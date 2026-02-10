@@ -31,11 +31,11 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Image
-              src="/images/clinicdigital-logo.png"
+              src="/images/clinicdigital-logo-white.png"
               alt="ClinicDigital.co - Bringing More Patients to Your Door"
-              width={180}
-              height={44}
-              className="h-9 w-auto brightness-0 invert"
+              width={200}
+              height={48}
+              className="h-10 w-auto"
             />
             <p className="mt-4 text-sm leading-relaxed text-background/50">
               AI-powered solutions for medical practices and medspas. Built on GoHighLevel.
