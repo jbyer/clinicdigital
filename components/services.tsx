@@ -2,8 +2,9 @@ import {
   Bot,
   Users,
   Megaphone,
-  Settings,
-  BarChart3,
+  Search,
+  Wrench,
+  Palette,
   CalendarCheck,
   ArrowRight,
 } from "lucide-react"
@@ -39,18 +40,25 @@ const services = [
     features: ["Online Self-Booking", "Smart Reminders", "Calendar Sync"],
   },
   {
-    icon: Settings,
-    title: "Custom Integrations",
+    icon: Search,
+    title: "SEO",
     description:
-      "Connect your EMR, PMS, payment processor, and review platforms into one cohesive ecosystem. We build custom workflows that eliminate data silos and manual tasks.",
-    features: ["EMR/PMS Integration", "Payment Processing", "Review Management"],
+      "Dominate local search results and attract high-intent patients with data-driven SEO strategies tailored for medical practices and medspas. We optimize every page to rank where it matters most.",
+    features: ["Local SEO & Google Business", "Keyword Strategy", "On-Page Optimization"],
   },
   {
-    icon: BarChart3,
-    title: "Analytics & Reporting",
+    icon: Wrench,
+    title: "Website Maintenance",
     description:
-      "Real-time dashboards that track marketing ROI, patient acquisition costs, and operational metrics. Make data-driven decisions with clear, actionable insights.",
-    features: ["ROI Dashboards", "Patient Acquisition Metrics", "Performance Reports"],
+      "Keep your practice website secure, up-to-date, and performing at its best. We handle updates, backups, speed optimization, and ongoing technical support so you can focus on patients.",
+    features: ["Security & Updates", "Performance Optimization", "Ongoing Technical Support"],
+  },
+  {
+    icon: Palette,
+    title: "Web Design",
+    description:
+      "Custom, conversion-focused websites designed specifically for healthcare and medspa brands. We build beautiful, mobile-first experiences that turn visitors into booked appointments.",
+    features: ["Custom Design & Branding", "Mobile-First Development", "Conversion Optimization"],
   },
 ]
 
