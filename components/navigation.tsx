@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -34,16 +35,15 @@ export function Navigation() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="flex items-center gap-1.5">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <span className="text-sm font-bold text-primary-foreground">CD</span>
-            </div>
-            <span className="font-heading text-xl font-bold tracking-tight text-foreground">
-              ClinicDigital
-              <span className="text-primary">.co</span>
-            </span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/clinicdigital-logo.png"
+            alt="ClinicDigital.co - Bringing More Patients to Your Door"
+            width={200}
+            height={48}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         {/* Desktop Navigation */}

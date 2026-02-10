@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 const footerLinks = {
   services: [
@@ -29,15 +30,13 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-1.5">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                <span className="text-sm font-bold text-primary-foreground">CD</span>
-              </div>
-              <span className="font-heading text-xl font-bold tracking-tight text-background">
-                ClinicDigital
-                <span className="text-primary">.co</span>
-              </span>
-            </div>
+            <Image
+              src="/images/clinicdigital-logo.png"
+              alt="ClinicDigital.co - Bringing More Patients to Your Door"
+              width={180}
+              height={44}
+              className="h-9 w-auto brightness-0 invert"
+            />
             <p className="mt-4 text-sm leading-relaxed text-background/50">
               AI-powered solutions for medical practices and medspas. Built on GoHighLevel.
               Designed for growth.
