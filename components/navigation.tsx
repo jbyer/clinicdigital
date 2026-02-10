@@ -64,7 +64,7 @@ export function Navigation() {
         </div>
 
         <div className="hidden lg:flex">
-          <Button asChild variant={isScrolled ? "default" : "secondary"} className={isScrolled ? "" : "bg-white text-foreground font-semibold hover:bg-white/90 hover:text-foreground"}>
+          <Button asChild variant={isScrolled ? "default" : "secondary"} className={isScrolled ? "hover:bg-red-600 hover:text-white" : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"}>
             <Link href="#contact">Book a Consultation</Link>
           </Button>
         </div>
