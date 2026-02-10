@@ -37,7 +37,7 @@ export function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/clinicdigital-logo.png"
+            src="/images/clinicdigital-logo-white.png"
             alt="ClinicDigital.co - Bringing More Patients to Your Door"
             width={200}
             height={48}
