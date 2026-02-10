@@ -37,11 +37,11 @@ export function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/clinicdigital-logo-white.png"
+            src={isScrolled ? "/images/clinicdigital-logo.png" : "/images/clinicdigital-logo-white.png"}
             alt="ClinicDigital.co - Bringing More Patients to Your Door"
             width={200}
             height={48}
-            className="h-10 w-auto"
+            className="h-10 w-auto transition-opacity duration-300"
             priority
           />
         </Link>
@@ -52,7 +52,11 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className={`text-sm font-medium transition-colors ${
+                isScrolled
+                  ? "text-muted-foreground hover:text-foreground"
+                  : "text-white/80 hover:text-white"
+              }`}
             >
               {link.label}
             </Link>
@@ -60,7 +64,7 @@ export function Navigation() {
         </div>
 
         <div className="hidden lg:flex">
-          <Button asChild>
+          <Button asChild variant={isScrolled ? "default" : "outline"} className={isScrolled ? "" : "border-white/30 text-white hover:bg-white/10 hover:text-white"}>
             <Link href="#contact">Book a Consultation</Link>
           </Button>
         </div>
@@ -68,7 +72,7 @@ export function Navigation() {
         {/* Mobile Menu Toggle */}
         <button
           type="button"
-          className="lg:hidden text-foreground"
+          className={`lg:hidden ${isScrolled ? "text-foreground" : "text-white"}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
         >
