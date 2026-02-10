@@ -52,7 +52,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-sm font-bold transition-colors ${
                 isScrolled
                   ? "text-muted-foreground hover:text-foreground"
                   : "text-white/80 hover:text-white"
