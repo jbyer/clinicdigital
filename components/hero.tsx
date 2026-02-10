@@ -43,7 +43,7 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button size="lg" asChild className="text-base">
               <Link href="#contact">
-                Schedule a Demo
+                Book A Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>

@@ -77,8 +77,7 @@ export function Services() {
             </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Our suite of GoHighLevel-powered services covers every stage of the patient journey,
-            from first touchpoint to lasting loyalty.
+            Our suite of AI empowered services covers every stage of the patient journey, from first touchpoint to lasting loyalty.
           </p>
         </div>
 
@@ -113,7 +112,7 @@ export function Services() {
                 ))}
               </ul>
 
-              <div className="mt-6 pt-4 border-t border-border">
+              {/*<div className="mt-6 pt-4 border-t border-border">
                 <Link
                   href="#contact"
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
@@ -121,7 +120,7 @@ export function Services() {
                   Learn more
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
-              </div>
+              </div>*/}
             </div>
           ))}
         </div>

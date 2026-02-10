@@ -106,9 +106,7 @@ export function Footer() {
           <p className="text-xs text-background/40">
             &copy; {new Date().getFullYear()} ClinicDigital.co. All rights reserved.
           </p>
-          <p className="text-xs text-background/40">
-            GoHighLevel Certified Partner
-          </p>
+
         </div>
       </div>
     </footer>
