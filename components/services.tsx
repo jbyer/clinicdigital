@@ -64,7 +64,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32">
+    <section id="services" className="py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-2xl">
@@ -82,7 +82,7 @@ export function Services() {
         </div>
 
         {/* Services Grid */}
-        <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service) => (
             <div
               key={service.title}

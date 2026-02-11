@@ -33,7 +33,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section id="process" className="bg-secondary py-24 lg:py-32">
+    <section id="process" className="bg-secondary py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center">
@@ -50,7 +50,7 @@ export function Process() {
         </div>
 
         {/* Steps */}
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {steps.map((step, index) => (
             <div key={step.number} className="relative flex flex-col items-start">
               {/* Connector line (desktop) */}

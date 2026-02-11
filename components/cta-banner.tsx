@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react"
 
 export function CtaBanner() {
   return (
-    <section className="relative overflow-hidden bg-primary py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-primary py-14 lg:py-16">
       {/* Decorative circles */}
       <div className="absolute -left-20 -top-20 h-64 w-64 rounded-full bg-primary-foreground/5" />
       <div className="absolute -bottom-16 -right-16 h-48 w-48 rounded-full bg-primary-foreground/5" />

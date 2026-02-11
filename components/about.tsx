@@ -11,7 +11,7 @@ const highlights = [
 
 export function About() {
   return (
-    <section id="about" className="bg-secondary py-24 lg:py-32">
+    <section id="about" className="bg-secondary py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           {/* Left: Content */}

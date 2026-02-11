@@ -46,7 +46,7 @@ const caseStudies = [
 
 export function CaseStudies() {
   return (
-    <section id="case-studies" className="py-24 lg:py-32">
+    <section id="case-studies" className="py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -65,7 +65,7 @@ export function CaseStudies() {
         </div>
 
         {/* Case Studies Grid */}
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <div className="mt-10 grid gap-8 lg:grid-cols-3">
           {caseStudies.map((study) => (
             <article
               key={study.title}
