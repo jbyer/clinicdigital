@@ -1,7 +1,6 @@
 import { CheckCircle2 } from "lucide-react"
 
 const highlights = [
-  "GoHighLevel Certified Partner with deep platform expertise",
   "Exclusive focus on healthcare, medical practices, and medspas",
   "HIPAA-aware workflows and secure data handling",
   "End-to-end implementation with ongoing optimization",
@@ -30,7 +29,7 @@ export function About() {
               and growth levers of medical practices and medspas.
             </p>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              Our team leverages the GoHighLevel platform to deliver AI-powered automation that
+              Our team leverages years of devlopment, online marketing, healthcare and AI to deliver custom automations that
               integrates seamlessly with your existing tools and workflows -- without the complexity
               of building from scratch.
             </p>
@@ -48,7 +47,7 @@ export function About() {
           {/* Right: Visual element */}
           <div className="relative">
             <div className="rounded-2xl border border-border bg-card p-8 shadow-lg">
-              <div className="flex items-center gap-3 mb-6">
+              {/*<div className="flex items-center gap-3 mb-6">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                   <span className="text-sm font-bold text-primary-foreground">CD</span>
                 </div>
@@ -58,7 +57,7 @@ export function About() {
                   </p>
                   <p className="text-xs text-muted-foreground">Official Platform Partner</p>
                 </div>
-              </div>
+              </div>*/}
 
               <div className="flex flex-col gap-4">
                 <div className="rounded-xl bg-secondary p-4">

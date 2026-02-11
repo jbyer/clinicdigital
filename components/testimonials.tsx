@@ -10,7 +10,7 @@ const testimonials = [
   },
   {
     quote:
-      "The GoHighLevel setup they built for us was a game-changer. Our marketing runs on autopilot and conversions have tripled.",
+      "The setup they built for us was a game-changer. Our marketing runs on autopilot and conversions have tripled.",
     author: "Michael Torres",
     role: "Owner, Elite MedSpa & Wellness",
     initials: "MT",

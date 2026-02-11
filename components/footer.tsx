@@ -16,10 +16,8 @@ const footerLinks = {
     { label: "Contact", href: "#contact" },
   ],
   resources: [
-    { label: "Blog", href: "#" },
-    { label: "Help Center", href: "#" },
-    { label: "Privacy Policy", href: "#" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
   ],
 }
 
@@ -38,7 +36,7 @@ export function Footer() {
               className="h-10 w-auto"
             />
             <p className="mt-4 text-sm leading-relaxed text-background/50">
-              AI-powered solutions for medical practices and medspas. Built on GoHighLevel.
+              AI-powered solutions for medical practices and medspas.
               Designed for growth.
             </p>
           </div>
