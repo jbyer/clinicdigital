@@ -100,7 +100,7 @@ export function Contact() {
           </div>
 
           {/* Right: Form */}
-          <div className="rounded-2xl border border-border bg-card p-8 shadow-sm lg:p-10">
+          <div id="book" className="rounded-2xl border border-border bg-card p-8 shadow-sm lg:p-10">
             <h3 className="font-heading text-xl font-semibold text-card-foreground">
               Book Your Free Strategy Session
             </h3>

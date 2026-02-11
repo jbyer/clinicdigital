@@ -28,11 +28,10 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center">
@@ -52,11 +51,10 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-bold transition-colors ${
-                isScrolled
+              className={`text-sm font-bold transition-colors ${isScrolled
                   ? "text-muted-foreground hover:text-foreground"
                   : "text-white/80 hover:text-white"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -65,7 +63,7 @@ export function Navigation() {
 
         <div className="hidden lg:flex">
           <Button asChild variant={isScrolled ? "default" : "secondary"} className={isScrolled ? "hover:bg-red-600 hover:text-white" : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"}>
-            <Link href="#contact">Book a Consultation</Link>
+            <Link href="#book">Book a Consultation</Link>
           </Button>
         </div>
 
@@ -82,18 +80,16 @@ export function Navigation() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 top-[72px] z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          isMobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 top-[72px] z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isMobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
         aria-hidden="true"
       />
       <div
-        className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${
-          isMobileMenuOpen
+        className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-2 pointer-events-none opacity-0"
-        }`}
+          }`}
       >
         <div className="mx-4 mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
           <div className="flex flex-col gap-1 px-4 py-4">
@@ -110,7 +106,7 @@ export function Navigation() {
           </div>
           <div className="border-t border-border px-4 py-4">
             <Button asChild className="w-full hover:bg-red-600 hover:text-white">
-              <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="#book" onClick={() => setIsMobileMenuOpen(false)}>
                 Book a Consultation
               </Link>
             </Button>

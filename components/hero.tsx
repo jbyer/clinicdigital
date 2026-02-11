@@ -42,7 +42,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button size="lg" asChild className="text-base hover:bg-red-600 hover:text-white">
-              <Link href="#contact">
+              <Link href="#book">
                 Book A Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -51,6 +51,8 @@ export function Hero() {
               <Link href="#case-studies">View Case Studies</Link>
             </Button>
           </div>
+
+          <div className="mb-[30px] lg:mb-0" />
 
 
         </div>
