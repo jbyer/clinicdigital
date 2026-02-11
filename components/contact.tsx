@@ -108,6 +108,11 @@ export function Contact() {
               Fill out the form below and we will be in touch within 24 hours.
             </p>
 
+            <script
+              src="https://beta.leadconnectorhq.com/loader.js"
+              data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+              data-widget-id="698352597cd1e6562be9d7d1"   >
+            </script>
 
 
           </div>
