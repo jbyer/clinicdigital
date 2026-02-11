@@ -14,7 +14,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react"
+import Script from "next/script"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -108,11 +109,12 @@ export function Contact() {
               Fill out the form below and we will be in touch within 24 hours.
             </p>
 
-            <script
+            <Script
               src="https://beta.leadconnectorhq.com/loader.js"
               data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-              data-widget-id="698352597cd1e6562be9d7d1">
-            </script>
+              data-widget-id="698352597cd1e6562be9d7d1"
+              strategy="afterInteractive"
+            />
 
 
           </div>
