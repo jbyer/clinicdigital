@@ -85,7 +85,7 @@ export function Contact() {
               Pick a time that works for you and we will handle the rest.
             </p>
 
-            <div className="mt-6 overflow-hidden rounded-xl">
+            <div className="">
               <iframe
                 src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
                 style={{ width: '100%', border: 'none', overflow: 'hidden' }} scrolling="no"
