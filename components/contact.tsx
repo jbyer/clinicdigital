@@ -90,6 +90,7 @@ export function Contact() {
                 src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
                 style={{ width: '100%', border: 'none', overflow: 'hidden' }} scrolling="no"
                 id="21QEzBNbB5RyfvyaVrxh_1770846144597">
+              </iframe>
             </div>
           </div>
         </div>
