@@ -51,7 +51,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Email</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">hello@clinicdigital.co</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground"><a href="mailto:info@clinicdigital.co">info@clinicdigital.co</a></p>
                 </div>
               </div>
 
@@ -61,7 +61,7 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Phone</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground">(555) 234-5678</p>
+                  <p className="mt-0.5 text-sm text-muted-foreground"><a href="tel:+18555800608">(855) 580-0608</a></p>
                 </div>
               </div>
 
