@@ -108,75 +108,8 @@ export function Contact() {
               Fill out the form below and we will be in touch within 24 hours.
             </p>
 
-            {isSubmitted ? (
-              <div className="mt-8 flex flex-col items-center justify-center rounded-xl bg-accent/10 py-16 text-center">
-                <CheckCircle2 className="mb-4 h-12 w-12 text-accent" />
-                <h4 className="font-heading text-xl font-semibold text-foreground">
-                  Thank you!
-                </h4>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  {"We've received your inquiry and will be in touch shortly."}
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" required />
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Smith" required />
-                  </div>
-                </div>
 
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@practice.com" required />
-                </div>
 
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" type="tel" placeholder="(555) 000-0000" />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="practiceType">Practice Type</Label>
-                  <Select>
-                    <SelectTrigger id="practiceType">
-                      <SelectValue placeholder="Select your practice type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="medspa">MedSpa</SelectItem>
-                      <SelectItem value="dermatology">Dermatology</SelectItem>
-                      <SelectItem value="dental">Dental</SelectItem>
-                      <SelectItem value="plastic-surgery">Plastic Surgery</SelectItem>
-                      <SelectItem value="general-practice">General Practice</SelectItem>
-                      <SelectItem value="specialty">Other Specialty</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell us about your practice and what challenges you're looking to solve..."
-                    rows={4}
-                  />
-                </div>
-
-                <Button type="submit" size="lg" className="mt-2 w-full text-base">
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Inquiry
-                </Button>
-
-                <p className="text-center text-xs text-muted-foreground">
-                  By submitting, you agree to our privacy policy. We never share your information.
-                </p>
-              </form>
-            )}
           </div>
         </div>
       </div>
