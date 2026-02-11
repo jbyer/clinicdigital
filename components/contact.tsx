@@ -87,12 +87,9 @@ export function Contact() {
 
             <div className="mt-6 overflow-hidden rounded-xl">
               <iframe
-                src="https://api.leadconnectorhq.com/widget/booking/698352597cd1e6562be9d7d1"
-                title="ClinicDigital.co Booking Calendar"
-                className="h-[600px] w-full border-0 sm:h-[650px]"
-                loading="lazy"
-                allow="payment"
-              />
+                src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
+                style={{ width: '100%', border: 'none', overflow: 'hidden' }} scrolling="no"
+                id="21QEzBNbB5RyfvyaVrxh_1770846144597">
             </div>
           </div>
         </div>
