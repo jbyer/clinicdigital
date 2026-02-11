@@ -1,30 +1,6 @@
-"use client"
-
-import React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-import Script from "next/script"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 4000)
-  }
 
   return (
     <section id="contact" className="py-16 lg:py-20">
@@ -100,23 +76,24 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right: Form */}
-          <div id="book" className="rounded-2xl border border-border bg-card p-8 shadow-sm lg:p-10">
+          {/* Right: Booking Calendar */}
+          <div id="book" className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <h3 className="font-heading text-xl font-semibold text-card-foreground">
               Book Your Free Strategy Session
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Fill out the form below and we will be in touch within 24 hours.
+              Pick a time that works for you and we will handle the rest.
             </p>
 
-            <Script
-              src="https://beta.leadconnectorhq.com/loader.js"
-              data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-              data-widget-id="698352597cd1e6562be9d7d1"
-              strategy="afterInteractive"
-            />
-
-
+            <div className="mt-6 overflow-hidden rounded-xl">
+              <iframe
+                src="https://api.leadconnectorhq.com/widget/booking/698352597cd1e6562be9d7d1"
+                title="ClinicDigital.co Booking Calendar"
+                className="h-[600px] w-full border-0 sm:h-[650px]"
+                loading="lazy"
+                allow="payment"
+              />
+            </div>
           </div>
         </div>
       </div>
