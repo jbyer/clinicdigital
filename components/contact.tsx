@@ -111,7 +111,7 @@ export function Contact() {
             <script
               src="https://beta.leadconnectorhq.com/loader.js"
               data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-              data-widget-id="698352597cd1e6562be9d7d1"   >
+              data-widget-id="698352597cd1e6562be9d7d1">
             </script>
 
 
