@@ -91,6 +91,8 @@ export function Contact() {
                 style={{ width: '100%', border: 'none', overflow: 'hidden' }} scrolling="no"
                 id="21QEzBNbB5RyfvyaVrxh_1770846144597">
               </iframe>
+              <br />
+              <script src="https://brand.clinicdigital.co/js/form_embed.js" type="text/javascript"></script>
             </div>
           </div>
         </div>
