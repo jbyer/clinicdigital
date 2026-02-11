@@ -21,7 +21,7 @@ const caseStudies = [
     category: "MedSpa",
     title: "Radiance Aesthetic Studio",
     description:
-      "Built a GoHighLevel-powered booking and retention system with AI chatbots that handle consultations, upsells, and loyalty program management.",
+      "Built a booking and retention system with AI chatbots that handle consultations, upsells, and loyalty program management.",
     results: [
       { metric: "Bookings", value: "+85%" },
       { metric: "No-Show Rate", value: "-62%" },
@@ -58,8 +58,7 @@ export function CaseStudies() {
               <span className="text-balance">Real results for real practices.</span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              See how our AI solutions have transformed operations and driven measurable growth for
-              healthcare businesses.
+              See how our AI solutions have transformed operations and driven measurable growth for healthcare businesses.
             </p>
           </div>
         </div>

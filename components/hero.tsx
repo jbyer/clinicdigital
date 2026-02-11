@@ -36,12 +36,12 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-            We deploy cutting-edge AI solutions through the GoHighLevel platform to streamline
+            We deploy cutting-edge AI solutions to streamline
             operations, boost patient engagement, and drive growth for medical practices and medspas.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button size="lg" asChild className="text-base">
+            <Button size="lg" asChild className="text-base hover:bg-red-600 hover:text-white">
               <Link href="#contact">
                 Book A Call
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -52,38 +52,7 @@ export function Hero() {
             </Button>
           </div>
 
-          {/* Trust Indicators */}
-          <div className="mt-16 flex flex-col gap-6 sm:flex-row sm:items-center">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-                <Bot className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-primary-foreground">50+ AI Automations</p>
-                <p className="text-xs text-primary-foreground/50">Deployed Successfully</p>
-              </div>
-            </div>
-            <div className="hidden h-8 w-px bg-primary-foreground/20 sm:block" />
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-                <Shield className="h-5 w-5 text-primary" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-primary-foreground">HIPAA Compliant</p>
-                <p className="text-xs text-primary-foreground/50">Secure & Reliable</p>
-              </div>
-            </div>
-            <div className="hidden h-8 w-px bg-primary-foreground/20 sm:block" />
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/20 backdrop-blur-sm">
-                <Zap className="h-5 w-5 text-accent" />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-primary-foreground">3x ROI Average</p>
-                <p className="text-xs text-primary-foreground/50">For Our Clients</p>
-              </div>
-            </div>
-          </div>
+
         </div>
       </div>
 

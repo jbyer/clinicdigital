@@ -13,7 +13,7 @@ const steps = [
     icon: Lightbulb,
     title: "Strategy & Design",
     description:
-      "We architect a custom AI solution tailored to your practice using GoHighLevel, mapping every touchpoint for maximum impact.",
+      "We architect a custom AI solution tailored to your practice, mapping every touchpoint for maximum impact.",
   },
   {
     number: "03",

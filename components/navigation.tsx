@@ -81,29 +81,42 @@ export function Navigation() {
       </nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="border-t border-border bg-background/98 backdrop-blur-md lg:hidden">
-          <div className="flex flex-col gap-1 px-6 py-4">
+      <div
+        className={`fixed inset-0 top-[72px] z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+          isMobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+        aria-hidden="true"
+      />
+      <div
+        className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${
+          isMobileMenuOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-2 pointer-events-none opacity-0"
+        }`}
+      >
+        <div className="mx-4 mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
+          <div className="flex flex-col gap-1 px-4 py-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+                className="rounded-lg px-4 py-3 text-sm font-semibold text-card-foreground transition-colors hover:bg-primary/10 hover:text-primary"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-2 border-t border-border pt-3">
-              <Button asChild className="w-full">
-                <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  Book a Consultation
-                </Link>
-              </Button>
-            </div>
+          </div>
+          <div className="border-t border-border px-4 py-4">
+            <Button asChild className="w-full hover:bg-red-600 hover:text-white">
+              <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
+                Book a Consultation
+              </Link>
+            </Button>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }
