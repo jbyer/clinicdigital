@@ -22,7 +22,7 @@ const services = [
     icon: Users,
     title: "Client Management (CRM)",
     description:
-      "A unified GoHighLevel CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
+      "A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
     features: ["Patient Pipeline Tracking", "Automated Follow-Ups", "Retention Workflows"],
   },
   {
@@ -88,7 +88,7 @@ export function Services() {
               key={service.title}
               className="group relative flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
             >
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground mx-auto md:mx-0">
                 <service.icon className="h-6 w-6" />
               </div>
 
