@@ -275,6 +275,7 @@ export default function BookACallPage() {
                     allow="payment"
                     id="book-a-call-calendar"
                   />
+                  <script src="https://brand.clinicdigital.co/js/form_embed.js" type="text/javascript"></script>
                 </div>
               </div>
             </div>
