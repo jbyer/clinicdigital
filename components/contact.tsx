@@ -1,3 +1,6 @@
+"use client"
+
+import Script from "next/script"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
@@ -85,14 +88,19 @@ export function Contact() {
               Pick a time that works for you and we will handle the rest.
             </p>
 
-            <div className="">
+            <div className="mt-6">
               <iframe
                 src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
-                style={{ width: '100%', border: 'none', overflow: 'hidden' }} scrolling="no"
-                id="21QEzBNbB5RyfvyaVrxh_1770846144597">
-              </iframe>
-              <br />
-              <script src="https://brand.clinicdigital.co/js/form_embed.js" type="text/javascript"></script>
+                style={{ width: "100%", border: "none", overflow: "hidden" }}
+                scrolling="no"
+                id="21QEzBNbB5RyfvyaVrxh_1770846144597"
+                title="ClinicDigital.co Booking Calendar"
+                suppressHydrationWarning
+              />
+              <Script
+                src="https://brand.clinicdigital.co/js/form_embed.js"
+                strategy="afterInteractive"
+              />
             </div>
           </div>
         </div>
