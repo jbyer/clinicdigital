@@ -267,15 +267,16 @@ export default function BookACallPage() {
                 <div className="mt-6 overflow-hidden rounded-xl">
                   <iframe
                     src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
-                    title="ClinicDigital.co Booking Calendar"
                     style={{ width: "100%", border: "none", overflow: "hidden" }}
                     scrolling="no"
-                    className="min-h-[600px] sm:min-h-[650px]"
-                    loading="lazy"
-                    allow="payment"
-                    id="book-a-call-calendar"
+                    id="21QEzBNbB5RyfvyaVrxh_1770846144597"
+                    title="ClinicDigital.co Booking Calendar"
+                    suppressHydrationWarning
                   />
-                  <script src="https://brand.clinicdigital.co/js/form_embed.js" type="text/javascript"></script>
+                  <Script
+                    src="https://brand.clinicdigital.co/js/form_embed.js"
+                    strategy="afterInteractive"
+                  />
                 </div>
               </div>
             </div>
