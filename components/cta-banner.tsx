@@ -26,7 +26,7 @@ export function CtaBanner() {
             asChild
             className="text-base"
           >
-            <Link href="#contact">
+            <Link href="/book-a-call">
               Book Your Free Consultation
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
