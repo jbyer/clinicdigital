@@ -63,7 +63,7 @@ export function Navigation() {
 
         <div className="hidden lg:flex">
           <Button asChild variant={isScrolled ? "default" : "secondary"} className={isScrolled ? "hover:bg-red-600 hover:text-white" : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"}>
-            <Link href="#book">Book a Consultation</Link>
+            <Link href="/book-a-call">Book a Consultation</Link>
           </Button>
         </div>
 
@@ -106,7 +106,7 @@ export function Navigation() {
           </div>
           <div className="border-t border-border px-4 py-4">
             <Button asChild className="w-full hover:bg-red-600 hover:text-white">
-              <Link href="#book" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="/book-a-call" onClick={() => setIsMobileMenuOpen(false)}>
                 Book a Consultation
               </Link>
             </Button>

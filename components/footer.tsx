@@ -15,6 +15,7 @@ const footerLinks = {
     { label: "Case Studies", href: "#case-studies" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
+    { label: "Book a Call", href: "/book-a-call" },
   ],
   resources: [
     { label: "Privacy Policy", href: "/privacy" },
