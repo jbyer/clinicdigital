@@ -99,20 +99,7 @@ export default function BookACallPage() {
             </div>
 
             {/* Trust indicators */}
-            <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-primary-foreground/10 pt-8">
-              <div className="flex items-center gap-2">
-                <Zap className="h-4 w-4 text-accent" />
-                <span className="text-sm text-primary-foreground/60">100% Free</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-4 w-4 text-accent" />
-                <span className="text-sm text-primary-foreground/60">30 Minutes</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="h-4 w-4 text-accent" />
-                <span className="text-sm text-primary-foreground/60">No Obligation</span>
-              </div>
-            </div>
+
           </div>
         </div>
 
