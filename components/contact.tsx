@@ -119,6 +119,25 @@ export function Contact() {
               24 hours.
             </p>
 
+            <iframe
+              src="https://brand.clinicdigital.co/widget/form/76lQWeup3iwEHsSsOhqO"
+              style="width:100%;height:100%;border:none;border-radius:3px"
+              id="inline-76lQWeup3iwEHsSsOhqO"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="ClinicDigital Contact"
+              data-height="764"
+              data-layout-iframe-id="inline-76lQWeup3iwEHsSsOhqO"
+              data-form-id="76lQWeup3iwEHsSsOhqO"
+              title="ClinicDigital Contact"
+            >
+            </iframe>
+            <script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
 
           </div>
         </div>
