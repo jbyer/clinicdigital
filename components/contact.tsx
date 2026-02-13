@@ -1,9 +1,20 @@
 "use client"
 
-import Script from "next/script"
-import { Mail, Phone, MapPin } from "lucide-react"
+import { useState } from "react"
+import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 
 export function Contact() {
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitted(true)
+    setTimeout(() => setIsSubmitted(false), 5000)
+  }
 
   return (
     <section id="contact" className="py-16 lg:py-20">
@@ -31,7 +42,9 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Email</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground"><a href="mailto:info@clinicdigital.co">info@clinicdigital.co</a></p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    <a href="mailto:info@clinicdigital.co" className="transition-colors hover:text-primary">info@clinicdigital.co</a>
+                  </p>
                 </div>
               </div>
 
@@ -41,7 +54,9 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold text-foreground">Phone</p>
-                  <p className="mt-0.5 text-sm text-muted-foreground"><a href="tel:+18555800608">(855) 580-0608</a></p>
+                  <p className="mt-0.5 text-sm text-muted-foreground">
+                    <a href="tel:+18555800608" className="transition-colors hover:text-primary">(855) 580-0608</a>
+                  </p>
                 </div>
               </div>
 
@@ -79,29 +94,115 @@ export function Contact() {
             </div>
           </div>
 
-          {/* Right: Booking Calendar */}
-          <div id="book" className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
+          {/* Right: Contact Form */}
+          <div className="rounded-2xl border border-border bg-card p-6 shadow-sm lg:p-8">
             <h3 className="font-heading text-xl font-semibold text-card-foreground">
-              Book Your Free Strategy Session
+              Send Us a Message
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Pick a time that works for you and we will handle the rest.
+              Fill out the form below and our team will get back to you within 24 hours.
             </p>
 
-            <div className="mt-6">
-              <iframe
-                src="https://brand.clinicdigital.co/widget/booking/21QEzBNbB5RyfvyaVrxh"
-                style={{ width: "100%", border: "none", overflow: "hidden" }}
-                scrolling="no"
-                id="21QEzBNbB5RyfvyaVrxh_1770846144597"
-                title="ClinicDigital.co Booking Calendar"
-                suppressHydrationWarning
-              />
-              <Script
-                src="https://brand.clinicdigital.co/js/form_embed.js"
-                strategy="afterInteractive"
-              />
-            </div>
+            {isSubmitted ? (
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/5 px-6 py-12 text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <CheckCircle2 className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <p className="font-heading text-lg font-semibold text-card-foreground">
+                    Message Sent Successfully
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Thank you for reaching out. We will be in touch shortly.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="firstName" className="text-sm font-medium text-card-foreground">
+                      First Name
+                    </Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      placeholder="John"
+                      required
+                      className="bg-background"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label htmlFor="lastName" className="text-sm font-medium text-card-foreground">
+                      Last Name
+                    </Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      placeholder="Doe"
+                      required
+                      className="bg-background"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="email" className="text-sm font-medium text-card-foreground">
+                    Email Address
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@yourpractice.com"
+                    required
+                    className="bg-background"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="phone" className="text-sm font-medium text-card-foreground">
+                    Phone Number <span className="text-muted-foreground">(optional)</span>
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="(555) 000-0000"
+                    className="bg-background"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Label htmlFor="message" className="text-sm font-medium text-card-foreground">
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your practice and how we can help..."
+                    rows={5}
+                    required
+                    className="resize-none bg-background"
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="mt-1 w-full gap-2">
+                  <Send className="h-4 w-4" />
+                  Send Message
+                </Button>
+
+                <p className="text-center text-xs text-muted-foreground">
+                  By submitting this form, you agree to our{" "}
+                  <a href="/privacy" className="underline transition-colors hover:text-primary">
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>
