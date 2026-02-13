@@ -77,7 +77,7 @@ export default function BookACallPage() {
               </span>
             </div>
 
-            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+            <h1 className="mt-[100px] font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
               <span className="text-balance">
                 Book a Call With{" "}
                 <span className="text-primary">Our Team</span>
