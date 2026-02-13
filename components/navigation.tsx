@@ -7,11 +7,11 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Case Studies", href: "#case-studies" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "https://www.clinicdigital.co/#services" },
+  { label: "Process", href: "https://www.clinicdigital.co/#process" },
+  { label: "Case Studies", href: "https://www.clinicdigital.co/#case-studies" },
+  { label: "About", href: "https://www.clinicdigital.co/#about" },
+  { label: "Contact", href: "https://www.clinicdigital.co/#contact" },
 ]
 
 export function Navigation() {
@@ -29,8 +29,8 @@ export function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+        ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -52,8 +52,8 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               className={`text-sm font-bold transition-colors ${isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-white/80 hover:text-white"
                 }`}
             >
               {link.label}
@@ -87,8 +87,8 @@ export function Navigation() {
       />
       <div
         className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-2 pointer-events-none opacity-0"
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-2 pointer-events-none opacity-0"
           }`}
       >
         <div className="mx-4 mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
