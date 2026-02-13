@@ -1,21 +1,9 @@
 "use client"
 
-import { useState } from "react"
-import { Mail, Phone, MapPin, Send, CheckCircle2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
+import Script from "next/script"
+import { Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitted(true)
-    setTimeout(() => setIsSubmitted(false), 5000)
-  }
-
   return (
     <section id="contact" className="py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -121,9 +109,9 @@ export function Contact() {
 
             <iframe
               src="https://brand.clinicdigital.co/widget/form/76lQWeup3iwEHsSsOhqO"
-              style="width:100%;height:100%;border:none;border-radius:3px"
+              style={{ width: "100%", height: "764px", border: "none", borderRadius: "3px" }}
               id="inline-76lQWeup3iwEHsSsOhqO"
-              data-layout="{'id':'INLINE'}"
+              data-layout='{"id":"INLINE"}'
               data-trigger-type="alwaysShow"
               data-trigger-value=""
               data-activation-type="alwaysActivated"
@@ -135,9 +123,12 @@ export function Contact() {
               data-layout-iframe-id="inline-76lQWeup3iwEHsSsOhqO"
               data-form-id="76lQWeup3iwEHsSsOhqO"
               title="ClinicDigital Contact"
-            >
-            </iframe>
-            <script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
+              suppressHydrationWarning
+            />
+            <Script
+              src="https://brand.clinicdigital.co/js/form_embed.js"
+              strategy="afterInteractive"
+            />
 
           </div>
         </div>
