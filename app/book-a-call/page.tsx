@@ -1,9 +1,20 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import Script from "next/script"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { Mail, Phone, MapPin, Clock, CheckCircle2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Clock,
+  CheckCircle2,
+  ArrowDown,
+  CalendarCheck,
+  Zap,
+} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Book A Call | ClinicDigital.co",
@@ -19,37 +30,132 @@ const benefits = [
   "No obligation, 100% free consultation",
 ]
 
+const steps = [
+  {
+    number: "01",
+    title: "Pick a Time",
+    description: "Choose a 30-minute slot that fits your schedule from the calendar below.",
+  },
+  {
+    number: "02",
+    title: "Tell Us About You",
+    description: "Share a few details about your practice so we can tailor the conversation.",
+  },
+  {
+    number: "03",
+    title: "Get Your Strategy",
+    description: "Receive a custom AI roadmap with clear next steps for your growth.",
+  },
+]
+
 export default function BookACallPage() {
   return (
     <>
       <Navigation />
 
-      {/* Hero Banner */}
-      <section className="bg-foreground py-12 lg:py-16">
-        <div className="mx-auto max-w-7xl px-6 text-center lg:px-8">
-          <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            Free Strategy Session
-          </p>
-          <h1 className="mt-3 font-heading text-3xl font-bold tracking-tight text-background sm:text-4xl lg:text-5xl">
-            <span className="text-balance">
-              Book a Call With Our Team
-            </span>
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-background/60">
-            Discover how AI-powered automation through GoHighLevel can transform your medical
-            practice or medspa. Pick a time that works for you.
-          </p>
+      {/* Hero Section */}
+      <section className="relative min-h-[70vh] overflow-hidden lg:min-h-[60vh]">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-book-a-call.jpg"
+            alt="Professional medical consultation"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/50" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-6 pt-20 lg:min-h-[60vh] lg:px-8">
+          <div className="max-w-2xl">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
+              <CalendarCheck className="h-3.5 w-3.5 text-accent" />
+              <span className="text-xs font-medium uppercase tracking-wide text-primary-foreground/90">
+                Free 30-Minute Strategy Session
+              </span>
+            </div>
+
+            <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+              <span className="text-balance">
+                Book a Call With{" "}
+                <span className="text-primary">Our Team</span>
+              </span>
+            </h1>
+
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
+              Discover how AI-powered automation through GoHighLevel can transform your medical
+              practice or medspa. Pick a time, and we will handle the rest.
+            </p>
+
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <Button size="lg" asChild className="text-base hover:bg-red-600 hover:text-white">
+                <a href="#booking-calendar">
+                  Schedule Now
+                  <ArrowDown className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-10 flex flex-wrap items-center gap-6 border-t border-primary-foreground/10 pt-8">
+              <div className="flex items-center gap-2">
+                <Zap className="h-4 w-4 text-accent" />
+                <span className="text-sm text-primary-foreground/60">100% Free</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="h-4 w-4 text-accent" />
+                <span className="text-sm text-primary-foreground/60">30 Minutes</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <CheckCircle2 className="h-4 w-4 text-accent" />
+                <span className="text-sm text-primary-foreground/60">No Obligation</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom gradient fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      </section>
+
+      {/* How It Works Mini-Steps */}
+      <section className="bg-secondary py-12 lg:py-14">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid gap-8 md:grid-cols-3">
+            {steps.map((step) => (
+              <div key={step.number} className="flex items-start gap-4">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
+                  {step.number}
+                </div>
+                <div>
+                  <h3 className="font-heading text-base font-semibold text-secondary-foreground">
+                    {step.title}
+                  </h3>
+                  <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Main Content */}
-      <main className="py-16 lg:py-20">
+      <main id="booking-calendar" className="scroll-mt-20 py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-5 lg:gap-16">
             {/* Left: Info Column */}
             <div className="lg:col-span-2">
-              <h2 className="font-heading text-2xl font-bold tracking-tight text-foreground">
-                {"What to Expect"}
+              <p className="text-sm font-semibold uppercase tracking-widest text-primary">
+                What to Expect
+              </p>
+              <h2 className="mt-3 font-heading text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+                <span className="text-balance">
+                  Your Personalized AI Growth Strategy
+                </span>
               </h2>
               <p className="mt-3 text-base leading-relaxed text-muted-foreground">
                 In this 30-minute call, we will review your current operations and show you exactly
@@ -85,7 +191,10 @@ export default function BookACallPage() {
                   <div>
                     <p className="text-sm font-semibold text-foreground">Email</p>
                     <p className="mt-0.5 text-sm text-muted-foreground">
-                      <a href="mailto:info@clinicdigital.co" className="transition-colors hover:text-primary">
+                      <a
+                        href="mailto:info@clinicdigital.co"
+                        className="transition-colors hover:text-primary"
+                      >
                         info@clinicdigital.co
                       </a>
                     </p>
@@ -99,7 +208,10 @@ export default function BookACallPage() {
                   <div>
                     <p className="text-sm font-semibold text-foreground">Phone</p>
                     <p className="mt-0.5 text-sm text-muted-foreground">
-                      <a href="tel:+18555800608" className="transition-colors hover:text-primary">
+                      <a
+                        href="tel:+18555800608"
+                        className="transition-colors hover:text-primary"
+                      >
                         (855) 580-0608
                       </a>
                     </p>
@@ -131,7 +243,9 @@ export default function BookACallPage() {
                     <span className="text-sm font-bold text-primary">JM</span>
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-card-foreground">Dr. Jessica Monroe</p>
+                    <p className="text-sm font-semibold text-card-foreground">
+                      Dr. Jessica Monroe
+                    </p>
                     <p className="text-xs text-muted-foreground">
                       Owner, Radiance Aesthetic Studio
                     </p>
