@@ -31,8 +31,9 @@ export function Contact() {
               </span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-              Book a free strategy consultation to discover how AI-powered automation can streamline
-              your operations and drive measurable growth.
+              Book a free strategy consultation to discover how AI-powered
+              automation can streamline your operations and drive measurable
+              growth.
             </p>
 
             <div className="mt-10 flex flex-col gap-6">
@@ -43,7 +44,12 @@ export function Contact() {
                 <div>
                   <p className="text-sm font-semibold text-foreground">Email</p>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    <a href="mailto:info@clinicdigital.co" className="transition-colors hover:text-primary">info@clinicdigital.co</a>
+                    <a
+                      href="mailto:info@clinicdigital.co"
+                      className="transition-colors hover:text-primary"
+                    >
+                      info@clinicdigital.co
+                    </a>
                   </p>
                 </div>
               </div>
@@ -55,7 +61,12 @@ export function Contact() {
                 <div>
                   <p className="text-sm font-semibold text-foreground">Phone</p>
                   <p className="mt-0.5 text-sm text-muted-foreground">
-                    <a href="tel:+18555800608" className="transition-colors hover:text-primary">(855) 580-0608</a>
+                    <a
+                      href="tel:+18555800608"
+                      className="transition-colors hover:text-primary"
+                    >
+                      (855) 580-0608
+                    </a>
                   </p>
                 </div>
               </div>
@@ -65,7 +76,9 @@ export function Contact() {
                   <MapPin className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-foreground">Office</p>
+                  <p className="text-sm font-semibold text-foreground">
+                    Office
+                  </p>
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     Remote-first with teams across the US
                   </p>
@@ -77,7 +90,7 @@ export function Contact() {
             <div className="mt-12 rounded-2xl border border-border bg-card p-6">
               <p className="text-sm italic leading-relaxed text-muted-foreground">
                 {
-                  "\"ClinicDigital completely transformed how we manage patient inquiries. Our booking rate jumped 85% in the first three months, and we haven't looked back.\""
+                  '"ClinicDigital completely transformed how we manage patient inquiries. Our booking rate jumped 85% in the first three months, and we haven\'t looked back."'
                 }
               </p>
               <div className="mt-4 flex items-center gap-3">
@@ -85,7 +98,9 @@ export function Contact() {
                   <span className="text-sm font-bold text-primary">JM</span>
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-card-foreground">Dr. Jessica Monroe</p>
+                  <p className="text-sm font-semibold text-card-foreground">
+                    Dr. Jessica Monroe
+                  </p>
                   <p className="text-xs text-muted-foreground">
                     Owner, Radiance Aesthetic Studio
                   </p>
@@ -100,29 +115,129 @@ export function Contact() {
               Send Us a Message
             </h3>
             <p className="mt-2 text-sm text-muted-foreground">
-              Fill out the form below and our team will get back to you within 24 hours.
+              Fill out the form below and our team will get back to you within
+              24 hours.
             </p>
 
-            <iframe
-              src="https://brand.clinicdigital.co/widget/form/76lQWeup3iwEHsSsOhqO"
-              style={{ width: "100%", height: "100", border: "none", border- radius: "3px" }}
-            id="inline-76lQWeup3iwEHsSsOhqO"
-            data-layout="{'id':'INLINE'}"
-            data-trigger-type="alwaysShow"
-            data-trigger-value=""
-            data-activation-type="alwaysActivated"
-            data-activation-value=""
-            data-deactivation-type="neverDeactivate"
-            data-deactivation-value=""
-            data-form-name="ClinicDigital Contact"
-            data-height="764"
-            data-layout-iframe-id="inline-76lQWeup3iwEHsSsOhqO"
-            data-form-id="76lQWeup3iwEHsSsOhqO"
-            title="ClinicDigital Contact"
-            >
-            />
-            <Script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
+            {isSubmitted ? (
+              <div className="mt-8 flex flex-col items-center justify-center gap-4 rounded-xl bg-primary/5 px-6 py-12 text-center">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+                  <CheckCircle2 className="h-7 w-7 text-primary" />
+                </div>
+                <div>
+                  <p className="font-heading text-lg font-semibold text-card-foreground">
+                    Message Sent Successfully
+                  </p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Thank you for reaching out. We will be in touch shortly.
+                  </p>
+                </div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="mt-6 flex flex-col gap-5">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <div className="flex flex-col gap-2">
+                    <Label
+                      htmlFor="firstName"
+                      className="text-sm font-medium text-card-foreground"
+                    >
+                      First Name
+                    </Label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      placeholder="John"
+                      required
+                      className="bg-background"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <Label
+                      htmlFor="lastName"
+                      className="text-sm font-medium text-card-foreground"
+                    >
+                      Last Name
+                    </Label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      placeholder="Doe"
+                      required
+                      className="bg-background"
+                    />
+                  </div>
+                </div>
 
+                <div className="flex flex-col gap-2">
+                  <Label
+                    htmlFor="email"
+                    className="text-sm font-medium text-card-foreground"
+                  >
+                    Email Address
+                  </Label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="john@yourpractice.com"
+                    required
+                    className="bg-background"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Label
+                    htmlFor="phone"
+                    className="text-sm font-medium text-card-foreground"
+                  >
+                    Phone Number{" "}
+                    <span className="text-muted-foreground">(optional)</span>
+                  </Label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    placeholder="(555) 000-0000"
+                    className="bg-background"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <Label
+                    htmlFor="message"
+                    className="text-sm font-medium text-card-foreground"
+                  >
+                    Message
+                  </Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us about your practice and how we can help..."
+                    rows={5}
+                    required
+                    className="resize-none bg-background"
+                  />
+                </div>
+
+                <Button type="submit" size="lg" className="mt-1 w-full gap-2">
+                  <Send className="h-4 w-4" />
+                  Send Message
+                </Button>
+
+                <p className="text-center text-xs text-muted-foreground">
+                  By submitting this form, you agree to our{" "}
+                  <a
+                    href="/privacy"
+                    className="underline transition-colors hover:text-primary"
+                  >
+                    Privacy Policy
+                  </a>
+                  .
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>
