@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPageLayout title="Privacy Policy" lastUpdated="February 10, 2026">
+    <LegalPageLayout
+      title="Privacy Policy"
+      subtitle="Your privacy matters. Learn how ClinicDigital.co collects, uses, and safeguards your personal data in compliance with GDPR, CCPA, and other applicable regulations."
+      lastUpdated="February 10, 2026"
+    >
       <LegalSection heading="1. Introduction">
         <p>
           ClinicDigital.co ("we," "our," or "us") is committed to protecting the privacy and

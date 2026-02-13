@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <LegalPageLayout title="Terms of Service" lastUpdated="February 10, 2026">
+    <LegalPageLayout
+      title="Terms of Service"
+      subtitle="Please read these terms carefully before using our website and services. By engaging ClinicDigital.co, you agree to be bound by the following conditions."
+      lastUpdated="February 10, 2026"
+    >
       <LegalSection heading="1. Acceptance of Terms">
         <p>
           By accessing, browsing, or using the website and services provided by ClinicDigital.co
