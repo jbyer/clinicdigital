@@ -69,10 +69,10 @@ export default function BookACallPage() {
 
         {/* Content */}
         <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-6 pt-20 lg:min-h-[60vh] lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl mt-[100px]">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
               <CalendarCheck className="h-3.5 w-3.5 text-accent" />
-              <span className="mt-[100px] text-xs font-medium uppercase tracking-wide text-primary-foreground/90">
+              <span className="text-xs font-medium uppercase tracking-wide text-primary-foreground/90">
                 Free 30-Minute Strategy Session
               </span>
             </div>
