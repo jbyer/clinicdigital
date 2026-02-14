@@ -14,6 +14,7 @@ const services = [
   {
     icon: Megaphone,
     title: "AI Marketing Automation",
+    href: "/services/ai-marketing-automation",
     description:
       "Automated email campaigns, SMS sequences, and social media outreach powered by AI. Reach the right patients at the right time with personalized messaging that converts.",
     features: ["Smart Email Sequences", "AI-Powered SMS Campaigns", "Social Media Automation"],
@@ -21,6 +22,7 @@ const services = [
   {
     icon: Users,
     title: "Client Management (CRM)",
+    href: "/services/client-management",
     description:
       "A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
     features: ["Patient Pipeline Tracking", "Automated Follow-Ups", "Retention Workflows"],
@@ -28,6 +30,7 @@ const services = [
   {
     icon: Bot,
     title: "AI Chatbots & Virtual Assistants",
+    href: "/services/ai-chatbots",
     description:
       "24/7 AI assistants that handle appointment booking, FAQ responses, and lead qualification. Reduce staff workload while maintaining an exceptional patient experience.",
     features: ["24/7 Lead Capture", "Appointment Scheduling", "Intelligent FAQ Responses"],
@@ -35,6 +38,7 @@ const services = [
   {
     icon: CalendarCheck,
     title: "Appointment Automation",
+    href: "/services/appointment-automation",
     description:
       "Eliminate no-shows with intelligent scheduling, automated reminders, and self-service booking. Seamlessly integrated with your existing practice management systems.",
     features: ["Online Self-Booking", "Smart Reminders", "Calendar Sync"],
@@ -42,6 +46,7 @@ const services = [
   {
     icon: Search,
     title: "SEO",
+    href: "/services/seo",
     description:
       "Dominate local search results and attract high-intent patients with data-driven SEO strategies tailored for medical practices and medspas. We optimize every page to rank where it matters most.",
     features: ["Local SEO & Google Business", "Keyword Strategy", "On-Page Optimization"],
@@ -49,6 +54,7 @@ const services = [
   {
     icon: Wrench,
     title: "Website Maintenance",
+    href: "/services/website-maintenance",
     description:
       "Keep your practice website secure, up-to-date, and performing at its best. We handle updates, backups, speed optimization, and ongoing technical support so you can focus on patients.",
     features: ["Security & Updates", "Performance Optimization", "Ongoing Technical Support"],
@@ -56,6 +62,7 @@ const services = [
   {
     icon: Palette,
     title: "Web Design",
+    href: "/services/web-design",
     description:
       "Custom, conversion-focused websites designed specifically for healthcare and medspa brands. We build beautiful, mobile-first experiences that turn visitors into booked appointments.",
     features: ["Custom Design & Branding", "Mobile-First Development", "Conversion Optimization"],
@@ -112,15 +119,15 @@ export function Services() {
                 ))}
               </ul>
 
-              {/*<div className="mt-6 pt-4 border-t border-border">
+              <div className="mt-6 border-t border-border pt-4">
                 <Link
-                  href="#contact"
+                  href={service.href}
                   className="inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
                 >
                   Learn more
                   <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
                 </Link>
-              </div>*/}
+              </div>
             </div>
           ))}
         </div>

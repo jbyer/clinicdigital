@@ -1,0 +1,69 @@
+import type { Metadata } from "next"
+import { ServicePageLayout } from "@/components/service-page-layout"
+import { Users } from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Client Management (CRM) | ClinicDigital.co",
+  description:
+    "A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
+}
+
+const features = [
+  {
+    title: "Patient Pipeline Tracking",
+    description:
+      "Visualize every patient's journey from initial inquiry to booked appointment and beyond. Never lose track of a lead with intelligent pipeline management.",
+  },
+  {
+    title: "Automated Follow-Ups",
+    description:
+      "Set-and-forget follow-up sequences that nurture leads and re-engage dormant patients. AI determines the optimal time and channel for each touchpoint.",
+  },
+  {
+    title: "Retention Workflows",
+    description:
+      "Proactive retention campaigns that keep patients coming back. Automated recall reminders, birthday messages, and loyalty programs built into your CRM.",
+  },
+  {
+    title: "Unified Patient Profiles",
+    description:
+      "All patient data in one place -- contact info, appointment history, communication logs, treatment notes, and engagement scores at a glance.",
+  },
+  {
+    title: "Task & Team Management",
+    description:
+      "Assign tasks, set reminders, and coordinate between front desk, providers, and marketing teams. Everyone stays aligned on patient priorities.",
+  },
+  {
+    title: "Smart Reporting",
+    description:
+      "Understand conversion rates, patient lifetime value, and team performance with dashboards designed for healthcare practice owners.",
+  },
+]
+
+const benefits = [
+  "Centralize all patient data in one HIPAA-aware platform",
+  "Never miss a follow-up with intelligent automation workflows",
+  "Increase patient retention rates by 40% or more",
+  "Reduce administrative overhead for your front-desk staff",
+  "Get clear visibility into your patient acquisition funnel",
+  "Seamlessly integrate with your existing EMR/PMS systems",
+]
+
+export default function ClientManagementPage() {
+  return (
+    <ServicePageLayout
+      badge="Client Management (CRM)"
+      title="Manage Every Patient Relationship with"
+      titleAccent="Precision"
+      subtitle="A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention."
+      heroImage="/images/hero-crm.jpg"
+      heroImageAlt="Healthcare professional reviewing patient management system"
+      icon={<Users className="h-3.5 w-3.5 text-accent" />}
+      features={features}
+      benefits={benefits}
+      ctaHeading="Ready to Streamline Patient Management?"
+      ctaDescription="See how a healthcare-focused CRM can reduce admin work, improve follow-ups, and help you retain more patients."
+    />
+  )
+}

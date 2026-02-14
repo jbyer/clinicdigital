@@ -4,11 +4,13 @@ import Script from "next/script"
 
 const footerLinks = {
   services: [
-    { label: "Marketing Automation", href: "#services" },
-    { label: "Client Management", href: "#services" },
-    { label: "AI Chatbots", href: "#services" },
-    { label: "Custom Integrations", href: "#services" },
-    { label: "Analytics & Reporting", href: "#services" },
+    { label: "Marketing Automation", href: "/services/ai-marketing-automation" },
+    { label: "Client Management", href: "/services/client-management" },
+    { label: "AI Chatbots", href: "/services/ai-chatbots" },
+    { label: "Appointment Automation", href: "/services/appointment-automation" },
+    { label: "SEO", href: "/services/seo" },
+    { label: "Website Maintenance", href: "/services/website-maintenance" },
+    { label: "Web Design", href: "/services/web-design" },
   ],
   company: [
     { label: "About", href: "#about" },
