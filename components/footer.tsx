@@ -20,6 +20,7 @@ const footerLinks = {
     { label: "Book a Call", href: "/book-a-call" },
   ],
   resources: [
+    { label: "Blog", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
   ],
