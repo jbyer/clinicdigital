@@ -24,7 +24,7 @@ export function CtaBanner() {
             size="lg"
             variant="secondary"
             asChild
-            className="text-base"
+            className="text-base hover:bg-red-600 hover:text-white"
           >
             <Link href="/book-a-call">
               Book Your Free Consultation
