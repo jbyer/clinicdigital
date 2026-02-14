@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Wrench } from "lucide-react"
+import { Wrench, ShieldCheck, Gauge, Headphones, DatabaseBackup, Activity, FileEdit } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Website Maintenance | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <ShieldCheck className="h-5 w-5" />,
     title: "Security & Updates",
     description:
       "Regular security patches, plugin updates, and vulnerability monitoring to keep your website safe from threats. We proactively protect your patients' data.",
   },
   {
+    icon: <Gauge className="h-5 w-5" />,
     title: "Performance Optimization",
     description:
       "Continuous speed optimization, image compression, caching configuration, and Core Web Vitals tuning to keep your site loading fast on every device.",
   },
   {
+    icon: <Headphones className="h-5 w-5" />,
     title: "Ongoing Technical Support",
     description:
       "Dedicated support for content updates, bug fixes, and technical questions. Your team always has an expert to turn to when issues arise.",
   },
   {
+    icon: <DatabaseBackup className="h-5 w-5" />,
     title: "Automated Backups",
     description:
       "Daily automated backups with one-click restore capability. Your website data is always protected and recoverable in any scenario.",
   },
   {
+    icon: <Activity className="h-5 w-5" />,
     title: "Uptime Monitoring",
     description:
       "24/7 uptime monitoring with instant alerts if your site goes down. We respond and resolve issues before your patients even notice.",
   },
   {
+    icon: <FileEdit className="h-5 w-5" />,
     title: "Content Updates",
     description:
       "Need to update staff bios, add new services, or change operating hours? We handle all content updates quickly and accurately.",

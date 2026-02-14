@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Megaphone } from "lucide-react"
+import { Megaphone, Mail, MessageSquare, Share2, Target, Layers, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "AI Marketing Automation | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <Mail className="h-5 w-5" />,
     title: "Smart Email Sequences",
     description:
       "AI-crafted email drip campaigns that nurture leads from first inquiry to booked appointment. Personalized content adapts based on patient behavior and engagement patterns.",
   },
   {
+    icon: <MessageSquare className="h-5 w-5" />,
     title: "AI-Powered SMS Campaigns",
     description:
       "Intelligent text message sequences that reach patients on their preferred channel. Automated appointment reminders, promotions, and re-engagement flows that drive action.",
   },
   {
+    icon: <Share2 className="h-5 w-5" />,
     title: "Social Media Automation",
     description:
       "Consistent, on-brand social media presence without the manual effort. AI generates, schedules, and optimizes posts across platforms to keep your practice top of mind.",
   },
   {
+    icon: <Target className="h-5 w-5" />,
     title: "Lead Scoring & Segmentation",
     description:
       "Automatically identify your hottest leads and segment audiences by interest, behavior, and demographics for hyper-targeted campaigns that convert.",
   },
   {
+    icon: <Layers className="h-5 w-5" />,
     title: "Multi-Channel Campaign Orchestration",
     description:
       "Coordinate email, SMS, social, and voice campaigns from a single dashboard. Ensure consistent messaging across every touchpoint in the patient journey.",
   },
   {
+    icon: <BarChart3 className="h-5 w-5" />,
     title: "Performance Analytics",
     description:
       "Real-time dashboards tracking open rates, click-throughs, conversions, and ROI. AI-powered insights recommend optimizations to continuously improve results.",

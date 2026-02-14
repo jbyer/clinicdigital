@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Palette } from "lucide-react"
+import { Palette, Brush, Smartphone, MousePointerClick, Zap, Code2, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Web Design for Medical Practices & MedSpas | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <Brush className="h-5 w-5" />,
     title: "Custom Design & Branding",
     description:
       "Bespoke website designs that reflect your practice's unique identity. We craft visual systems that build trust, convey professionalism, and differentiate your brand.",
   },
   {
+    icon: <Smartphone className="h-5 w-5" />,
     title: "Mobile-First Development",
     description:
       "Over 70% of healthcare searches happen on mobile. Every site we build is optimized for mobile first, ensuring a flawless experience on any device.",
   },
   {
+    icon: <MousePointerClick className="h-5 w-5" />,
     title: "Conversion Optimization",
     description:
       "Strategic placement of calls-to-action, booking widgets, and contact forms designed to convert visitors into booked appointments at every step.",
   },
   {
+    icon: <Zap className="h-5 w-5" />,
     title: "Speed & Performance",
     description:
       "Built with modern technologies for lightning-fast page loads. Fast sites rank higher on Google and provide a better patient experience.",
   },
   {
+    icon: <Code2 className="h-5 w-5" />,
     title: "SEO-Ready Architecture",
     description:
       "Every page is built with clean code, proper schema markup, and SEO best practices baked in from day one -- giving you a head start in search rankings.",
   },
   {
+    icon: <FileText className="h-5 w-5" />,
     title: "Content Strategy",
     description:
       "We help you craft compelling service descriptions, provider bios, and landing pages that educate patients and drive them to take action.",

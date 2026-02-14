@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Users } from "lucide-react"
+import { Users, GitBranch, RefreshCw, Heart, UserCircle, ListChecks, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Client Management (CRM) | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <GitBranch className="h-5 w-5" />,
     title: "Patient Pipeline Tracking",
     description:
       "Visualize every patient's journey from initial inquiry to booked appointment and beyond. Never lose track of a lead with intelligent pipeline management.",
   },
   {
+    icon: <RefreshCw className="h-5 w-5" />,
     title: "Automated Follow-Ups",
     description:
       "Set-and-forget follow-up sequences that nurture leads and re-engage dormant patients. AI determines the optimal time and channel for each touchpoint.",
   },
   {
+    icon: <Heart className="h-5 w-5" />,
     title: "Retention Workflows",
     description:
       "Proactive retention campaigns that keep patients coming back. Automated recall reminders, birthday messages, and loyalty programs built into your CRM.",
   },
   {
+    icon: <UserCircle className="h-5 w-5" />,
     title: "Unified Patient Profiles",
     description:
       "All patient data in one place -- contact info, appointment history, communication logs, treatment notes, and engagement scores at a glance.",
   },
   {
+    icon: <ListChecks className="h-5 w-5" />,
     title: "Task & Team Management",
     description:
       "Assign tasks, set reminders, and coordinate between front desk, providers, and marketing teams. Everyone stays aligned on patient priorities.",
   },
   {
+    icon: <PieChart className="h-5 w-5" />,
     title: "Smart Reporting",
     description:
       "Understand conversion rates, patient lifetime value, and team performance with dashboards designed for healthcare practice owners.",

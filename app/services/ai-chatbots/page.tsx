@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Bot } from "lucide-react"
+import { Bot, Clock, CalendarPlus, HelpCircle, Filter, Globe, ArrowRightLeft } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "AI Chatbots & Virtual Assistants | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <Clock className="h-5 w-5" />,
     title: "24/7 Lead Capture",
     description:
       "Never miss an inquiry. AI chatbots engage website visitors around the clock, capturing contact info and qualifying leads even when your office is closed.",
   },
   {
+    icon: <CalendarPlus className="h-5 w-5" />,
     title: "Appointment Scheduling",
     description:
       "Patients book appointments directly through the chat interface. The AI handles availability checks, confirmations, and calendar syncing in real time.",
   },
   {
+    icon: <HelpCircle className="h-5 w-5" />,
     title: "Intelligent FAQ Responses",
     description:
       "Trained on your practice's specific services, pricing, and policies. Answers patient questions instantly with accurate, on-brand responses.",
   },
   {
+    icon: <Filter className="h-5 w-5" />,
     title: "Lead Qualification",
     description:
       "AI asks the right questions to identify high-intent patients and routes them to your team with full context, so no time is wasted on unqualified leads.",
   },
   {
+    icon: <Globe className="h-5 w-5" />,
     title: "Multi-Platform Deployment",
     description:
       "Deploy chatbots on your website, Facebook Messenger, Instagram DMs, and SMS. Meet patients wherever they are with a consistent conversational experience.",
   },
   {
+    icon: <ArrowRightLeft className="h-5 w-5" />,
     title: "Seamless Handoff to Staff",
     description:
       "When a conversation needs a human touch, the AI smoothly hands off to your team with the full chat history and patient context.",

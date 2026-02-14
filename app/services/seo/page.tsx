@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { ServicePageLayout } from "@/components/service-page-layout"
-import { Search } from "lucide-react"
+import { Search, MapPin, FileKey, Code2, PenTool, Star, Radar } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "SEO for Medical Practices & MedSpas | ClinicDigital.co",
@@ -10,31 +10,37 @@ export const metadata: Metadata = {
 
 const features = [
   {
+    icon: <MapPin className="h-5 w-5" />,
     title: "Local SEO & Google Business",
     description:
       "Optimize your Google Business Profile, build local citations, and dominate the map pack for searches like 'medspa near me' and 'dermatologist in [city].'",
   },
   {
+    icon: <FileKey className="h-5 w-5" />,
     title: "Keyword Strategy",
     description:
       "Research and target the exact terms your ideal patients are searching for. We build content strategies around high-intent, high-volume keywords in your niche.",
   },
   {
+    icon: <Code2 className="h-5 w-5" />,
     title: "On-Page Optimization",
     description:
       "Technical SEO audits, meta tag optimization, schema markup, and content structuring to ensure every page on your site is optimized for search engines.",
   },
   {
+    icon: <PenTool className="h-5 w-5" />,
     title: "Content Marketing",
     description:
       "SEO-driven blog posts, service pages, and landing pages that establish your authority, educate patients, and rank for competitive keywords.",
   },
   {
+    icon: <Star className="h-5 w-5" />,
     title: "Reputation Management",
     description:
       "Automated review request campaigns that build your online reputation. More 5-star reviews mean better rankings and more patient trust.",
   },
   {
+    icon: <Radar className="h-5 w-5" />,
     title: "Competitor Analysis",
     description:
       "Understand exactly where your competitors rank and why. We identify gaps and opportunities to outperform them in search results.",

@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, Zap } from "lucide-react"
 
 interface ServiceFeature {
+  icon: ReactNode
   title: string
   description: string
 }
@@ -117,6 +118,9 @@ export function ServicePageLayout({
                 key={feature.title}
                 className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
               >
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
+                  {feature.icon}
+                </div>
                 <h3 className="font-heading text-lg font-semibold text-card-foreground">
                   {feature.title}
                 </h3>
