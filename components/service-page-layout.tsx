@@ -45,7 +45,7 @@ export function ServicePageLayout({
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] overflow-hidden lg:min-h-[60vh]">
+      <section className="relative min-h-screen overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={heroImage}
@@ -57,7 +57,7 @@ export function ServicePageLayout({
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/50" />
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[70vh] max-w-7xl flex-col justify-center px-6 pt-20 lg:min-h-[60vh] lg:px-8">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
           <div className="max-w-2xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
               {icon}
