@@ -9,13 +9,13 @@ export function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-medical.jpg"
-          alt="Modern medical clinic interior"
+          src="/images/hero-medspa.jpg"
+          alt="Luxurious modern medspa interior with serene, relaxing atmosphere"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/70 to-foreground/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/75 to-foreground/45" />
       </div>
 
       {/* Content */}
