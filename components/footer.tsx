@@ -13,7 +13,7 @@ const footerLinks = {
     { label: "Web Design", href: "/services/web-design" },
   ],
   company: [
-    { label: "About", href: "#about" },
+    { label: "About Us", href: "/about-us" },
     { label: "Case Studies", href: "#case-studies" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
