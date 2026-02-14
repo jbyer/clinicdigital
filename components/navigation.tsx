@@ -1,4 +1,4 @@
-s"use client"
+"use client"
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
@@ -86,8 +86,8 @@ export function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
+        ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
+        : "bg-transparent"
         }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
@@ -116,8 +116,8 @@ export function Navigation() {
               onClick={() => setIsServicesOpen(!isServicesOpen)}
               onFocus={handleServicesEnter}
               className={`flex items-center gap-1 text-sm font-bold transition-colors ${isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-white/80 hover:text-white"
                 }`}
               aria-expanded={isServicesOpen}
               aria-haspopup="true"
@@ -132,8 +132,8 @@ export function Navigation() {
             {/* Desktop Dropdown Panel */}
             <div
               className={`absolute left-1/2 top-full pt-4 -translate-x-1/2 transition-all duration-200 ${isServicesOpen
-                  ? "translate-y-0 opacity-100 visible"
-                  : "-translate-y-2 opacity-0 invisible pointer-events-none"
+                ? "translate-y-0 opacity-100 visible"
+                : "-translate-y-2 opacity-0 invisible pointer-events-none"
                 }`}
               role="menu"
             >
@@ -167,8 +167,8 @@ export function Navigation() {
               key={link.href}
               href={link.href}
               className={`text-sm font-bold transition-colors ${isScrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-white/80 hover:text-white"
+                ? "text-muted-foreground hover:text-foreground"
+                : "text-white/80 hover:text-white"
                 }`}
             >
               {link.label}
@@ -212,8 +212,8 @@ export function Navigation() {
       {/* Mobile Menu Panel */}
       <div
         className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-2 pointer-events-none opacity-0"
+          ? "translate-y-0 opacity-100"
+          : "-translate-y-2 pointer-events-none opacity-0"
           }`}
       >
         <div className="mx-4 mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
