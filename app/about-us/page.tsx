@@ -62,45 +62,6 @@ const milestones = [
   { year: "2025", title: "Expanding Horizons", description: "Launched SEO, web design, and website maintenance services to provide comprehensive digital growth for healthcare businesses." },
 ]
 
-const team = [
-  {
-    name: "Marcus Chen",
-    role: "Founder & CEO",
-    initials: "MC",
-    bio: "15+ years in healthcare technology. Former CTO at a national telehealth platform. Passionate about making AI accessible to independent practices.",
-  },
-  {
-    name: "Dr. Sarah Okafor",
-    role: "Chief Strategy Officer",
-    initials: "SO",
-    bio: "Board-certified physician turned healthcare consultant. Bridges the gap between clinical workflows and marketing automation with firsthand practice experience.",
-  },
-  {
-    name: "Raj Patel",
-    role: "Head of AI & Automation",
-    initials: "RP",
-    bio: "Machine learning engineer with a decade of experience building conversational AI and intelligent workflow systems for high-touch industries.",
-  },
-  {
-    name: "Emily Torres",
-    role: "Director of Client Success",
-    initials: "ET",
-    bio: "Former medical office manager who understands the daily challenges practices face. Ensures every client achieves measurable, sustainable growth.",
-  },
-  {
-    name: "James Wright",
-    role: "Lead Web Designer",
-    initials: "JW",
-    bio: "Creative director specializing in healthcare branding. Has designed conversion-optimized websites for 100+ clinics and medical practices.",
-  },
-  {
-    name: "Anika Sharma",
-    role: "SEO & Content Lead",
-    initials: "AS",
-    bio: "Search engine optimization expert focused on local and medical SEO. Helps practices dominate Google search results in their markets.",
-  },
-]
-
 const stats = [
   { value: "150+", label: "Practices Served", icon: Users },
   { value: "6+", label: "Years in Business", icon: Clock },
@@ -277,52 +238,6 @@ export default function AboutUsPage() {
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                   {value.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-16 lg:py-20">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-2xl">
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-              Our Team
-            </p>
-            <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              <span className="text-balance">
-                Healthcare meets technology expertise
-              </span>
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              A dedicated team of specialists who understand both the clinical
-              and digital sides of growing a healthcare business.
-            </p>
-          </div>
-
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="group rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 transition-colors group-hover:bg-primary">
-                    <span className="text-lg font-bold text-primary transition-colors group-hover:text-primary-foreground">
-                      {member.initials}
-                    </span>
-                  </div>
-                  <div>
-                    <h3 className="font-heading text-base font-semibold text-card-foreground">
-                      {member.name}
-                    </h3>
-                    <p className="text-sm font-medium text-primary">{member.role}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                  {member.bio}
                 </p>
               </div>
             ))}
