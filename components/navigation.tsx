@@ -1,4 +1,4 @@
-"use client"
+s"use client"
 
 import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
@@ -85,11 +85,10 @@ export function Navigation() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
-      }`}
+        }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
         <Link href="/" className="flex items-center">
@@ -116,29 +115,26 @@ export function Navigation() {
               type="button"
               onClick={() => setIsServicesOpen(!isServicesOpen)}
               onFocus={handleServicesEnter}
-              className={`flex items-center gap-1 text-sm font-bold transition-colors ${
-                isScrolled
+              className={`flex items-center gap-1 text-sm font-bold transition-colors ${isScrolled
                   ? "text-muted-foreground hover:text-foreground"
                   : "text-white/80 hover:text-white"
-              }`}
+                }`}
               aria-expanded={isServicesOpen}
               aria-haspopup="true"
             >
               Services
               <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform duration-200 ${
-                  isServicesOpen ? "rotate-180" : ""
-                }`}
+                className={`h-3.5 w-3.5 transition-transform duration-200 ${isServicesOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
             {/* Desktop Dropdown Panel */}
             <div
-              className={`absolute left-1/2 top-full pt-4 -translate-x-1/2 transition-all duration-200 ${
-                isServicesOpen
+              className={`absolute left-1/2 top-full pt-4 -translate-x-1/2 transition-all duration-200 ${isServicesOpen
                   ? "translate-y-0 opacity-100 visible"
                   : "-translate-y-2 opacity-0 invisible pointer-events-none"
-              }`}
+                }`}
               role="menu"
             >
               <div className="w-[340px] overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
@@ -160,15 +156,7 @@ export function Navigation() {
                     </Link>
                   ))}
                 </div>
-                <div className="border-t border-border px-4 py-3">
-                  <Link
-                    href="https://www.clinicdigital.co/#services"
-                    className="text-xs font-medium text-primary transition-colors hover:text-primary/80"
-                    onClick={() => setIsServicesOpen(false)}
-                  >
-                    View all services
-                  </Link>
-                </div>
+
               </div>
             </div>
           </div>
@@ -178,11 +166,10 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-bold transition-colors ${
-                isScrolled
+              className={`text-sm font-bold transition-colors ${isScrolled
                   ? "text-muted-foreground hover:text-foreground"
                   : "text-white/80 hover:text-white"
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -216,20 +203,18 @@ export function Navigation() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 top-[72px] z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
-          isMobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 top-[72px] z-40 bg-foreground/40 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${isMobileMenuOpen ? "opacity-100" : "pointer-events-none opacity-0"
+          }`}
         onClick={() => setIsMobileMenuOpen(false)}
         aria-hidden="true"
       />
 
       {/* Mobile Menu Panel */}
       <div
-        className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${
-          isMobileMenuOpen
+        className={`absolute left-0 right-0 top-full z-50 transform transition-all duration-300 ease-in-out lg:hidden ${isMobileMenuOpen
             ? "translate-y-0 opacity-100"
             : "-translate-y-2 pointer-events-none opacity-0"
-        }`}
+          }`}
       >
         <div className="mx-4 mt-2 overflow-hidden rounded-xl border border-border bg-card shadow-xl shadow-foreground/5">
           <div className="flex flex-col gap-1 px-4 py-4">
@@ -242,17 +227,15 @@ export function Navigation() {
             >
               Services
               <ChevronDown
-                className={`h-4 w-4 transition-transform duration-200 ${
-                  isMobileServicesOpen ? "rotate-180" : ""
-                }`}
+                className={`h-4 w-4 transition-transform duration-200 ${isMobileServicesOpen ? "rotate-180" : ""
+                  }`}
               />
             </button>
 
             {/* Mobile Services Sub-links */}
             <div
-              className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                isMobileServicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
-              }`}
+              className={`overflow-hidden transition-all duration-300 ease-in-out ${isMobileServicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+                }`}
             >
               <div className="ml-4 flex flex-col gap-0.5 border-l-2 border-primary/20 py-1 pl-3">
                 {serviceLinks.map((service) => (
