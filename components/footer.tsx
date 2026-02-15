@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import Script from "next/script"
 
 const footerLinks = {
   services: [
@@ -112,12 +111,13 @@ export function Footer() {
 
         </div>
       </div>
-      <Script
+      {/* Chat widget - uncomment for production
+      <script
         src="https://beta.leadconnectorhq.com/loader.js"
         data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
         data-widget-id="698352597cd1e6562be9d7d1"
-        strategy="afterInteractive"
       />
+      */}
     </footer>
   )
 }

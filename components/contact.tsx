@@ -1,6 +1,3 @@
-"use client"
-
-import Script from "next/script"
 import { Mail, Phone, MapPin } from "lucide-react"
 
 export function Contact() {
@@ -125,10 +122,9 @@ export function Contact() {
               title="ClinicDigital Contact"
               suppressHydrationWarning
             />
-            <Script
-              src="https://brand.clinicdigital.co/js/form_embed.js"
-              strategy="afterInteractive"
-            />
+            {/* Form embed script - uncomment for production
+            <script src="https://brand.clinicdigital.co/js/form_embed.js" />
+            */}
 
           </div>
         </div>
