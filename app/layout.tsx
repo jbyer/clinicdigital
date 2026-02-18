@@ -2,7 +2,6 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 
-import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })

@@ -28,17 +28,26 @@ function formatDate(dateString: string) {
 }
 
 export default async function BlogPage() {
-  const supabase = await createClient()
+  let posts: BlogPost[] = []
 
-  const { data: allPosts } = await supabase
-    .from("blog_posts")
-    .select(
-      "id, title, slug, excerpt, author, author_role, category, image_url, read_time, published_at"
-    )
-    .eq("published", true)
-    .order("published_at", { ascending: false })
+  try {
+    const supabase = await createClient()
+    const { data: allPosts, error } = await supabase
+      .from("blog_posts")
+      .select(
+        "id, title, slug, excerpt, author, author_role, category, image_url, read_time, published_at"
+      )
+      .eq("published", true)
+      .order("published_at", { ascending: false })
 
-  const posts: BlogPost[] = allPosts ?? []
+    if (error) {
+      console.log("[v0] Supabase query error:", error.message)
+    }
+    posts = allPosts ?? []
+  } catch (err) {
+    console.log("[v0] Failed to fetch blog posts:", err)
+  }
+
   const featuredPost = posts[0] ?? null
   const remainingPosts = posts.slice(1)
 
