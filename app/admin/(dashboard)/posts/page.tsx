@@ -1,6 +1,6 @@
 import { createClient } from "@/lib/supabase/server"
 import Link from "next/link"
-import { Plus, FileText, Eye, EyeOff, Pencil } from "lucide-react"
+import { Plus, FileText, Eye, EyeOff, Pencil, ExternalLink } from "lucide-react"
 
 export default async function AdminPostsPage() {
   const supabase = await createClient()
@@ -55,7 +55,7 @@ export default async function AdminPostsPage() {
         <div className="overflow-hidden rounded-2xl border border-border bg-card">
           {/* Table header */}
           <div className="hidden border-b border-border bg-muted/30 px-6 py-3 md:grid md:grid-cols-12 md:gap-4">
-            <span className="col-span-5 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
+            <span className="col-span-4 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Title
             </span>
             <span className="col-span-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
@@ -67,8 +67,11 @@ export default async function AdminPostsPage() {
             <span className="col-span-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground">
               Status
             </span>
-            <span className="col-span-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground text-right">
+            <span className="col-span-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground text-right">
               Date
+            </span>
+            <span className="col-span-1 text-xs font-semibold uppercase tracking-widest text-muted-foreground text-right">
+              Actions
             </span>
           </div>
 
@@ -78,13 +81,13 @@ export default async function AdminPostsPage() {
               key={post.id}
               className="flex flex-col gap-2 border-b border-border px-6 py-4 last:border-0 md:grid md:grid-cols-12 md:items-center md:gap-4"
             >
-              <div className="col-span-5 flex items-center gap-3">
+              <div className="col-span-4 flex items-center gap-3">
                 <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/10">
                   <FileText className="h-4 w-4 text-primary" />
                 </div>
                 <div className="min-w-0">
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={`/admin/posts/${post.id}`}
                     className="block truncate text-sm font-medium text-card-foreground hover:text-primary"
                   >
                     {post.title}
@@ -115,13 +118,34 @@ export default async function AdminPostsPage() {
                   </span>
                 )}
               </div>
-              <div className="col-span-2 text-right">
+              <div className="col-span-1 text-right">
                 <p className="text-xs text-muted-foreground">
                   {new Date(post.published_at || post.created_at).toLocaleDateString(
                     "en-US",
                     { month: "short", day: "numeric", year: "numeric" }
                   )}
                 </p>
+              </div>
+              <div className="col-span-1 flex items-center justify-end gap-1">
+                <Link
+                  href={`/admin/posts/${post.id}`}
+                  className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+                  title="Edit post"
+                >
+                  <Pencil className="h-3.5 w-3.5" />
+                  <span className="sr-only">Edit</span>
+                </Link>
+                {post.published && (
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    target="_blank"
+                    className="flex h-8 w-8 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-emerald-50 hover:text-emerald-600"
+                    title="View live post"
+                  >
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    <span className="sr-only">View</span>
+                  </Link>
+                )}
               </div>
             </div>
           ))}
