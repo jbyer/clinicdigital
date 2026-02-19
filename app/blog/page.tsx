@@ -29,9 +29,25 @@ function formatDate(dateString: string) {
 
 export default async function BlogPage() {
   let posts: BlogPost[] = []
+  let featuredPost: BlogPost | null = null
 
   try {
     const supabase = await createClient()
+
+    // Fetch the explicitly featured post first
+    const { data: featuredPosts } = await supabase
+      .from("blog_posts")
+      .select(
+        "id, title, slug, excerpt, author, author_role, category, image_url, read_time, published_at"
+      )
+      .eq("published", true)
+      .eq("featured", true)
+      .order("published_at", { ascending: false })
+      .limit(1)
+
+    featuredPost = featuredPosts?.[0] ?? null
+
+    // Fetch all published posts
     const { data: allPosts, error } = await supabase
       .from("blog_posts")
       .select(
@@ -44,12 +60,17 @@ export default async function BlogPage() {
       console.log("[v0] Supabase query error:", error.message)
     }
     posts = allPosts ?? []
+
+    // If no post is explicitly featured, fall back to the most recent post
+    if (!featuredPost && posts.length > 0) {
+      featuredPost = posts[0]
+    }
   } catch (err) {
     console.log("[v0] Failed to fetch blog posts:", err)
   }
 
-  const featuredPost = posts[0] ?? null
-  const remainingPosts = posts.slice(1)
+  // Exclude the featured post from the remaining list
+  const remainingPosts = posts.filter((p) => p.id !== featuredPost?.id)
 
   return (
     <>

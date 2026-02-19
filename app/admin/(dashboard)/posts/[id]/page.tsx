@@ -71,6 +71,7 @@ export default function EditPostPage() {
   const [authorRole, setAuthorRole] = useState("")
   const [category, setCategory] = useState("")
   const [published, setPublished] = useState(false)
+  const [featured, setFeatured] = useState(false)
   const [publishDate, setPublishDate] = useState<Date | undefined>(undefined)
 
   const [categories, setCategories] = useState<string[]>(DEFAULT_CATEGORIES)
@@ -114,6 +115,7 @@ export default function EditPostPage() {
         setAuthorRole(post.author_role || "")
         setCategory(post.category || "")
         setPublished(post.published)
+        setFeatured(post.featured || false)
         setPublishDate(
           post.published_at ? new Date(post.published_at) : new Date()
         )
@@ -304,6 +306,7 @@ export default function EditPostPage() {
           image_url: imageUrl,
           read_time: estimateReadTime(content),
           published,
+          featured,
           published_at: published
             ? (publishDate ?? new Date()).toISOString()
             : null,
@@ -837,6 +840,37 @@ export default function EditPostPage() {
                     ? "This post is visible to the public."
                     : "This post is saved as a draft and won\u2019t appear on the blog."}
                 </p>
+
+                {/* Featured Article toggle */}
+                <div className="mt-1 rounded-lg border border-border bg-background p-4">
+                  <div className="flex items-center gap-3">
+                    <button
+                      type="button"
+                      role="switch"
+                      aria-checked={featured}
+                      onClick={() => setFeatured(!featured)}
+                      className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${
+                        featured ? "bg-amber-500" : "bg-muted"
+                      }`}
+                    >
+                      <span
+                        className={`absolute top-0.5 left-0.5 h-5 w-5 rounded-full bg-background shadow transition-transform ${
+                          featured ? "translate-x-5" : "translate-x-0"
+                        }`}
+                      />
+                    </button>
+                    <div>
+                      <label className="text-sm font-medium text-card-foreground">
+                        Featured Article
+                      </label>
+                      <p className="text-xs text-muted-foreground">
+                        {featured
+                          ? "This post is highlighted in the Featured Article section on the blog page."
+                          : "Enable to showcase this post as the Featured Article."}
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
