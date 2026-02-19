@@ -17,7 +17,7 @@ import { useState } from "react"
 
 const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
-  { label: "New Post", href: "/admin/posts/new", icon: FilePlus },
+  { label: "New Post", href: "/admin/create", icon: FilePlus },
   { label: "All Posts", href: "/admin/posts", icon: FileText },
 ]
 
