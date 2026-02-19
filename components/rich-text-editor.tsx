@@ -27,11 +27,12 @@ export function RichTextEditor({
   const modules = useMemo(
     () => ({
       toolbar: [
-        [{ header: [2, 3, false] }],
+        [{ header: [1, 2, 3, false] }],
         ["bold", "italic", "underline", "strike"],
         [{ list: "ordered" }, { list: "bullet" }],
-        ["blockquote"],
-        ["link"],
+        ["blockquote", "code-block"],
+        ["link", "image"],
+        [{ align: [] }],
         ["clean"],
       ],
     }),
@@ -47,7 +48,10 @@ export function RichTextEditor({
       "strike",
       "list",
       "blockquote",
+      "code-block",
       "link",
+      "image",
+      "align",
     ],
     []
   )

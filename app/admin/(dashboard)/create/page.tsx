@@ -5,7 +5,6 @@ import { useRouter } from "next/navigation"
 import { createClient } from "@/lib/supabase/client"
 import {
   ArrowLeft,
-  Upload,
   X,
   Image as ImageIcon,
   Loader2,
@@ -13,6 +12,7 @@ import {
   Save,
   Plus,
   Tag,
+  Check,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
@@ -37,13 +37,14 @@ function slugify(text: string): string {
 
 function estimateReadTime(html: string): string {
   const text = html.replace(/<[^>]*>/g, " ")
-  const words = text.trim().split(/\s+/).length
+  const words = text.trim().split(/\s+/).filter(Boolean).length
   const minutes = Math.max(1, Math.ceil(words / 200))
   return `${minutes} min read`
 }
 
-function stripHtml(html: string): string {
-  return html.replace(/<[^>]*>/g, "").trim()
+function countWords(html: string): number {
+  const text = html.replace(/<[^>]*>/g, " ")
+  return text.trim().split(/\s+/).filter(Boolean).length
 }
 
 export default function CreatePostPage() {
@@ -63,6 +64,7 @@ export default function CreatePostPage() {
   const [categories, setCategories] = useState<string[]>(DEFAULT_CATEGORIES)
   const [showNewCategory, setShowNewCategory] = useState(false)
   const [newCategoryInput, setNewCategoryInput] = useState("")
+  const newCategoryRef = useRef<HTMLInputElement>(null)
 
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
@@ -71,33 +73,35 @@ export default function CreatePostPage() {
   const [error, setError] = useState<string | null>(null)
   const [showPreview, setShowPreview] = useState(false)
 
-  // Fetch existing categories from the database on mount
   useEffect(() => {
-    async function fetchCategories() {
+    async function loadCategories() {
       try {
         const supabase = createClient()
         const { data } = await supabase
           .from("blog_posts")
           .select("category")
           .order("category")
-
         if (data) {
-          const dbCategories = [...new Set(data.map((d) => d.category))]
+          const dbCategories = [...new Set(data.map((r) => r.category))]
           const merged = [...new Set([...DEFAULT_CATEGORIES, ...dbCategories])]
           setCategories(merged.sort())
         }
       } catch {
-        // Keep defaults if fetch fails
+        // fallback to defaults
       }
     }
-    fetchCategories()
+    loadCategories()
   }, [])
+
+  useEffect(() => {
+    if (showNewCategory && newCategoryRef.current) {
+      newCategoryRef.current.focus()
+    }
+  }, [showNewCategory])
 
   function handleTitleChange(value: string) {
     setTitle(value)
-    if (!slugManuallyEdited) {
-      setSlug(slugify(value))
-    }
+    if (!slugManuallyEdited) setSlug(slugify(value))
   }
 
   function handleSlugChange(value: string) {
@@ -108,7 +112,6 @@ export default function CreatePostPage() {
   function handleImageSelect(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-
     if (!file.type.startsWith("image/")) {
       setError("Please select a valid image file.")
       return
@@ -117,7 +120,6 @@ export default function CreatePostPage() {
       setError("Image must be under 5MB.")
       return
     }
-
     setImageFile(file)
     setError(null)
     const reader = new FileReader()
@@ -134,18 +136,16 @@ export default function CreatePostPage() {
   function handleAddCategory() {
     const trimmed = newCategoryInput.trim()
     if (!trimmed) return
-    if (categories.some((c) => c.toLowerCase() === trimmed.toLowerCase())) {
-      setCategory(
-        categories.find((c) => c.toLowerCase() === trimmed.toLowerCase()) ??
-          trimmed
-      )
+    const existing = categories.find(
+      (c) => c.toLowerCase() === trimmed.toLowerCase()
+    )
+    if (existing) {
+      setCategory(existing)
       setShowNewCategory(false)
       setNewCategoryInput("")
       return
     }
-
-    const updated = [...categories, trimmed].sort()
-    setCategories(updated)
+    setCategories((prev) => [...prev, trimmed].sort())
     setCategory(trimmed)
     setShowNewCategory(false)
     setNewCategoryInput("")
@@ -154,44 +154,32 @@ export default function CreatePostPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
-
     if (!title.trim()) return setError("Title is required.")
     if (!slug.trim()) return setError("Slug is required.")
     if (!excerpt.trim()) return setError("Excerpt is required.")
-    if (!stripHtml(content)) return setError("Content is required.")
+    const cleanContent = content.replace(/<p><br><\/p>/g, "").trim()
+    if (!cleanContent) return setError("Content is required.")
     if (!author.trim()) return setError("Author name is required.")
     if (!category) return setError("Please select a category.")
-
     setSaving(true)
-
     try {
       const supabase = createClient()
       let imageUrl: string | null = null
-
       if (imageFile) {
         setUploading(true)
         const ext = imageFile.name.split(".").pop()
         const filePath = `${slug}-${Date.now()}.${ext}`
-
         const { error: uploadError } = await supabase.storage
           .from("blog-images")
-          .upload(filePath, imageFile, {
-            cacheControl: "3600",
-            upsert: false,
-          })
-
-        if (uploadError) {
+          .upload(filePath, imageFile, { cacheControl: "3600", upsert: false })
+        if (uploadError)
           throw new Error(`Image upload failed: ${uploadError.message}`)
-        }
-
         const { data: urlData } = supabase.storage
           .from("blog-images")
           .getPublicUrl(filePath)
-
         imageUrl = urlData.publicUrl
         setUploading(false)
       }
-
       const { error: insertError } = await supabase.from("blog_posts").insert({
         title: title.trim(),
         slug: slug.trim(),
@@ -205,20 +193,14 @@ export default function CreatePostPage() {
         published,
         published_at: published ? new Date().toISOString() : null,
       })
-
-      if (insertError) {
-        throw new Error(insertError.message)
-      }
-
-      router.push("/admin/posts")
+      if (insertError) throw new Error(insertError.message)
+      router.push("/admin")
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.")
       setSaving(false)
       setUploading(false)
     }
   }
-
-  const wordCount = stripHtml(content).split(/\s+/).filter(Boolean).length
 
   return (
     <div className="min-h-screen">
@@ -260,7 +242,6 @@ export default function CreatePostPage() {
       )}
 
       {showPreview ? (
-        /* Preview Mode */
         <div className="rounded-2xl border border-border bg-card p-6 lg:p-10">
           {imagePreview && (
             <div className="relative mb-8 aspect-video overflow-hidden rounded-xl">
@@ -282,8 +263,10 @@ export default function CreatePostPage() {
           </h2>
           {author && (
             <p className="mt-3 text-sm text-muted-foreground">
-              By {author}
-              {authorRole ? ` - ${authorRole}` : ""} &middot;{" "}
+              {"By "}
+              {author}
+              {authorRole ? ` - ${authorRole}` : ""}
+              {" \u00B7 "}
               {estimateReadTime(content)}
             </p>
           )}
@@ -294,14 +277,13 @@ export default function CreatePostPage() {
           )}
           <hr className="my-6 border-border" />
           <div
-            className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:text-2xl prose-h2:font-bold prose-h3:text-xl prose-h3:font-semibold prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-blockquote:border-primary prose-strong:text-card-foreground"
+            className="prose prose-neutral max-w-none dark:prose-invert"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
       ) : (
-        /* Edit Mode */
         <form onSubmit={handleSubmit} className="flex flex-col gap-8">
-          {/* Title + Slug */}
+          {/* Post Details */}
           <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
               Post Details
@@ -312,7 +294,8 @@ export default function CreatePostPage() {
                   htmlFor="title"
                   className="mb-1.5 block text-sm font-medium text-card-foreground"
                 >
-                  Title <span className="text-red-500">*</span>
+                  {"Title "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <input
                   id="title"
@@ -328,7 +311,8 @@ export default function CreatePostPage() {
                   htmlFor="slug"
                   className="mb-1.5 block text-sm font-medium text-card-foreground"
                 >
-                  URL Slug <span className="text-red-500">*</span>
+                  {"URL Slug "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-muted-foreground">/blog/</span>
@@ -347,7 +331,8 @@ export default function CreatePostPage() {
                   htmlFor="excerpt"
                   className="mb-1.5 block text-sm font-medium text-card-foreground"
                 >
-                  Excerpt <span className="text-red-500">*</span>
+                  {"Excerpt "}
+                  <span className="text-red-500">*</span>
                 </label>
                 <textarea
                   id="excerpt"
@@ -385,8 +370,10 @@ export default function CreatePostPage() {
                   <span className="sr-only">Remove image</span>
                 </button>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  {imageFile?.name} (
-                  {((imageFile?.size ?? 0) / 1024).toFixed(0)} KB)
+                  {imageFile?.name}
+                  {" ("}
+                  {((imageFile?.size ?? 0) / 1024).toFixed(0)}
+                  {" KB)"}
                 </p>
               </div>
             ) : (
@@ -425,11 +412,12 @@ export default function CreatePostPage() {
             </h3>
             <div>
               <label className="mb-1.5 block text-sm font-medium text-card-foreground">
-                Post Body <span className="text-red-500">*</span>
+                {"Post Body "}
+                <span className="text-red-500">*</span>
               </label>
               <p className="mb-3 text-xs text-muted-foreground">
-                Use the toolbar to format headings, bold, lists, quotes, and
-                links.
+                Use the toolbar to format headings, bold, italic, lists,
+                blockquotes, and links.
               </p>
               <RichTextEditor
                 value={content}
@@ -437,13 +425,16 @@ export default function CreatePostPage() {
                 placeholder="Write your blog post content here..."
               />
               <p className="mt-2 text-right text-xs text-muted-foreground">
-                {wordCount} words &middot; {estimateReadTime(content)}
+                {countWords(content)}
+                {" words \u00B7 "}
+                {estimateReadTime(content)}
               </p>
             </div>
           </div>
 
-          {/* Meta: Author, Category, Publish */}
+          {/* Author + Publishing */}
           <div className="grid gap-8 lg:grid-cols-2">
+            {/* Author */}
             <div className="rounded-2xl border border-border bg-card p-6">
               <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
                 Author
@@ -454,7 +445,8 @@ export default function CreatePostPage() {
                     htmlFor="author"
                     className="mb-1.5 block text-sm font-medium text-card-foreground"
                   >
-                    Name <span className="text-red-500">*</span>
+                    {"Name "}
+                    <span className="text-red-500">*</span>
                   </label>
                   <input
                     id="author"
@@ -484,65 +476,20 @@ export default function CreatePostPage() {
               </div>
             </div>
 
+            {/* Publishing */}
             <div className="rounded-2xl border border-border bg-card p-6">
               <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
                 Publishing
               </h3>
               <div className="flex flex-col gap-5">
-                {/* Category selector with "Add new" option */}
+                {/* Category with dynamic creation */}
                 <div>
-                  <label
-                    htmlFor="category"
-                    className="mb-1.5 block text-sm font-medium text-card-foreground"
-                  >
-                    Category <span className="text-red-500">*</span>
+                  <label className="mb-1.5 block text-sm font-medium text-card-foreground">
+                    {"Category "}
+                    <span className="text-red-500">*</span>
                   </label>
 
-                  {showNewCategory ? (
-                    <div className="flex flex-col gap-2">
-                      <div className="flex items-center gap-2">
-                        <input
-                          type="text"
-                          autoFocus
-                          value={newCategoryInput}
-                          onChange={(e) => setNewCategoryInput(e.target.value)}
-                          onKeyDown={(e) => {
-                            if (e.key === "Enter") {
-                              e.preventDefault()
-                              handleAddCategory()
-                            }
-                            if (e.key === "Escape") {
-                              setShowNewCategory(false)
-                              setNewCategoryInput("")
-                            }
-                          }}
-                          placeholder="Enter new category name"
-                          className="flex-1 rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                        />
-                        <button
-                          type="button"
-                          onClick={handleAddCategory}
-                          disabled={!newCategoryInput.trim()}
-                          className="flex h-10 items-center justify-center rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
-                        >
-                          <Plus className="h-4 w-4" />
-                        </button>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            setShowNewCategory(false)
-                            setNewCategoryInput("")
-                          }}
-                          className="flex h-10 items-center justify-center rounded-lg border border-border px-3 text-sm transition-colors hover:bg-accent"
-                        >
-                          <X className="h-4 w-4" />
-                        </button>
-                      </div>
-                      <p className="text-xs text-muted-foreground">
-                        Press Enter to add or Escape to cancel
-                      </p>
-                    </div>
-                  ) : (
+                  {!showNewCategory ? (
                     <div className="flex flex-col gap-2">
                       <select
                         id="category"
@@ -560,32 +507,83 @@ export default function CreatePostPage() {
                       <button
                         type="button"
                         onClick={() => setShowNewCategory(true)}
-                        className="flex items-center gap-1.5 self-start text-xs font-medium text-primary transition-colors hover:text-primary/80"
+                        className="flex items-center gap-1.5 self-start rounded-md px-2 py-1 text-xs font-medium text-primary transition-colors hover:bg-primary/10"
                       >
-                        <Tag className="h-3 w-3" />
+                        <Plus className="h-3 w-3" />
                         Create new category
                       </button>
                     </div>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <div className="relative flex-1">
+                          <Tag className="absolute left-3 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-muted-foreground" />
+                          <input
+                            ref={newCategoryRef}
+                            type="text"
+                            value={newCategoryInput}
+                            onChange={(e) =>
+                              setNewCategoryInput(e.target.value)
+                            }
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter") {
+                                e.preventDefault()
+                                handleAddCategory()
+                              }
+                              if (e.key === "Escape") {
+                                setShowNewCategory(false)
+                                setNewCategoryInput("")
+                              }
+                            }}
+                            placeholder="e.g. Technology"
+                            className="w-full rounded-lg border border-input bg-background py-2.5 pl-9 pr-4 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          onClick={handleAddCategory}
+                          disabled={!newCategoryInput.trim()}
+                          className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <Check className="h-4 w-4" />
+                          <span className="sr-only">Add category</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowNewCategory(false)
+                            setNewCategoryInput("")
+                          }}
+                          className="flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-lg border border-border transition-colors hover:bg-accent"
+                        >
+                          <X className="h-4 w-4" />
+                          <span className="sr-only">Cancel</span>
+                        </button>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Press Enter to add or Escape to cancel
+                      </p>
+                    </div>
                   )}
 
-                  {/* Selected category badge */}
-                  {category && !showNewCategory && (
-                    <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1">
-                      <span className="text-xs font-semibold text-primary">
+                  {category && (
+                    <div className="mt-2 flex items-center gap-2">
+                      <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+                        <Tag className="h-3 w-3" />
                         {category}
                       </span>
                       <button
                         type="button"
                         onClick={() => setCategory("")}
-                        className="flex h-3.5 w-3.5 items-center justify-center rounded-full text-primary/60 transition-colors hover:text-primary"
+                        className="text-xs text-muted-foreground transition-colors hover:text-foreground"
                       >
-                        <X className="h-2.5 w-2.5" />
-                        <span className="sr-only">Remove category</span>
+                        Change
                       </button>
                     </div>
                   )}
                 </div>
 
+                {/* Publish toggle */}
                 <div className="flex items-center gap-3">
                   <button
                     type="button"
@@ -609,7 +607,7 @@ export default function CreatePostPage() {
                 <p className="text-xs text-muted-foreground">
                   {published
                     ? "This post will be visible to the public immediately."
-                    : "This post is saved as a draft and won't appear on the blog."}
+                    : "This post is saved as a draft and won\u2019t appear on the blog."}
                 </p>
               </div>
             </div>
