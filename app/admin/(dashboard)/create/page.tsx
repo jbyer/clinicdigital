@@ -13,10 +13,17 @@ import {
   Plus,
   Tag,
   Check,
+  CalendarDays,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import { RichTextEditor } from "@/components/rich-text-editor"
+import { Calendar } from "@/components/ui/calendar"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
 
 const DEFAULT_CATEGORIES = [
   "AI & Automation",
@@ -60,6 +67,7 @@ export default function CreatePostPage() {
   const [authorRole, setAuthorRole] = useState("")
   const [category, setCategory] = useState("")
   const [published, setPublished] = useState(false)
+  const [publishDate, setPublishDate] = useState<Date | undefined>(new Date())
 
   const [categories, setCategories] = useState<string[]>(DEFAULT_CATEGORIES)
   const [showNewCategory, setShowNewCategory] = useState(false)
@@ -191,7 +199,9 @@ export default function CreatePostPage() {
         image_url: imageUrl,
         read_time: estimateReadTime(content),
         published,
-        published_at: published ? new Date().toISOString() : null,
+        published_at: published
+          ? (publishDate ?? new Date()).toISOString()
+          : null,
       })
       if (insertError) throw new Error(insertError.message)
       router.push("/admin")
@@ -581,6 +591,45 @@ export default function CreatePostPage() {
                       </button>
                     </div>
                   )}
+                </div>
+
+                {/* Publish Date Picker */}
+                <div>
+                  <label className="mb-1.5 block text-sm font-medium text-card-foreground">
+                    Publish Date
+                  </label>
+                  <Popover>
+                    <PopoverTrigger asChild>
+                      <button
+                        type="button"
+                        className="flex w-full items-center gap-2 rounded-lg border border-input bg-background px-4 py-2.5 text-left text-sm text-foreground transition-colors hover:bg-accent focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      >
+                        <CalendarDays className="h-4 w-4 text-muted-foreground" />
+                        {publishDate ? (
+                          publishDate.toLocaleDateString("en-US", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })
+                        ) : (
+                          <span className="text-muted-foreground">
+                            Pick a date
+                          </span>
+                        )}
+                      </button>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-auto p-0" align="start">
+                      <Calendar
+                        mode="single"
+                        selected={publishDate}
+                        onSelect={setPublishDate}
+                        initialFocus
+                      />
+                    </PopoverContent>
+                  </Popover>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    The date that will appear on the published post.
+                  </p>
                 </div>
 
                 {/* Publish toggle */}
