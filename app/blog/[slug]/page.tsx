@@ -46,6 +46,10 @@ function formatDate(dateString: string) {
   })
 }
 
+function isHtmlContent(content: string): boolean {
+  return /<[a-z][\s\S]*>/i.test(content)
+}
+
 function renderMarkdownContent(content: string) {
   const lines = content.split("\n")
   const elements: React.ReactNode[] = []
@@ -76,7 +80,6 @@ function renderMarkdownContent(content: string) {
         </h3>
       )
     } else {
-      // Handle bold text within paragraphs
       const parts = trimmed.split(/(\*\*[^*]+\*\*)/)
       const rendered = parts.map((part, i) => {
         if (part.startsWith("**") && part.endsWith("**")) {
@@ -197,7 +200,14 @@ export default async function BlogPostPage({
       {/* Article Content */}
       <main className="py-12 lg:py-16">
         <article className="mx-auto max-w-3xl px-6 lg:px-8">
-          {renderMarkdownContent(post.content)}
+          {isHtmlContent(post.content) ? (
+            <div
+              className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-2xl prose-h2:font-bold prose-h2:tracking-tight prose-h2:text-foreground sm:prose-h2:text-3xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h3:font-semibold prose-h3:text-foreground prose-p:mb-4 prose-p:text-base prose-p:leading-relaxed prose-p:text-muted-foreground lg:prose-p:text-lg lg:prose-p:leading-8 prose-a:text-primary prose-strong:text-foreground prose-blockquote:border-primary prose-blockquote:text-muted-foreground prose-li:text-muted-foreground"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          ) : (
+            renderMarkdownContent(post.content)
+          )}
         </article>
       </main>
 

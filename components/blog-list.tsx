@@ -29,15 +29,6 @@ export interface BlogPost {
 
 const POSTS_PER_PAGE = 6
 
-const categories = [
-  "All",
-  "AI & Automation",
-  "Marketing",
-  "SEO",
-  "Patient Experience",
-  "Industry Insights",
-]
-
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("en-US", {
     year: "numeric",
@@ -47,6 +38,10 @@ function formatDate(dateString: string) {
 }
 
 export function BlogList({ posts }: { posts: BlogPost[] }) {
+  const categories = [
+    "All",
+    ...Array.from(new Set(posts.map((p) => p.category))).sort(),
+  ]
   const [activeCategory, setActiveCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1)

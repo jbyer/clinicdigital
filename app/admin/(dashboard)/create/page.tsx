@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { createClient } from "@/lib/supabase/client"
 import {
@@ -11,11 +11,14 @@ import {
   Loader2,
   Eye,
   Save,
+  Plus,
+  Tag,
 } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { RichTextEditor } from "@/components/rich-text-editor"
 
-const CATEGORIES = [
+const DEFAULT_CATEGORIES = [
   "AI & Automation",
   "Marketing",
   "SEO",
@@ -32,10 +35,15 @@ function slugify(text: string): string {
     .trim()
 }
 
-function estimateReadTime(content: string): string {
-  const words = content.trim().split(/\s+/).length
+function estimateReadTime(html: string): string {
+  const text = html.replace(/<[^>]*>/g, " ")
+  const words = text.trim().split(/\s+/).length
   const minutes = Math.max(1, Math.ceil(words / 200))
   return `${minutes} min read`
+}
+
+function stripHtml(html: string): string {
+  return html.replace(/<[^>]*>/g, "").trim()
 }
 
 export default function CreatePostPage() {
@@ -52,12 +60,38 @@ export default function CreatePostPage() {
   const [category, setCategory] = useState("")
   const [published, setPublished] = useState(false)
 
+  const [categories, setCategories] = useState<string[]>(DEFAULT_CATEGORIES)
+  const [showNewCategory, setShowNewCategory] = useState(false)
+  const [newCategoryInput, setNewCategoryInput] = useState("")
+
   const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [showPreview, setShowPreview] = useState(false)
+
+  // Fetch existing categories from the database on mount
+  useEffect(() => {
+    async function fetchCategories() {
+      try {
+        const supabase = createClient()
+        const { data } = await supabase
+          .from("blog_posts")
+          .select("category")
+          .order("category")
+
+        if (data) {
+          const dbCategories = [...new Set(data.map((d) => d.category))]
+          const merged = [...new Set([...DEFAULT_CATEGORIES, ...dbCategories])]
+          setCategories(merged.sort())
+        }
+      } catch {
+        // Keep defaults if fetch fails
+      }
+    }
+    fetchCategories()
+  }, [])
 
   function handleTitleChange(value: string) {
     setTitle(value)
@@ -97,6 +131,26 @@ export default function CreatePostPage() {
     if (fileInputRef.current) fileInputRef.current.value = ""
   }
 
+  function handleAddCategory() {
+    const trimmed = newCategoryInput.trim()
+    if (!trimmed) return
+    if (categories.some((c) => c.toLowerCase() === trimmed.toLowerCase())) {
+      setCategory(
+        categories.find((c) => c.toLowerCase() === trimmed.toLowerCase()) ??
+          trimmed
+      )
+      setShowNewCategory(false)
+      setNewCategoryInput("")
+      return
+    }
+
+    const updated = [...categories, trimmed].sort()
+    setCategories(updated)
+    setCategory(trimmed)
+    setShowNewCategory(false)
+    setNewCategoryInput("")
+  }
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
@@ -104,7 +158,7 @@ export default function CreatePostPage() {
     if (!title.trim()) return setError("Title is required.")
     if (!slug.trim()) return setError("Slug is required.")
     if (!excerpt.trim()) return setError("Excerpt is required.")
-    if (!content.trim()) return setError("Content is required.")
+    if (!stripHtml(content)) return setError("Content is required.")
     if (!author.trim()) return setError("Author name is required.")
     if (!category) return setError("Please select a category.")
 
@@ -114,7 +168,6 @@ export default function CreatePostPage() {
       const supabase = createClient()
       let imageUrl: string | null = null
 
-      // Upload image if selected
       if (imageFile) {
         setUploading(true)
         const ext = imageFile.name.split(".").pop()
@@ -139,12 +192,11 @@ export default function CreatePostPage() {
         setUploading(false)
       }
 
-      // Insert blog post
       const { error: insertError } = await supabase.from("blog_posts").insert({
         title: title.trim(),
         slug: slug.trim(),
         excerpt: excerpt.trim(),
-        content: content.trim(),
+        content,
         author: author.trim(),
         author_role: authorRole.trim() || null,
         category,
@@ -158,13 +210,15 @@ export default function CreatePostPage() {
         throw new Error(insertError.message)
       }
 
-      router.push("/admin")
+      router.push("/admin/posts")
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.")
       setSaving(false)
       setUploading(false)
     }
   }
+
+  const wordCount = stripHtml(content).split(/\s+/).filter(Boolean).length
 
   return (
     <div className="min-h-screen">
@@ -239,28 +293,10 @@ export default function CreatePostPage() {
             </p>
           )}
           <hr className="my-6 border-border" />
-          <div className="prose prose-neutral max-w-none dark:prose-invert">
-            {content.split("\n").map((line, i) => {
-              if (line.startsWith("## "))
-                return (
-                  <h2 key={i} className="mt-8 mb-3 font-heading text-2xl font-bold text-card-foreground">
-                    {line.replace("## ", "")}
-                  </h2>
-                )
-              if (line.startsWith("**") && line.endsWith("**"))
-                return (
-                  <p key={i} className="mt-4 font-semibold text-card-foreground">
-                    {line.replace(/\*\*/g, "")}
-                  </p>
-                )
-              if (line.trim() === "") return <br key={i} />
-              return (
-                <p key={i} className="leading-relaxed text-muted-foreground">
-                  {line}
-                </p>
-              )
-            })}
-          </div>
+          <div
+            className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:text-2xl prose-h2:font-bold prose-h3:text-xl prose-h3:font-semibold prose-p:text-muted-foreground prose-p:leading-relaxed prose-a:text-primary prose-blockquote:border-primary prose-strong:text-card-foreground"
+            dangerouslySetInnerHTML={{ __html: content }}
+          />
         </div>
       ) : (
         /* Edit Mode */
@@ -349,7 +385,8 @@ export default function CreatePostPage() {
                   <span className="sr-only">Remove image</span>
                 </button>
                 <p className="mt-2 text-xs text-muted-foreground">
-                  {imageFile?.name} ({((imageFile?.size ?? 0) / 1024).toFixed(0)} KB)
+                  {imageFile?.name} (
+                  {((imageFile?.size ?? 0) / 1024).toFixed(0)} KB)
                 </p>
               </div>
             ) : (
@@ -381,32 +418,26 @@ export default function CreatePostPage() {
             />
           </div>
 
-          {/* Content */}
+          {/* Content - Rich Text Editor */}
           <div className="rounded-2xl border border-border bg-card p-6">
             <h3 className="mb-5 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
               Content
             </h3>
             <div>
-              <label
-                htmlFor="content"
-                className="mb-1.5 block text-sm font-medium text-card-foreground"
-              >
+              <label className="mb-1.5 block text-sm font-medium text-card-foreground">
                 Post Body <span className="text-red-500">*</span>
               </label>
               <p className="mb-3 text-xs text-muted-foreground">
-                Supports basic Markdown: ## for headings, **bold** for emphasis, blank lines for paragraphs.
+                Use the toolbar to format headings, bold, lists, quotes, and
+                links.
               </p>
-              <textarea
-                id="content"
+              <RichTextEditor
                 value={content}
-                onChange={(e) => setContent(e.target.value)}
-                placeholder={"## Introduction\n\nWrite your blog post content here...\n\n## Section Two\n\n**Key point:** Elaborate on your ideas..."}
-                rows={20}
-                className="w-full resize-y rounded-lg border border-input bg-background px-4 py-3 font-mono text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                onChange={setContent}
+                placeholder="Write your blog post content here..."
               />
               <p className="mt-2 text-right text-xs text-muted-foreground">
-                {content.trim().split(/\s+/).filter(Boolean).length} words &middot;{" "}
-                {estimateReadTime(content)}
+                {wordCount} words &middot; {estimateReadTime(content)}
               </p>
             </div>
           </div>
@@ -458,6 +489,7 @@ export default function CreatePostPage() {
                 Publishing
               </h3>
               <div className="flex flex-col gap-5">
+                {/* Category selector with "Add new" option */}
                 <div>
                   <label
                     htmlFor="category"
@@ -465,20 +497,95 @@ export default function CreatePostPage() {
                   >
                     Category <span className="text-red-500">*</span>
                   </label>
-                  <select
-                    id="category"
-                    value={category}
-                    onChange={(e) => setCategory(e.target.value)}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                  >
-                    <option value="">Select a category</option>
-                    {CATEGORIES.map((cat) => (
-                      <option key={cat} value={cat}>
-                        {cat}
-                      </option>
-                    ))}
-                  </select>
+
+                  {showNewCategory ? (
+                    <div className="flex flex-col gap-2">
+                      <div className="flex items-center gap-2">
+                        <input
+                          type="text"
+                          autoFocus
+                          value={newCategoryInput}
+                          onChange={(e) => setNewCategoryInput(e.target.value)}
+                          onKeyDown={(e) => {
+                            if (e.key === "Enter") {
+                              e.preventDefault()
+                              handleAddCategory()
+                            }
+                            if (e.key === "Escape") {
+                              setShowNewCategory(false)
+                              setNewCategoryInput("")
+                            }
+                          }}
+                          placeholder="Enter new category name"
+                          className="flex-1 rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                        />
+                        <button
+                          type="button"
+                          onClick={handleAddCategory}
+                          disabled={!newCategoryInput.trim()}
+                          className="flex h-10 items-center justify-center rounded-lg bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:cursor-not-allowed disabled:opacity-50"
+                        >
+                          <Plus className="h-4 w-4" />
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setShowNewCategory(false)
+                            setNewCategoryInput("")
+                          }}
+                          className="flex h-10 items-center justify-center rounded-lg border border-border px-3 text-sm transition-colors hover:bg-accent"
+                        >
+                          <X className="h-4 w-4" />
+                        </button>
+                      </div>
+                      <p className="text-xs text-muted-foreground">
+                        Press Enter to add or Escape to cancel
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="flex flex-col gap-2">
+                      <select
+                        id="category"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+                      >
+                        <option value="">Select a category</option>
+                        {categories.map((cat) => (
+                          <option key={cat} value={cat}>
+                            {cat}
+                          </option>
+                        ))}
+                      </select>
+                      <button
+                        type="button"
+                        onClick={() => setShowNewCategory(true)}
+                        className="flex items-center gap-1.5 self-start text-xs font-medium text-primary transition-colors hover:text-primary/80"
+                      >
+                        <Tag className="h-3 w-3" />
+                        Create new category
+                      </button>
+                    </div>
+                  )}
+
+                  {/* Selected category badge */}
+                  {category && !showNewCategory && (
+                    <div className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1">
+                      <span className="text-xs font-semibold text-primary">
+                        {category}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => setCategory("")}
+                        className="flex h-3.5 w-3.5 items-center justify-center rounded-full text-primary/60 transition-colors hover:text-primary"
+                      >
+                        <X className="h-2.5 w-2.5" />
+                        <span className="sr-only">Remove category</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
+
                 <div className="flex items-center gap-3">
                   <button
                     type="button"
