@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 
+
 const footerLinks = {
   services: [
     { label: "Marketing Automation", href: "/services/ai-marketing-automation" },
@@ -112,8 +113,11 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Chat widget disabled in dev to prevent hydration mismatch.
-         Re-enable via next/script with strategy="lazyOnload" in a client component wrapper for production. */}
+      <script
+        src="https://beta.leadconnectorhq.com/loader.js"
+        data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
+        data-widget-id="698352597cd1e6562be9d7d1"   >
+      </script>
 
     </footer>
   )

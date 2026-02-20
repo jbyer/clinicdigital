@@ -38,7 +38,7 @@ export default async function BlogPage() {
     const { data: featuredPosts } = await supabase
       .from("blog_posts")
       .select(
-        "id, title, slug, excerpt, author, author_role, category, image_url, read_time, published_at"
+        "id, title, slug, excerpt, author, author_role, categories, image_url, read_time, published_at"
       )
       .eq("published", true)
       .eq("featured", true)
@@ -51,7 +51,7 @@ export default async function BlogPage() {
     const { data: allPosts, error } = await supabase
       .from("blog_posts")
       .select(
-        "id, title, slug, excerpt, author, author_role, category, image_url, read_time, published_at"
+        "id, title, slug, excerpt, author, author_role, categories, image_url, read_time, published_at"
       )
       .eq("published", true)
       .order("published_at", { ascending: false })
@@ -149,10 +149,12 @@ export default async function BlogPage() {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 )}
-                <div className="absolute left-4 top-4">
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                    {featuredPost.category}
-                  </span>
+                <div className="absolute left-4 top-4 flex flex-wrap gap-1.5">
+                  {(featuredPost.categories ?? []).map((cat) => (
+                    <span key={cat} className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                      {cat}
+                    </span>
+                  ))}
                 </div>
               </div>
 

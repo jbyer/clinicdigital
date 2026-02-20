@@ -10,11 +10,11 @@ export default function ChatWidget() {
   }
 
   return (
-    <Script
+    <script
       src="https://beta.leadconnectorhq.com/loader.js"
       strategy="lazyOnload"
       data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
       data-widget-id="698352597cd1e6562be9d7d1"
-    />
+    ></script>
   );
 }

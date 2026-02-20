@@ -125,12 +125,12 @@ export default async function BlogPostPage({
     notFound()
   }
 
-  // Fetch related posts (same category, excluding current)
+  // Fetch related posts (overlapping categories, excluding current)
   const { data: relatedPosts } = await supabase
     .from("blog_posts")
-    .select("id, title, slug, excerpt, category, image_url, read_time, published_at")
+    .select("id, title, slug, excerpt, categories, image_url, read_time, published_at")
     .eq("published", true)
-    .eq("category", post.category)
+    .overlaps("categories", post.categories ?? [])
     .neq("id", post.id)
     .order("published_at", { ascending: false })
     .limit(2)
@@ -163,10 +163,12 @@ export default async function BlogPostPage({
             Back to Blog
           </Link>
 
-          <div className="mb-4 inline-flex w-fit items-center rounded-full bg-primary px-3 py-1">
-            <span className="text-xs font-semibold text-primary-foreground">
-              {post.category}
-            </span>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {(post.categories ?? []).map((cat: string) => (
+              <span key={cat} className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                {cat}
+              </span>
+            ))}
           </div>
 
           <h1 className="font-heading text-3xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-4xl lg:text-5xl">
@@ -238,10 +240,12 @@ export default async function BlogPostPage({
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                     )}
-                    <div className="absolute left-4 top-4">
-                      <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                        {related.category}
-                      </span>
+                    <div className="absolute left-4 top-4 flex flex-wrap gap-1.5">
+                      {(related.categories ?? []).map((cat: string) => (
+                        <span key={cat} className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                          {cat}
+                        </span>
+                      ))}
                     </div>
                   </div>
 

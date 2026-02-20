@@ -151,7 +151,7 @@ export function Navigation() {
                       <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         <service.icon className="h-4 w-4" />
                       </div>
-                      <span className="text-sm font-medium text-card-foreground">
+                      <span className="text-sm font-medium text-card-foreground hover:cursor-pointer">
                         {service.label}
                       </span>
                     </Link>
@@ -167,7 +167,7 @@ export function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-bold transition-colors ${isScrolled
+              className={`text-sm font-bold transition-colors hover:cursor-pointer ${isScrolled
                 ? "text-muted-foreground hover:text-foreground"
                 : "text-white/80 hover:text-white"
                 }`}
@@ -183,7 +183,7 @@ export function Navigation() {
             variant={isScrolled ? "default" : "secondary"}
             className={
               isScrolled
-                ? "hover:bg-red-600 hover:text-white"
+                ? "hover:bg-red-600 hover:text-white hover:cursor-pointer"
                 : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"
             }
           >

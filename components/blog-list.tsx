@@ -21,7 +21,7 @@ export interface BlogPost {
   excerpt: string
   author: string
   author_role: string | null
-  category: string
+  categories: string[]
   image_url: string | null
   read_time: string | null
   published_at: string
@@ -38,9 +38,9 @@ function formatDate(dateString: string) {
 }
 
 export function BlogList({ posts }: { posts: BlogPost[] }) {
-  const categories = [
+  const allCategories = [
     "All",
-    ...Array.from(new Set(posts.map((p) => p.category))).sort(),
+    ...Array.from(new Set(posts.flatMap((p) => p.categories ?? []))).sort(),
   ]
   const [activeCategory, setActiveCategory] = useState("All")
   const [searchQuery, setSearchQuery] = useState("")
@@ -48,7 +48,7 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
 
   const filteredPosts = posts.filter((post) => {
     const matchesCategory =
-      activeCategory === "All" || post.category === activeCategory
+      activeCategory === "All" || (post.categories ?? []).includes(activeCategory)
     const matchesSearch =
       searchQuery === "" ||
       post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -101,18 +101,18 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
 
         {/* Category Filter */}
         <div className="mt-8 flex flex-wrap gap-2">
-          {categories.map((category) => (
+          {allCategories.map((cat) => (
             <button
-              key={category}
+              key={cat}
               type="button"
-              onClick={() => handleCategoryChange(category)}
+              onClick={() => handleCategoryChange(cat)}
               className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                activeCategory === category
+                activeCategory === cat
                   ? "bg-primary text-primary-foreground shadow-md shadow-primary/20"
                   : "border border-border bg-background text-muted-foreground hover:bg-primary/10 hover:text-primary"
               }`}
             >
-              {category}
+              {cat}
             </button>
           ))}
         </div>
@@ -134,10 +134,12 @@ export function BlogList({ posts }: { posts: BlogPost[] }) {
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 )}
-                <div className="absolute left-4 top-4">
-                  <span className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
-                    {post.category}
-                  </span>
+                <div className="absolute left-4 top-4 flex flex-wrap gap-1.5">
+                  {(post.categories ?? []).map((cat) => (
+                    <span key={cat} className="rounded-full bg-primary px-3 py-1 text-xs font-semibold text-primary-foreground">
+                      {cat}
+                    </span>
+                  ))}
                 </div>
               </div>
 

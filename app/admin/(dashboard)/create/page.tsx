@@ -65,12 +65,12 @@ export default function CreatePostPage() {
   const [content, setContent] = useState("")
   const [author, setAuthor] = useState("")
   const [authorRole, setAuthorRole] = useState("")
-  const [category, setCategory] = useState("")
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const [published, setPublished] = useState(false)
   const [featured, setFeatured] = useState(false)
   const [publishDate, setPublishDate] = useState<Date | undefined>(new Date())
 
-  const [categories, setCategories] = useState<string[]>(DEFAULT_CATEGORIES)
+  const [allCategories, setAllCategories] = useState<string[]>(DEFAULT_CATEGORIES)
   const [showNewCategory, setShowNewCategory] = useState(false)
   const [newCategoryInput, setNewCategoryInput] = useState("")
   const newCategoryRef = useRef<HTMLInputElement>(null)
@@ -88,12 +88,11 @@ export default function CreatePostPage() {
         const supabase = createClient()
         const { data } = await supabase
           .from("blog_posts")
-          .select("category")
-          .order("category")
+          .select("categories")
         if (data) {
-          const dbCategories = [...new Set(data.map((r) => r.category))]
+          const dbCategories = data.flatMap((r) => r.categories ?? [])
           const merged = [...new Set([...DEFAULT_CATEGORIES, ...dbCategories])]
-          setCategories(merged.sort())
+          setAllCategories(merged.filter(Boolean).sort())
         }
       } catch {
         // fallback to defaults
@@ -142,20 +141,29 @@ export default function CreatePostPage() {
     if (fileInputRef.current) fileInputRef.current.value = ""
   }
 
+  function toggleCategory(cat: string) {
+    setSelectedCategories((prev) => {
+      if (prev.includes(cat)) {
+        return prev.filter((c) => c !== cat)
+      }
+      if (prev.length >= 3) return prev
+      return [...prev, cat]
+    })
+  }
+
   function handleAddCategory() {
     const trimmed = newCategoryInput.trim()
     if (!trimmed) return
-    const existing = categories.find(
+    const existing = allCategories.find(
       (c) => c.toLowerCase() === trimmed.toLowerCase()
     )
-    if (existing) {
-      setCategory(existing)
-      setShowNewCategory(false)
-      setNewCategoryInput("")
-      return
+    const catName = existing || trimmed
+    if (!existing) {
+      setAllCategories((prev) => [...prev, trimmed].sort())
     }
-    setCategories((prev) => [...prev, trimmed].sort())
-    setCategory(trimmed)
+    if (!selectedCategories.includes(catName) && selectedCategories.length < 3) {
+      setSelectedCategories((prev) => [...prev, catName])
+    }
     setShowNewCategory(false)
     setNewCategoryInput("")
   }
@@ -169,7 +177,8 @@ export default function CreatePostPage() {
     const cleanContent = content.replace(/<p><br><\/p>/g, "").trim()
     if (!cleanContent) return setError("Content is required.")
     if (!author.trim()) return setError("Author name is required.")
-    if (!category) return setError("Please select a category.")
+    if (selectedCategories.length === 0)
+      return setError("Please select at least one category.")
     setSaving(true)
     try {
       const supabase = createClient()
@@ -196,7 +205,7 @@ export default function CreatePostPage() {
         content,
         author: author.trim(),
         author_role: authorRole.trim() || null,
-        category,
+        categories: selectedCategories,
         image_url: imageUrl,
         read_time: estimateReadTime(content),
         published,
@@ -265,10 +274,17 @@ export default function CreatePostPage() {
               />
             </div>
           )}
-          {category && (
-            <span className="mb-3 inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-              {category}
-            </span>
+          {selectedCategories.length > 0 && (
+            <div className="mb-3 flex flex-wrap gap-2">
+              {selectedCategories.map((cat) => (
+                <span
+                  key={cat}
+                  className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary"
+                >
+                  {cat}
+                </span>
+              ))}
+            </div>
           )}
           <h2 className="font-heading text-3xl font-bold tracking-tight text-card-foreground sm:text-4xl">
             <span className="text-balance">{title || "Untitled Post"}</span>
@@ -289,7 +305,7 @@ export default function CreatePostPage() {
           )}
           <hr className="my-6 border-border" />
           <div
-            className="prose prose-neutral max-w-none dark:prose-invert"
+            className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-2xl prose-h2:font-bold prose-h2:tracking-tight prose-h2:text-foreground sm:prose-h2:text-3xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h3:font-semibold prose-h3:text-foreground prose-p:mb-4 prose-p:text-base prose-p:leading-relaxed prose-p:text-muted-foreground lg:prose-p:text-lg lg:prose-p:leading-8 prose-a:text-primary prose-strong:text-foreground prose-blockquote:border-primary prose-blockquote:text-muted-foreground prose-li:text-muted-foreground"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
@@ -494,28 +510,57 @@ export default function CreatePostPage() {
                 Publishing
               </h3>
               <div className="flex flex-col gap-5">
-                {/* Category with dynamic creation */}
+                {/* Categories multi-select (max 3) */}
                 <div>
                   <label className="mb-1.5 block text-sm font-medium text-card-foreground">
-                    {"Category "}
+                    {"Categories "}
                     <span className="text-red-500">*</span>
+                    <span className="ml-1 text-xs font-normal text-muted-foreground">
+                      (select up to 3)
+                    </span>
                   </label>
 
-                  {!showNewCategory ? (
+                  {/* Selected pills */}
+                  {selectedCategories.length > 0 && (
+                    <div className="mb-3 flex flex-wrap gap-2">
+                      {selectedCategories.map((cat) => (
+                        <span
+                          key={cat}
+                          className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
+                        >
+                          <Tag className="h-3 w-3" />
+                          {cat}
+                          <button
+                            type="button"
+                            onClick={() => toggleCategory(cat)}
+                            className="ml-0.5 rounded-full p-0.5 transition-colors hover:bg-primary/20"
+                          >
+                            <X className="h-3 w-3" />
+                            <span className="sr-only">Remove {cat}</span>
+                          </button>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Category list */}
+                  {selectedCategories.length < 3 && !showNewCategory && (
                     <div className="flex flex-col gap-2">
-                      <select
-                        id="category"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                        className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                      >
-                        <option value="">Select a category</option>
-                        {categories.map((cat) => (
-                          <option key={cat} value={cat}>
-                            {cat}
-                          </option>
-                        ))}
-                      </select>
+                      <div className="max-h-[160px] overflow-y-auto rounded-lg border border-input bg-background p-1.5">
+                        {allCategories
+                          .filter((c) => !selectedCategories.includes(c))
+                          .map((cat) => (
+                            <button
+                              key={cat}
+                              type="button"
+                              onClick={() => toggleCategory(cat)}
+                              className="flex w-full items-center gap-2 rounded-md px-3 py-1.5 text-left text-sm text-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+                            >
+                              <Plus className="h-3 w-3 text-muted-foreground" />
+                              {cat}
+                            </button>
+                          ))}
+                      </div>
                       <button
                         type="button"
                         onClick={() => setShowNewCategory(true)}
@@ -525,7 +570,10 @@ export default function CreatePostPage() {
                         Create new category
                       </button>
                     </div>
-                  ) : (
+                  )}
+
+                  {/* New category input */}
+                  {showNewCategory && (
                     <div className="flex flex-col gap-2">
                       <div className="flex items-center gap-2">
                         <div className="relative flex-1">
@@ -578,20 +626,10 @@ export default function CreatePostPage() {
                     </div>
                   )}
 
-                  {category && (
-                    <div className="mt-2 flex items-center gap-2">
-                      <span className="flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
-                        <Tag className="h-3 w-3" />
-                        {category}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => setCategory("")}
-                        className="text-xs text-muted-foreground transition-colors hover:text-foreground"
-                      >
-                        Change
-                      </button>
-                    </div>
+                  {selectedCategories.length >= 3 && !showNewCategory && (
+                    <p className="text-xs text-muted-foreground">
+                      Maximum 3 categories reached. Remove one to add another.
+                    </p>
                   )}
                 </div>
 
