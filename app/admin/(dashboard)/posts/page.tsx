@@ -7,7 +7,7 @@ export default async function AdminPostsPage() {
 
   const { data: posts } = await supabase
     .from("blog_posts")
-    .select("id, title, slug, category, published, published_at, author, read_time, created_at")
+    .select("id, title, slug, categories, published, published_at, author, read_time, created_at")
     .order("created_at", { ascending: false })
 
   const allPosts = posts ?? []
@@ -97,10 +97,12 @@ export default async function AdminPostsPage() {
                   </p>
                 </div>
               </div>
-              <div className="col-span-2">
-                <span className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
-                  {post.category}
-                </span>
+              <div className="col-span-2 flex flex-wrap gap-1">
+                {(post.categories ?? []).map((cat: string) => (
+                  <span key={cat} className="inline-block rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
+                    {cat}
+                  </span>
+                ))}
               </div>
               <div className="col-span-2">
                 <p className="text-sm text-muted-foreground">{post.author}</p>

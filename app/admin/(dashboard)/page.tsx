@@ -16,7 +16,7 @@ export default async function AdminDashboardPage() {
 
   const { data: recentPosts } = await supabase
     .from("blog_posts")
-    .select("id, title, slug, published, category, published_at")
+    .select("id, title, slug, published, categories, published_at")
     .order("created_at", { ascending: false })
     .limit(5)
 
@@ -113,9 +113,13 @@ export default async function AdminDashboardPage() {
                       {post.title}
                     </p>
                     <div className="mt-1 flex items-center gap-3">
-                      <span className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
-                        {post.category}
-                      </span>
+                      <div className="flex flex-wrap gap-1">
+                        {(post.categories ?? []).map((cat: string) => (
+                          <span key={cat} className="rounded-full bg-muted px-2 py-0.5 text-xs text-muted-foreground">
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
                       <span className="text-xs text-muted-foreground">
                         {post.published_at
                           ? new Date(post.published_at).toLocaleDateString(

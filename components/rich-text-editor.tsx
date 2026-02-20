@@ -57,7 +57,7 @@ export function RichTextEditor({
   )
 
   return (
-    <div className="quill-wrapper">
+    <div className="quill-wrapper blog-content">
       <ReactQuill
         theme="snow"
         value={value}
@@ -83,11 +83,25 @@ export function RichTextEditor({
         .quill-wrapper .ql-editor {
           min-height: 20rem;
           color: hsl(var(--foreground)) !important;
-          line-height: 1.7 !important;
         }
         .quill-wrapper .ql-editor.ql-blank::before {
           color: hsl(var(--muted-foreground)) !important;
           font-style: normal !important;
+        }
+        /* Apply shared blog-content formatting inside the editor */
+        .quill-wrapper .ql-editor h1,
+        .quill-wrapper .ql-editor h2,
+        .quill-wrapper .ql-editor h3,
+        .quill-wrapper .ql-editor p,
+        .quill-wrapper .ql-editor blockquote,
+        .quill-wrapper .ql-editor ul,
+        .quill-wrapper .ql-editor ol,
+        .quill-wrapper .ql-editor li,
+        .quill-wrapper .ql-editor pre,
+        .quill-wrapper .ql-editor code,
+        .quill-wrapper .ql-editor a,
+        .quill-wrapper .ql-editor img {
+          /* Inherit from .blog-content via the wrapper */
         }
         .quill-wrapper .ql-snow .ql-stroke {
           stroke: hsl(var(--muted-foreground)) !important;
@@ -121,27 +135,7 @@ export function RichTextEditor({
         .quill-wrapper .ql-container:focus-within {
           border-color: hsl(var(--primary)) !important;
         }
-        .quill-wrapper .ql-editor h2 {
-          font-size: 1.5rem !important;
-          font-weight: 700 !important;
-          margin-top: 1.5rem !important;
-          margin-bottom: 0.75rem !important;
-        }
-        .quill-wrapper .ql-editor h3 {
-          font-size: 1.25rem !important;
-          font-weight: 600 !important;
-          margin-top: 1.25rem !important;
-          margin-bottom: 0.5rem !important;
-        }
-        .quill-wrapper .ql-editor p {
-          margin-bottom: 0.75rem !important;
-        }
-        .quill-wrapper .ql-editor blockquote {
-          border-left: 3px solid hsl(var(--primary)) !important;
-          padding-left: 1rem !important;
-          color: hsl(var(--muted-foreground)) !important;
-          font-style: italic !important;
-        }
+        /* Content formatting is handled by the .blog-content class in globals.css */
       `}</style>
     </div>
   )

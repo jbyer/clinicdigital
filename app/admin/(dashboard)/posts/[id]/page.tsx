@@ -480,7 +480,7 @@ export default function EditPostPage() {
           )}
           <hr className="my-6 border-border" />
           <div
-            className="prose prose-neutral max-w-none dark:prose-invert prose-headings:font-heading prose-h2:mt-10 prose-h2:mb-4 prose-h2:text-2xl prose-h2:font-bold prose-h2:tracking-tight prose-h2:text-foreground sm:prose-h2:text-3xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-xl prose-h3:font-semibold prose-h3:text-foreground prose-p:mb-4 prose-p:text-base prose-p:leading-relaxed prose-p:text-muted-foreground lg:prose-p:text-lg lg:prose-p:leading-8 prose-a:text-primary prose-strong:text-foreground prose-blockquote:border-primary prose-blockquote:text-muted-foreground prose-li:text-muted-foreground"
+            className="blog-content max-w-none"
             dangerouslySetInnerHTML={{ __html: content }}
           />
         </div>
