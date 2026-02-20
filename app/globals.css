@@ -95,6 +95,10 @@
 /* Shared blog content styles -- used by the Quill editor, admin preview, and the public blog page
    to guarantee formatting parity across all three surfaces. */
 @layer components {
+  .blog-content {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
   .blog-content h1 {
     @apply mt-10 mb-4 text-3xl font-bold tracking-tight text-foreground;
   }

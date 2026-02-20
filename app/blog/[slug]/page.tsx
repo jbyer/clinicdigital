@@ -205,7 +205,9 @@ export default async function BlogPostPage({
           {isHtmlContent(post.content) ? (
             <div
               className="blog-content max-w-none"
-              dangerouslySetInnerHTML={{ __html: post.content }}
+              dangerouslySetInnerHTML={{
+                __html: post.content.replace(/&nbsp;/g, " ").replace(/\u00A0/g, " "),
+              }}
             />
           ) : (
             renderMarkdownContent(post.content)

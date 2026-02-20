@@ -481,7 +481,9 @@ export default function EditPostPage() {
           <hr className="my-6 border-border" />
           <div
             className="blog-content max-w-none"
-            dangerouslySetInnerHTML={{ __html: content }}
+            dangerouslySetInnerHTML={{
+              __html: content.replace(/&nbsp;/g, " ").replace(/\u00A0/g, " "),
+            }}
           />
         </div>
       ) : (
