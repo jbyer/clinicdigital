@@ -20,6 +20,7 @@ const footerLinks = {
     { label: "Book a Call", href: "/book-a-call" },
   ],
   resources: [
+    { label: "Offers", href: "/offers" },
     { label: "Blog", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
@@ -113,11 +114,7 @@ export function Footer() {
         </div>
       </div>
 
-      <script
-        src="https://beta.leadconnectorhq.com/loader.js"
-        data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js"
-        data-widget-id="698352597cd1e6562be9d7d1"   >
-      </script>
+      {/* Chat widget loaded via next/script in a client component wrapper for production */}
 
     </footer>
   )
