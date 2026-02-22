@@ -30,7 +30,8 @@ const serviceLinks = [
 const navLinks = [
   { label: "Process", href: "https://www.clinicdigital.co/#process" },
   { label: "Case Studies", href: "https://www.clinicdigital.co/#case-studies" },
-  { label: "Offers", href: "/offers" },
+  { label: "SEO Offers", href: "/offers" },
+  { label: "Smart Website", href: "/offers/smart-website" },
   { label: "Blog", href: "/blog" },
   { label: "About Us", href: "/about-us" },
   { label: "Contact", href: "https://www.clinicdigital.co/#contact" },
