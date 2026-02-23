@@ -2,9 +2,10 @@ import type { Metadata } from "next"
 import { LegalPageLayout, LegalSection } from "@/components/legal-page-layout"
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | ClinicDigital.co",
+  title: "Privacy Policy - ClinicDigital.co",
   description:
-    "Learn how ClinicDigital.co collects, uses, and protects your personal data. Read our full privacy policy covering GDPR, CCPA, and other applicable regulations.",
+    "Learn how ClinicDigital.co protects your privacy and handles your data. Our commitment to transparency and security for all healthcare practice clients.",
+  keywords: []
 }
 
 export default function PrivacyPolicyPage() {
