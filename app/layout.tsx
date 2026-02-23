@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata: Metadata = {
-  title: 'ClinicDigital.co | AI-Powered Solutions for Medical Practices & MedSpas',
-  description: 'ClinicDigital.co deploys cutting-edge AI solutions through the GoHighLevel platform to streamline and enhance medical practices, medspas, and healthcare operations.',
+  title: 'ClinicDigital.co | Bring More Patients to Your Practice',
+  description: 'Custom websites, SEO, and AI solutions designed for healthcare practices. Attract more patients, boost your online presence, and grow your clinic with expert digital services.',
   keywords: []
 }
 
