@@ -5,7 +5,7 @@ import { ArrowRight, Bot, Zap, Shield } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen overflow-hidden">
+    <section className="relative h-[550px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -19,7 +19,7 @@ export function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
         <div className="max-w-2xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
             <Zap className="h-3.5 w-3.5 text-accent" />

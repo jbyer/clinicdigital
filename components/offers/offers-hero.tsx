@@ -10,7 +10,7 @@ const highlights = [
 
 export function OffersHero() {
   return (
-    <section className="relative overflow-hidden bg-foreground pt-32 pb-20 lg:pt-40 lg:pb-28">
+    <section className="relative flex h-[550px] items-center overflow-hidden bg-foreground">
       {/* Decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />

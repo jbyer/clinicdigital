@@ -20,7 +20,7 @@ export function LegalPageLayout({
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-32 lg:py-36">
+      <section className="relative h-[550px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -34,7 +34,7 @@ export function LegalPageLayout({
         </div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-4xl px-6 lg:px-8">
+        <div className="relative z-10 mx-auto flex h-full max-w-4xl flex-col justify-center px-6 lg:px-8">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
             <FileText className="h-3.5 w-3.5 text-accent" />
             <span className="text-xs font-medium uppercase tracking-wide text-primary-foreground/90">
