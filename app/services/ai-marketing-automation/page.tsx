@@ -3,9 +3,9 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Megaphone, Mail, MessageSquare, Share2, Target, Layers, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Marketing Automation | ClinicDigital.co",
+  title: "Marketing Automation for Healthcare Practices | ClinicDigital.co",
   description:
-    "Automated email campaigns, SMS sequences, and social media outreach powered by AI. Reach the right patients at the right time with personalized messaging.",
+    "Automate patient follow-ups, appointment reminders, and email campaigns. Save time and nurture more patients with smart marketing automation for your clinic.",
 }
 
 const features = [

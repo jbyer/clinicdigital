@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { LegalPageLayout, LegalSection } from "@/components/legal-page-layout"
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ClinicDigital.co",
+  title: "Terms of Service - ClinicDigital.co",
   description:
     "Read the Terms of Service for ClinicDigital.co. Understand user obligations, acceptable use, intellectual property rights, liability limitations, and more.",
 }
