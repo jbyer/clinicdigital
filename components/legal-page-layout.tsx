@@ -20,7 +20,7 @@ export function LegalPageLayout({
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[550px] overflow-hidden">
+      <section className="relative h-[600px] overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
