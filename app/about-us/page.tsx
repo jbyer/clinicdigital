@@ -22,9 +22,10 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "About Us | ClinicDigital.co",
+  title: "About ClinicDigital.co | Your Healthcare Digital Partner",
   description:
-    "Learn about ClinicDigital.co -- the AI agency built exclusively for medical practices and medspas. Meet our team, our mission, and our story.",
+    "Discover why healthcare practices trust ClinicDigital.co for web design, SEO, and digital marketing. Dedicated to bringing more patients to your door.",
+  keywords: []
 }
 
 const values = [
