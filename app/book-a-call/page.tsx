@@ -17,9 +17,10 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Book A Call | ClinicDigital.co",
+  title: "Schedule Your Free Strategy Call - ClinicDigital.co",
   description:
-    "Schedule a free strategy session with ClinicDigital.co. Discover how AI-powered automation can streamline your medical practice or medspa operations.",
+    "Ready to grow your practice? Book a free strategy call with ClinicDigital.co. Discuss your goals and create a plan to attract more patients.",
+  keywords: []
 }
 
 const benefits = [
