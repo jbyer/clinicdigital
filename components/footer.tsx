@@ -20,7 +20,7 @@ const footerLinks = {
     { label: "Book a Call", href: "/book-a-call" },
   ],
   resources: [
-    { label: "SEO Offers", href: "/offers" },
+    { label: "SEO Offers", href: "/offers/seo" },
     { label: "Smart Website", href: "/offers/smart-website" },
     { label: "AI Chatbot", href: "/offers/chatbot" },
     { label: "Blog", href: "/blog" },
