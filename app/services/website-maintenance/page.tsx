@@ -3,9 +3,10 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Wrench, ShieldCheck, Gauge, Headphones, DatabaseBackup, Activity, FileEdit } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Healthcare Website Maintenance Services - ClinicDigital.co",
+  title: "Healthcare & Medspa Website Maintenance Services - ClinicDigital.co",
   description:
     "Focus on patients, not website problems. Our maintenance plans handle updates, security, backups, and technical issues so your site stays online and secure.",
+  keywords: []
 }
 
 const features = [
