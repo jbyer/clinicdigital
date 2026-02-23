@@ -46,7 +46,7 @@ export function ServicePageLayout({
       <Navigation />
 
       {/* Hero Section */}
-      <section className="relative h-[550px] overflow-hidden">
+      <section className="relative h-[600px] overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src={heroImage}
@@ -59,7 +59,7 @@ export function ServicePageLayout({
         </div>
 
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
-          <div className="max-w-2xl">
+          <div className="max-w-x1">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
               {icon}
               <span className="text-xs font-medium uppercase tracking-wide text-primary-foreground/90">
