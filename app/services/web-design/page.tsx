@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Palette, Brush, Smartphone, MousePointerClick, Zap, Code2, FileText } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Custom Web Design for Healthcare Practices | ClinicDigital.co",
+  title: "Custom Web Design for Healthcare and Medspa Practices | ClinicDigital.co",
   description:
     "Turn visitors into patients. We design professional, mobile-friendly websites for healthcare and medspa practices that showcase services and make booking easy.",
 }
