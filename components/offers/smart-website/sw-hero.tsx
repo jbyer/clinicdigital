@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
@@ -10,27 +11,34 @@ const highlights = [
 
 export function SmartWebsiteHero() {
   return (
-    <section className="relative flex h-[550px] items-center overflow-hidden bg-foreground">
-      {/* Decorative blurs */}
+    <section className="relative h-[550px] overflow-hidden">
+      {/* Background Image */}
       <div className="absolute inset-0">
-        <div className="absolute -left-32 top-1/4 h-96 w-96 rounded-full bg-primary/10 blur-3xl" />
-        <div className="absolute -right-32 bottom-1/4 h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
+        <Image
+          src="/images/hero-offers-smart-website.jpg"
+          alt="Sleek laptop displaying a healthcare website design in a modern medspa waiting room"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/50" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Content */}
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary backdrop-blur-sm">
             Smart Website for Healthcare
           </p>
 
-          <h1 className="mt-6 font-heading text-4xl font-bold tracking-tight text-background sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 font-heading text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
             <span className="text-balance">
               Your Practice Deserves a Website That{" "}
               <span className="text-primary">Books Patients 24/7.</span>
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-background/60 lg:text-xl">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/70 lg:text-xl">
             Not just a pretty brochure -- a conversion-focused Smart Website
             with AI chatbot, automated patient intake, CRM integration, and
             built-in SEO. Purpose-built for medical practices and medspas.
@@ -40,7 +48,7 @@ export function SmartWebsiteHero() {
             <Button
               size="lg"
               asChild
-              className="text-base hover:bg-red-600 hover:text-background"
+              className="text-base hover:bg-red-600 hover:text-primary-foreground"
             >
               <Link href="/book-a-call">
                 Get Your Smart Website
@@ -51,7 +59,7 @@ export function SmartWebsiteHero() {
               size="lg"
               variant="outline"
               asChild
-              className="border-background/20 bg-transparent text-base text-background hover:border-background/40 hover:bg-background/5"
+              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10"
             >
               <Link href="#pricing">See Pricing</Link>
             </Button>
@@ -62,7 +70,7 @@ export function SmartWebsiteHero() {
             {highlights.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-2 text-sm text-background/50"
+                className="flex items-center gap-2 text-sm text-primary-foreground/60"
               >
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
                 {item}
@@ -71,6 +79,9 @@ export function SmartWebsiteHero() {
           </div>
         </div>
       </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   )
 }
