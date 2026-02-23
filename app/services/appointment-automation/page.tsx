@@ -3,9 +3,10 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { CalendarCheck, MousePointerClick, BellRing, RefreshCcw, ListPlus, UsersRound, TrendingDown } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Appointment Automation | ClinicDigital.co",
+  title: "Appointment Automation | Reduce No-Shows & Save Time",
   description:
-    "Eliminate no-shows with intelligent scheduling, automated reminders, and self-service booking integrated with your existing practice management systems.",
+    "Reduce no-shows by 70% with automated appointment reminders, online booking, and confirmations. Free up your staff to focus on patient care.",
+  keywords: []
 }
 
 const features = [
