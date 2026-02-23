@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { ArrowRight, CheckCircle2, Monitor } from "lucide-react"
 
 const highlights = [
   "Done-for-you in 4 weeks",
@@ -11,7 +11,7 @@ const highlights = [
 
 export function SmartWebsiteHero() {
   return (
-    <section className="relative h-[550px] overflow-hidden">
+    <section className="relative h-[600px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -21,34 +21,37 @@ export function SmartWebsiteHero() {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/80 to-foreground/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/75 to-foreground/45" />
       </div>
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary backdrop-blur-sm">
-            Smart Website for Healthcare
-          </p>
+      <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-center px-6 pt-20 lg:px-8">
+        <div className="max-w-2xl">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
+            <Monitor className="h-3.5 w-3.5 text-accent" />
+            <span className="text-xs font-medium tracking-wide uppercase text-primary-foreground/90">
+              Smart Website for Healthcare
+            </span>
+          </div>
 
-          <h1 className="mt-6 font-heading text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+          <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
               Your Practice Deserves a Website That{" "}
               <span className="text-primary">Books Patients 24/7.</span>
             </span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/70 lg:text-xl">
+          <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
             Not just a pretty brochure -- a conversion-focused Smart Website
             with AI chatbot, automated patient intake, CRM integration, and
             built-in SEO. Purpose-built for medical practices and medspas.
           </p>
 
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Button
               size="lg"
               asChild
-              className="text-base hover:bg-red-600 hover:text-primary-foreground"
+              className="text-base hover:bg-red-600 hover:text-white"
             >
               <Link href="/book-a-call">
                 Get Your Smart Website
@@ -59,14 +62,14 @@ export function SmartWebsiteHero() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:border-primary-foreground/40 hover:bg-primary-foreground/10"
+              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-primary-foreground/10"
             >
               <Link href="#pricing">See Pricing</Link>
             </Button>
           </div>
 
           {/* Highlight pills */}
-          <div className="mt-10 flex flex-wrap justify-center gap-x-6 gap-y-3">
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3">
             {highlights.map((item) => (
               <div
                 key={item}
