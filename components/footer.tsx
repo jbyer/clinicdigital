@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+import ChatWidget from "./chat-widget"
 
 
 const footerLinks = {
@@ -117,6 +118,7 @@ export function Footer() {
       </div>
 
       {/* Chat widget loaded via next/script in a client component wrapper for production */}
+      <ChatWidget />
 
     </footer>
   )
