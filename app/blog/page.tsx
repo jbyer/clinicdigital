@@ -17,6 +17,7 @@ export const metadata = {
   title: "Blog | Grow Your Practice - ClinicDigital.co",
   description:
     "Proven strategies to attract more patients and grow your clinic. Expert insights on web development, SEO, and healthcare digital marketing.",
+  keywords: []
 }
 
 function formatDate(dateString: string) {
