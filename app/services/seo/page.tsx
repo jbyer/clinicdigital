@@ -3,9 +3,9 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Search, MapPin, FileKey, Code2, PenTool, Star, Radar } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "SEO for Medical Practices & MedSpas | ClinicDigital.co",
+  title: "Healthcare SEO Services | ClinicDigital.co",
   description:
-    "Dominate local search results and attract high-intent patients with data-driven SEO strategies tailored for medical practices and medspas.",
+    "Invisible on Google? Our specialized healthcare SEO increases your visibility, drives more traffic, and turns searches into booked appointments.",
 }
 
 const features = [

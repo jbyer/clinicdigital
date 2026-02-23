@@ -10,6 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 export const metadata: Metadata = {
   title: 'ClinicDigital.co | AI-Powered Solutions for Medical Practices & MedSpas',
   description: 'ClinicDigital.co deploys cutting-edge AI solutions through the GoHighLevel platform to streamline and enhance medical practices, medspas, and healthcare operations.',
+  keywords: []
 }
 
 export const viewport: Viewport = {
