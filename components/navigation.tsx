@@ -32,6 +32,7 @@ const navLinks = [
   { label: "Case Studies", href: "https://www.clinicdigital.co/#case-studies" },
   { label: "SEO Offers", href: "/offers" },
   { label: "Smart Website", href: "/offers/smart-website" },
+  { label: "AI Chatbot", href: "/offers/chatbot" },
   { label: "Blog", href: "/blog" },
   { label: "About Us", href: "/about-us" },
   { label: "Contact", href: "https://www.clinicdigital.co/#contact" },

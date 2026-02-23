@@ -22,6 +22,7 @@ const footerLinks = {
   resources: [
     { label: "SEO Offers", href: "/offers" },
     { label: "Smart Website", href: "/offers/smart-website" },
+    { label: "AI Chatbot", href: "/offers/chatbot" },
     { label: "Blog", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
