@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Healthcare SEO Services | ClinicDigital.co",
   description:
     "Invisible on Google? Our specialized healthcare SEO increases your visibility, drives more traffic, and turns searches into booked appointments.",
+  keywords: []
 }
 
 const features = [
