@@ -14,9 +14,9 @@ import {
 import { createClient } from "@/lib/supabase/server"
 
 export const metadata = {
-  title: "Blog & Insights | ClinicDigital",
+  title: "Blog | Grow Your Practice - ClinicDigital.co",
   description:
-    "Expert guides, actionable strategies, and industry analysis to help medical practices and medspas thrive in the age of AI.",
+    "Proven strategies to attract more patients and grow your clinic. Expert insights on web development, SEO, and healthcare digital marketing.",
 }
 
 function formatDate(dateString: string) {
