@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Marketing Automation for Healthcare Practices | ClinicDigital.co",
   description:
     "Automate patient follow-ups, appointment reminders, and email campaigns. Save time and nurture more patients with smart marketing automation for your clinic.",
+  keywords: []
 }
 
 const features = [
