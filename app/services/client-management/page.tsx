@@ -3,9 +3,10 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Users, GitBranch, RefreshCw, Heart, UserCircle, ListChecks, PieChart } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Client Management (CRM) | ClinicDigital.co",
+  title: "Patient Management & CRM Solutions - ClinicDigital.co",
   description:
-    "A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
+    "Never lose track of patient details again. Our CRM helps you manage patient relationships, follow-ups, and communications to deliver exceptional care.",
+  keywords: []
 }
 
 const features = [
