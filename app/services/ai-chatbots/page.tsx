@@ -3,9 +3,10 @@ import { ServicePageLayout } from "@/components/service-page-layout"
 import { Bot, Clock, CalendarPlus, HelpCircle, Filter, Globe, ArrowRightLeft } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "AI Chatbots & Virtual Assistants | ClinicDigital.co",
+  title: "AI Chatbot Solutions for Clinics - ClinicDigital.co",
   description:
-    "24/7 AI assistants that handle appointment booking, FAQ responses, and lead qualification. Reduce staff workload while delivering exceptional patient experiences.",
+    "HIPAA-compliant AI chatbot for dental, chiropractic, and medical offices. Automate patient engagement, answer FAQs, and book appointments instantly.",
+  keywords: []
 }
 
 const features = [
