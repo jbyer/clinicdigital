@@ -21,9 +21,6 @@ const footerLinks = {
     { label: "Book a Call", href: "/book-a-call" },
   ],
   resources: [
-    { label: "SEO Offers", href: "/offers/seo" },
-    { label: "Smart Website", href: "/offers/smart-website" },
-    { label: "AI Chatbot", href: "/offers/chatbot" },
     { label: "Blog", href: "/blog" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
