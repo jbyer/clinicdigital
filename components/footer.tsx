@@ -106,7 +106,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-background/10 pt-8 md:flex-row">
+        <div className="mt-12 flex flex-col align-middle items-center justify-between gap-4 border-t border-background/10 pt-8 md:flex-row">
           <p className="text-xs text-background/40">
             &copy; {new Date().getFullYear()} ClinicDigital.co. All rights reserved.
           </p>
