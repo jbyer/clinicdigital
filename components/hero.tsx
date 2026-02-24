@@ -47,7 +47,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 text-base bg-transparent">
+            <Button size="lg" variant="outline" asChild className="border-primary-foreground/20 text-primary-foreground hover:bg-red-600 text-base bg-transparent">
               <Link href="#case-studies">View Case Studies</Link>
             </Button>
           </div>
