@@ -1,6 +1,20 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Facebook, Instagram } from "lucide-react"
 import ChatWidget from "./chat-widget"
+
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/clinicdigital",
+    icon: Facebook,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/clinicdigital",
+    icon: Instagram,
+  },
+]
 
 
 const footerLinks = {
@@ -111,6 +125,21 @@ export function Footer() {
             &copy; {new Date().getFullYear()} ClinicDigital.co. All rights reserved.
           </p>
 
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Follow us on ${social.label}`}
+                className="flex h-9 w-9 items-center justify-center rounded-full bg-background/10 text-background/60 transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <social.icon className="h-4 w-4" />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 
