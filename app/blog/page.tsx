@@ -230,7 +230,7 @@ export default async function BlogPage() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-red-600"
             >
               <Link href="/#contact">Contact Us</Link>
             </Button>
