@@ -176,7 +176,7 @@ export default function AboutUsPage() {
                 client.
               </p>
               <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-                Leveraging the GoHighLevel platform as our backbone, we deploy
+                Leveraging various AI platforms, we deploy
                 custom AI automations that handle everything from patient
                 acquisition and appointment scheduling to reputation management
                 and long-term retention -- all tailored to the unique compliance
