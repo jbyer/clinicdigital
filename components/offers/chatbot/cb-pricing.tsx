@@ -44,6 +44,7 @@ const plans = [
       "New Patient Forms - Collect intake information before appointments",
       "Appointment Reminders - Automated SMS/email reminders to reduce no-shows",
       "CRM Integration - All conversations sync to your ClinicDigital CRM",
+      "Priority Support - Email & chat support within 24 hours",
     ],
     cta: "Deploy My AI Chatbot",
     highlighted: true,
