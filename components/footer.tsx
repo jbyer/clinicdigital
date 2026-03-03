@@ -11,7 +11,7 @@ const socialLinks = [
   },
   {
     label: "Instagram",
-    href: "https://www.instagram.com/clinicdigital",
+    href: "https://www.instagram.com/clinic_digital.co/",
     icon: Instagram,
   },
 ]
