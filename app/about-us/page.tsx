@@ -58,7 +58,6 @@ const values = [
 const milestones = [
   { year: "2019", title: "Founded", description: "ClinicDigital.co launched with a mission to bring enterprise-grade AI tools to independent medical practices." },
   { year: "2020", title: "First 25 Clients", description: "Onboarded our first cohort of dermatology and medspa clients, proving the model with measurable patient growth." },
-  { year: "2021", title: "GoHighLevel Partnership", description: "Became an official GoHighLevel certified partner, deepening our platform expertise and integration capabilities." },
   { year: "2023", title: "150+ Deployments", description: "Crossed 150 successful AI automation deployments across medical practices, medspas, and dental offices nationwide." },
   { year: "2025", title: "Expanding Horizons", description: "Launched SEO, web design, and website maintenance services to provide comprehensive digital growth for healthcare businesses." },
 ]
