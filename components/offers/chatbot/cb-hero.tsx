@@ -49,16 +49,7 @@ export function ChatbotHero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Button
-              size="lg"
-              asChild
-              className="text-base hover:bg-red-600 hover:text-white"
-            >
-              <Link href="/book-a-call">
-                Get Your AI Chatbot
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+
             <Button
               size="lg"
               variant="outline"
