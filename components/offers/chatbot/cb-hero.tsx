@@ -72,6 +72,8 @@ export function ChatbotHero() {
               </div>
             ))}
           </div>
+
+          <div className="mb-[30px] lg:mb-0" />
         </div>
       </div>
 
