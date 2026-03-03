@@ -2,7 +2,7 @@ const stats = [
   { value: "24/7", label: "Always-on patient support" },
   { value: "85%+", label: "Questions resolved instantly" },
   { value: "3x", label: "More after-hours bookings" },
-  { value: "<2 Weeks", label: "Deployed and live" },
+  { value: "<1 Week", label: "Deployed and live" },
 ]
 
 export function ChatbotTrustBar() {
