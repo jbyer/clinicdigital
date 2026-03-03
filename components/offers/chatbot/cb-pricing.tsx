@@ -4,7 +4,7 @@ import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
 
 const plans = [
   {
-    name: "Starter",
+    name: "Starter Chatbot",
     icon: Zap,
     setupFee: 297,
     monthlyFee: 197,
@@ -26,24 +26,24 @@ const plans = [
     highlighted: false,
   },
   {
-    name: "Growth",
+    name: "Professional Chatbot",
     icon: TrendingUp,
-    setupFee: 1997,
-    monthlyFee: 397,
+    setupFee: 497,
+    monthlyFee: 347,
     description:
-      "Our most popular package -- multi-channel AI chatbot with advanced qualification, automated follow-ups, and deep CRM workflows to maximize every patient interaction.",
+      "Perfect for growing practices ready to automate patient acquisition",
     features: [
-      "Everything in Starter, plus:",
-      "Multi-channel: Website, SMS & Facebook",
-      "Advanced lead qualification & scoring",
-      "Automated SMS & email follow-up sequences",
-      "Custom conversation flows per service line",
-      "Provider-specific appointment routing",
-      "Missed-call text-back automation",
-      "Google Business Profile chat integration",
-      "Review request triggers post-appointment",
-      "Bi-weekly optimization & training updates",
-      "Priority email & chat support",
+      "Everything in Starter Chatbot plan",
+      "Unlimited FAQs - Train chatbot on your entire knowledge base",
+      "Direct Calendar Integration - Patients book appointments directly into your calendar",
+      "Automated Appointment Confirmations - SMS & email confirmations sent automatically",
+      "CLead Qualification - Pre-screens patients based on your criteria",
+      "Multi-Channel Support - Website chat + Facebook Messenger integration",
+      "Smart Lead Routing - Routes inquiries to specific staff members",
+      "Custom Workflows - Create automated follow-up sequences",
+      "New Patient Forms - Collect intake information before appointments",
+      "Appointment Reminders - Automated SMS/email reminders to reduce no-shows",
+      "CRM Integration - All conversations sync to your ClinicDigital CRM",
     ],
     cta: "Deploy My AI Chatbot",
     highlighted: true,
@@ -101,8 +101,8 @@ export function ChatbotPricing() {
             <article
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${plan.highlighted
-                  ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
-                  : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
+                : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
                 }`}
             >
               {/* Popular badge */}
@@ -118,8 +118,8 @@ export function ChatbotPricing() {
               <div className="flex items-center gap-3">
                 <div
                   className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-primary/10 text-primary"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-primary/10 text-primary"
                     }`}
                 >
                   <plan.icon className="h-5 w-5" />
@@ -165,8 +165,8 @@ export function ChatbotPricing() {
                   size="lg"
                   asChild
                   className={`w-full text-base ${plan.highlighted
-                      ? "hover:bg-red-600 hover:text-background"
-                      : "bg-foreground text-background hover:bg-foreground/90"
+                    ? "hover:bg-red-600 hover:text-background"
+                    : "bg-foreground text-background hover:bg-foreground/90"
                     }`}
                 >
                   <Link href="/book-a-call">
