@@ -52,8 +52,8 @@ const plans = [
   {
     name: "Enterprise",
     icon: Crown,
-    setupFee: 3997,
-    monthlyFee: 697,
+    setupFee: 797,
+    monthlyFee: 597,
     description:
       "The full AI-powered patient communication suite for multi-location practices demanding premium automation, HIPAA-grade compliance, and dedicated strategic support.",
     features: [
