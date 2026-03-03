@@ -6,21 +6,21 @@ const plans = [
   {
     name: "Starter",
     icon: Zap,
-    setupFee: 997,
+    setupFee: 297,
     monthlyFee: 197,
     description:
-      "A single-channel AI chatbot for practices ready to automate patient inquiries on their website and capture after-hours leads with intelligent conversation.",
+      "Perfect for small practices just getting started with automation",
     features: [
-      "AI chatbot on your website",
-      "Trained on your services, FAQs & policies",
-      "Automated appointment booking",
-      "Lead capture & contact form replacement",
-      "Business-hours & after-hours messaging",
-      "Basic lead qualification rules",
-      "GoHighLevel CRM integration",
-      "Conversation analytics dashboard",
-      "Monthly performance report",
-      "Email support",
+      "AI-Powered Chat Widget on your website",
+      "4/7 Availability - Never miss a patient inquiry",
+      "FAQ Automation - Answers up to 25 common questions (office hours, location, services, insurance accepted)",
+      "Lead Capture - Collects name, phone, email from website visitors",
+      "Basic Appointment Requests - Captures appointment requests and sends to your staff",
+      "Business Hours Settings - Custom responses for after-hours inquiries",
+      "Email Notifications - Alerts when new leads come in",
+      "Monthly Analytics Report - Track conversations and leads generated",
+      "HIPAA-Compliant messaging",
+      "Mobile-Responsive - Works on all devices",
     ],
     cta: "Get Started",
     highlighted: false,
@@ -100,11 +100,10 @@ export function ChatbotPricing() {
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
-                plan.highlighted
+              className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${plan.highlighted
                   ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
                   : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-              }`}
+                }`}
             >
               {/* Popular badge */}
               {plan.highlighted && (
@@ -118,11 +117,10 @@ export function ChatbotPricing() {
               {/* Plan header */}
               <div className="flex items-center gap-3">
                 <div
-                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    plan.highlighted
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
                       ? "bg-primary text-primary-foreground"
                       : "bg-primary/10 text-primary"
-                  }`}
+                    }`}
                 >
                   <plan.icon className="h-5 w-5" />
                 </div>
@@ -166,11 +164,10 @@ export function ChatbotPricing() {
                 <Button
                   size="lg"
                   asChild
-                  className={`w-full text-base ${
-                    plan.highlighted
+                  className={`w-full text-base ${plan.highlighted
                       ? "hover:bg-red-600 hover:text-background"
                       : "bg-foreground text-background hover:bg-foreground/90"
-                  }`}
+                    }`}
                 >
                   <Link href="/book-a-call">
                     {plan.cta}
@@ -190,14 +187,12 @@ export function ChatbotPricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
                     <div
-                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                        plan.highlighted ? "bg-primary/15" : "bg-accent/15"
-                      }`}
+                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${plan.highlighted ? "bg-primary/15" : "bg-accent/15"
+                        }`}
                     >
                       <Check
-                        className={`h-3 w-3 ${
-                          plan.highlighted ? "text-primary" : "text-accent"
-                        }`}
+                        className={`h-3 w-3 ${plan.highlighted ? "text-primary" : "text-accent"
+                          }`}
                       />
                     </div>
                     <span className="text-sm leading-snug text-muted-foreground">
