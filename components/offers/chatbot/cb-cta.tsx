@@ -39,7 +39,7 @@ export function ChatbotCta() {
             asChild
             className="border-primary-foreground/30 bg-transparent text-base text-primary-foreground hover:bg-red-600"
           >
-            <Link href="tel:+1234567890">
+            <Link href="tel:+18555800608">
               <Phone className="mr-2 h-4 w-4" />
               Call Us Now
             </Link>
