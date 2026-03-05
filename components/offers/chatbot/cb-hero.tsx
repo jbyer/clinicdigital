@@ -36,8 +36,8 @@ export function ChatbotHero() {
 
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
-              Your AI Receptionist That{" "}
-              <span className="text-primary">Never Misses a Patient.</span>
+              Turn Website Visitors into Booked Patients {" "}
+              <span className="text-primary">24/7 with a HIPAA-Aware Chatbot</span>
             </span>
           </h1>
 
