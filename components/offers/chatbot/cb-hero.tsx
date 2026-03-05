@@ -42,10 +42,7 @@ export function ChatbotHero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-            Stop losing leads to voicemail and after-hours inquiries. Deploy a
-            HIPAA-aware AI chatbot that answers patient questions, qualifies
-            leads, and books appointments 24/7 -- powered by GoHighLevel
-            Conversation AI, customized for your practice.
+            ClinicDigital installs and manages a custom AI chatbot that greets visitors, pre-qualifies leads, answers common questions, and hands off hot prospects directly to your front desk — without adding to your staff’s workload.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
