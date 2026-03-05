@@ -70,7 +70,7 @@ export function ChatbotHero() {
             ))}
           </div>
 
-          <div className="mb-[30px] lg:mb-0" />
+          <div className="mb-[50px] lg:mb-[30px]" />
         </div>
       </div>
 
