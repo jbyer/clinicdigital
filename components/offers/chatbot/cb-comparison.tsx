@@ -9,7 +9,7 @@ const rows = [
   { feature: "Custom-trained on your practice", generic: false, ai: true },
   { feature: "CRM & workflow integration", generic: true, ai: true },
   { feature: "HIPAA-aware data handling", generic: false, ai: true },
-  { feature: "Automated follow-up sequences", generic: false, ai: true },
+  { feature: "Automated follow-up sequences", generic: true, ai: true },
   { feature: "Continuous learning & optimization", generic: false, ai: true },
 ]
 
@@ -67,9 +67,8 @@ export function ChatbotComparison() {
           {rows.map((row, i) => (
             <div
               key={row.feature}
-              className={`grid grid-cols-[1fr_100px_100px] items-center px-6 py-3.5 sm:grid-cols-[1fr_140px_140px] ${
-                i < rows.length - 1 ? "border-b border-border" : ""
-              }`}
+              className={`grid grid-cols-[1fr_100px_100px] items-center px-6 py-3.5 sm:grid-cols-[1fr_140px_140px] ${i < rows.length - 1 ? "border-b border-border" : ""
+                }`}
             >
               <span className="text-sm text-card-foreground">
                 {row.feature}
