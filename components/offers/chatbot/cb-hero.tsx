@@ -46,12 +46,17 @@ export function ChatbotHero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-
+            <Button size="lg" asChild className="text-base hover:bg-red-600 hover:text-white">
+              <Link href="/book-a-call">
+                Book A Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
             <Button
               size="lg"
               variant="outline"
               asChild
-              className="text-base hover:bg-red-600 hover:text-background"
+              className="border-primary-foreground/20 text-primary-foreground hover:bg-red-600 text-base bg-transparent"
             >
               <Link href="#pricing">See Pricing</Link>
             </Button>
