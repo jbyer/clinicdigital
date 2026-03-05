@@ -54,7 +54,7 @@ export function ChatbotHero() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-red-600"
+              className="text-base hover:bg-red-600 hover:text-background"
             >
               <Link href="#pricing">See Pricing</Link>
             </Button>
