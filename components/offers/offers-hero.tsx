@@ -74,7 +74,7 @@ export function OffersHero() {
             {highlights.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-2 text-sm text-primary"
+                className="flex items-center gap-2 text-sm text-muted-foreground"
               >
                 <CheckCircle2 className="h-4 w-4 shrink-0 text-accent" />
                 {item}
