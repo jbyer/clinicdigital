@@ -52,7 +52,7 @@ const plans = [
   {
     name: "Enterprise SEO Domination",
     icon: Crown,
-    price: 2, 997,
+    price: 2997,
     description:
       "Perfect for: Multi-location practices or high-volume medspas dominating their market",
     features: [
