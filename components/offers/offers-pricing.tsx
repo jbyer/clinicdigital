@@ -4,20 +4,25 @@ import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
 
 const plans = [
   {
-    name: "Starter",
+    name: "Local SEO Foundation",
     icon: Zap,
-    price: 1497,
+    price: 797,
     description:
-      "Essential SEO foundations for practices ready to build a stronger online presence and start attracting more patients organically.",
+      "Single-location practices establishing their local presence",
     features: [
-      "Healthcare keyword research & strategy",
-      "On-page SEO optimization (up to 10 pages)",
-      "Google Business Profile setup & optimization",
-      "Monthly SEO blog article (1 per month)",
-      "Local citation building (20 citations)",
-      "Basic reputation monitoring",
-      "Monthly performance report",
-      "Dedicated account manager",
+      "Google Business Profile Optimization - Complete GBP setup and optimization",
+      "Local Keyword Research - Target 10 primary local keywords ('dentist in [city]', 'chiropractor near me')",
+      "Monthly Local Ranking Tracking - Monitor your map pack positions",
+      "Basic Technical SEO Audit - Identify and fix critical site issues",
+      "On-Page Optimization - Optimize up to 10 pages (meta titles, descriptions, headers, alt text)",
+      "Google Search Console Integration - Track performance and fix indexing issues",
+      "Google Analytics 4 Setup - Install and configure GA4 tracking",
+      "Monthly SEO Report - Simple performance dashboard",
+      "Schema Markup - Local business schema implementation",
+      "Citation Building - 15 directory listings (Healthgrades, WebMD, Yelp, etc.)",
+      "Review Monitoring - Track reviews across platforms",
+      "Content Optimization - Optimize 1 blog post per month",
+
     ],
     cta: "Get Started",
     highlighted: false,
@@ -95,11 +100,10 @@ export function OffersPricing() {
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
-                plan.highlighted
+              className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${plan.highlighted
                   ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
                   : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-              }`}
+                }`}
             >
               {/* Popular badge */}
               {plan.highlighted && (
@@ -113,11 +117,10 @@ export function OffersPricing() {
               {/* Plan header */}
               <div className="flex items-center gap-3">
                 <div
-                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    plan.highlighted
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
                       ? "bg-primary text-primary-foreground"
                       : "bg-primary/10 text-primary"
-                  }`}
+                    }`}
                 >
                   <plan.icon className="h-5 w-5" />
                 </div>
@@ -151,11 +154,10 @@ export function OffersPricing() {
                 <Button
                   size="lg"
                   asChild
-                  className={`w-full text-base ${
-                    plan.highlighted
+                  className={`w-full text-base ${plan.highlighted
                       ? "hover:bg-red-600 hover:text-background"
                       : "bg-foreground text-background hover:bg-foreground/90"
-                  }`}
+                    }`}
                   variant={plan.highlighted ? "default" : "default"}
                 >
                   <Link href="/book-a-call">
@@ -176,14 +178,12 @@ export function OffersPricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
                     <div
-                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                        plan.highlighted ? "bg-primary/15" : "bg-accent/15"
-                      }`}
+                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${plan.highlighted ? "bg-primary/15" : "bg-accent/15"
+                        }`}
                     >
                       <Check
-                        className={`h-3 w-3 ${
-                          plan.highlighted ? "text-primary" : "text-accent"
-                        }`}
+                        className={`h-3 w-3 ${plan.highlighted ? "text-primary" : "text-accent"
+                          }`}
                       />
                     </div>
                     <span className="text-sm leading-snug text-muted-foreground">
