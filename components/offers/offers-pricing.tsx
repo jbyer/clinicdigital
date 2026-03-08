@@ -28,23 +28,23 @@ const plans = [
     highlighted: false,
   },
   {
-    name: "Growth",
+    name: "Growth SEO Accelerator",
     icon: TrendingUp,
-    price: 2997,
+    price: 1497,
     description:
-      "Our most popular plan for practices serious about dominating local search and driving a consistent flow of new patient appointments.",
+      "Perfect for: Growing practices ready to dominate local search",
     features: [
-      "Everything in Starter, plus:",
-      "Advanced technical SEO audit & fixes",
-      "On-page SEO optimization (up to 25 pages)",
-      "AI-powered blog content (4 articles/month)",
-      "Service page copywriting & optimization",
-      "Local citation building (50 citations)",
-      "Automated review request system",
-      "Google Ads management (up to $2k spend)",
-      "Conversion rate optimization",
-      "Bi-weekly strategy calls",
-      "Real-time analytics dashboard",
+      "Everything in Foundation, PLUS:",
+      "Expanded Keyword Tracking - 30 keywords monitored with local heatmap visualization",
+      "Advanced Content Strategy - 2 SEO-optimized blog posts per month (AI-assisted with Content Genius)",
+      "Competitor Analysis - Monthly tracking of top 3 competitors' rankings and backlinks",
+      "Enhanced GBP Management - Weekly GBP post scheduling, Q&A management, photo uploads",
+      "Link Building Campaign - 5 high-quality healthcare backlinks per month",
+      "Local Citation Expansion - 40 directory listings + monthly audit",
+      "On-Page Optimization - Optimize up to 25 pages",
+      "Advanced Schema - FAQ schema, medical procedure schema, review schema",
+      "Bi-Weekly Performance Reports - Detailed analytics dashboard",
+      "Priority Email Support - Response within 24 hours",
     ],
     cta: "Start Growing",
     highlighted: true,
@@ -101,8 +101,8 @@ export function OffersPricing() {
             <article
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${plan.highlighted
-                  ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
-                  : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
+                : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
                 }`}
             >
               {/* Popular badge */}
@@ -118,8 +118,8 @@ export function OffersPricing() {
               <div className="flex items-center gap-3">
                 <div
                   className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-primary/10 text-primary"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-primary/10 text-primary"
                     }`}
                 >
                   <plan.icon className="h-5 w-5" />
@@ -155,8 +155,8 @@ export function OffersPricing() {
                   size="lg"
                   asChild
                   className={`w-full text-base ${plan.highlighted
-                      ? "hover:bg-red-600 hover:text-background"
-                      : "bg-foreground text-background hover:bg-foreground/90"
+                    ? "hover:bg-red-600 hover:text-background"
+                    : "bg-foreground text-background hover:bg-foreground/90"
                     }`}
                   variant={plan.highlighted ? "default" : "default"}
                 >
