@@ -14,10 +14,12 @@ import {
   Search,
   Wrench,
   Palette,
+  Target,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const serviceLinks = [
+  { label: "Lead Generation", href: "/services/lead-generation", icon: Target },
   { label: "AI Marketing Automation", href: "/services/ai-marketing-automation", icon: Megaphone },
   { label: "Client Management (CRM)", href: "/services/client-management", icon: Users },
   { label: "AI Chatbots & Virtual Assistants", href: "/services/ai-chatbots", icon: Bot },
