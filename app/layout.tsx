@@ -10,8 +10,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space
 export const metadata: Metadata = {
   title: 'ClinicDigital.co | Bring More Patients to Your Practice',
   description: 'Custom websites, SEO, and AI solutions designed for healthcare practices. Attract more patients, boost your online presence, and grow your clinic with expert digital services.',
-  google- site - verification: 'ozx5PybwmMocTqgQLJi0wjdAmWzchhs6SFZd2RgciQ4',
-    keywords: []
+  keywords: []
 }
 
 export const viewport: Viewport = {
