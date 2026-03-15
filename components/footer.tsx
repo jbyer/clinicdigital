@@ -30,7 +30,7 @@ const socialLinks = [
   },
   {
     label: "X",
-    href: "https://x.com/clinicdigital",
+    href: "https://x.com/ClinicDigital1",
     icon: XIcon,
   },
 ]
