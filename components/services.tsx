@@ -7,6 +7,7 @@ import {
   Palette,
   CalendarCheck,
   ArrowRight,
+  Phone,
 } from "lucide-react"
 import Link from "next/link"
 
@@ -34,6 +35,14 @@ const services = [
     description:
       "24/7 AI assistants that handle appointment booking, FAQ responses, and lead qualification. Reduce staff workload while maintaining an exceptional patient experience.",
     features: ["24/7 Lead Capture", "Appointment Scheduling", "Intelligent FAQ Responses"],
+  },
+  {
+    icon: Phone,
+    title: "Voice AI",
+    href: "/services/voice-ai",
+    description:
+      "Intelligent voice assistants that answer calls, book appointments, and qualify leads with natural conversation. Never miss a patient call again, even after hours.",
+    features: ["24/7 Call Answering", "Voice-Based Booking", "Natural Conversations"],
   },
   {
     icon: CalendarCheck,
