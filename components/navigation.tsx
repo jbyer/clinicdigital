@@ -15,6 +15,7 @@ import {
   Wrench,
   Palette,
   Target,
+  Phone,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -23,6 +24,7 @@ const serviceLinks = [
   { label: "AI Marketing Automation", href: "/services/ai-marketing-automation", icon: Megaphone },
   { label: "Client Management (CRM)", href: "/services/client-management", icon: Users },
   { label: "AI Chatbots & Virtual Assistants", href: "/services/ai-chatbots", icon: Bot },
+  { label: "Voice AI", href: "/services/voice-ai", icon: Phone },
   { label: "Appointment Automation", href: "/services/appointment-automation", icon: CalendarCheck },
   { label: "SEO", href: "/services/seo", icon: Search },
   { label: "Website Maintenance", href: "/services/website-maintenance", icon: Wrench },
