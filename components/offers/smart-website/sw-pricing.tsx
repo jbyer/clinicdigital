@@ -4,9 +4,9 @@ import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
 
 const plans = [
   {
-    name: "Essential",
+    name: "Starter",
     icon: Zap,
-    setupFee: 2497,
+    setupFee: 1500,
     monthlyFee: 297,
     description:
       "A polished, conversion-focused website for single-location practices ready to establish a powerful online presence and start booking patients online.",
@@ -27,7 +27,7 @@ const plans = [
   {
     name: "Professional",
     icon: TrendingUp,
-    setupFee: 4997,
+    setupFee: 2500,
     monthlyFee: 497,
     description:
       "Our most popular package for practices that want a full Smart Website experience -- AI chatbot, patient intake automation, CRM, and conversion funnels built in.",
@@ -50,7 +50,7 @@ const plans = [
   {
     name: "Enterprise",
     icon: Crown,
-    setupFee: 9997,
+    setupFee: 5500,
     monthlyFee: 797,
     description:
       "The complete digital command center for multi-location practices and medspas demanding a premium online experience with full automation and ongoing growth.",
@@ -99,11 +99,10 @@ export function SmartWebsitePricing() {
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-5 transition-all duration-300 sm:p-8 ${
-                plan.highlighted
-                  ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
-                  : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-              }`}
+              className={`relative flex flex-col rounded-2xl border p-5 transition-all duration-300 sm:p-8 ${plan.highlighted
+                ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
+                : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                }`}
             >
               {/* Popular badge */}
               {plan.highlighted && (
@@ -117,11 +116,10 @@ export function SmartWebsitePricing() {
               {/* Plan header */}
               <div className="flex items-center gap-3">
                 <div
-                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${
-                    plan.highlighted
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-primary/10 text-primary"
-                  }`}
+                  className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-primary/10 text-primary"
+                    }`}
                 >
                   <plan.icon className="h-5 w-5" />
                 </div>
@@ -165,11 +163,10 @@ export function SmartWebsitePricing() {
                 <Button
                   size="lg"
                   asChild
-                  className={`w-full text-base ${
-                    plan.highlighted
-                      ? "hover:bg-red-600 hover:text-background"
-                      : "bg-foreground text-background hover:bg-foreground/90"
-                  }`}
+                  className={`w-full text-base ${plan.highlighted
+                    ? "hover:bg-red-600 hover:text-background"
+                    : "bg-foreground text-background hover:bg-foreground/90"
+                    }`}
                 >
                   <Link href="/book-a-call">
                     {plan.cta}
@@ -189,14 +186,12 @@ export function SmartWebsitePricing() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5">
                     <div
-                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${
-                        plan.highlighted ? "bg-primary/15" : "bg-accent/15"
-                      }`}
+                      className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full ${plan.highlighted ? "bg-primary/15" : "bg-accent/15"
+                        }`}
                     >
                       <Check
-                        className={`h-3 w-3 ${
-                          plan.highlighted ? "text-primary" : "text-accent"
-                        }`}
+                        className={`h-3 w-3 ${plan.highlighted ? "text-primary" : "text-accent"
+                          }`}
                       />
                     </div>
                     <span className="text-sm leading-snug text-muted-foreground">
