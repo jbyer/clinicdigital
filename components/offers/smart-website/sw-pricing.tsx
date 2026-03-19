@@ -95,11 +95,11 @@ export function SmartWebsitePricing() {
         </div>
 
         {/* Price cards */}
-        <div className="mt-14 grid items-stretch gap-6 lg:grid-cols-3">
+        <div className="mt-14 grid items-stretch gap-6 md:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`relative flex flex-col rounded-2xl border p-8 transition-all duration-300 ${
+              className={`relative flex flex-col rounded-2xl border p-5 transition-all duration-300 sm:p-8 ${
                 plan.highlighted
                   ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
                   : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
@@ -133,20 +133,20 @@ export function SmartWebsitePricing() {
               {/* Pricing -- setup + monthly */}
               <div className="mt-6 space-y-3">
                 {/* Setup fee */}
-                <div className="flex items-baseline gap-2">
-                  <span className="font-heading text-4xl font-extrabold tracking-tight text-foreground">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                  <span className="font-heading text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl">
                     ${plan.setupFee.toLocaleString()}
                   </span>
-                  <span className="text-sm font-medium text-muted-foreground">
+                  <span className="text-xs font-medium text-muted-foreground sm:text-sm">
                     one-time setup
                   </span>
                 </div>
                 {/* Monthly fee */}
-                <div className="flex items-baseline gap-2 rounded-lg bg-muted/60 px-4 py-2.5">
-                  <span className="text-lg font-bold text-foreground">
+                <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 rounded-lg bg-muted/60 px-3 py-2 sm:px-4 sm:py-2.5">
+                  <span className="text-base font-bold text-foreground sm:text-lg">
                     + ${plan.monthlyFee}
                   </span>
-                  <span className="text-sm text-muted-foreground">/month</span>
+                  <span className="text-xs text-muted-foreground sm:text-sm">/month</span>
                 </div>
               </div>
 

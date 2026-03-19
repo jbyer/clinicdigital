@@ -122,11 +122,11 @@ export function SmartWebsiteFeatures() {
         </div>
 
         {/* Feature grid */}
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {features.map((feature) => (
             <article
               key={feature.title}
-              className="group flex flex-col rounded-2xl border border-border bg-card p-6 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+              className="group flex flex-col rounded-2xl border border-border bg-card p-5 transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 sm:p-6"
             >
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                 <feature.icon className="h-5 w-5" />

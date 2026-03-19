@@ -50,33 +50,35 @@ export function SmartWebsiteComparison() {
         </div>
 
         {/* Table */}
-        <div className="mt-12 overflow-hidden rounded-2xl border border-border">
-          <div className="grid grid-cols-[1fr_100px_100px] items-center border-b border-border bg-muted/50 px-6 py-4 sm:grid-cols-[1fr_140px_140px]">
-            <span className="text-sm font-semibold text-foreground">
-              Feature
-            </span>
-            <span className="text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-              Generic Site
-            </span>
-            <span className="text-center text-xs font-semibold uppercase tracking-wider text-primary">
-              Smart Website
-            </span>
-          </div>
-
-          {rows.map((row, i) => (
-            <div
-              key={row.feature}
-              className={`grid grid-cols-[1fr_100px_100px] items-center px-6 py-3.5 sm:grid-cols-[1fr_140px_140px] ${
-                i < rows.length - 1 ? "border-b border-border" : ""
-              }`}
-            >
-              <span className="text-sm text-card-foreground">
-                {row.feature}
+        <div className="mt-12 overflow-x-auto rounded-2xl border border-border">
+          <div className="min-w-[400px]">
+            <div className="grid grid-cols-[1fr_80px_80px] items-center border-b border-border bg-muted/50 px-4 py-4 sm:grid-cols-[1fr_120px_120px] sm:px-6">
+              <span className="text-xs font-semibold text-foreground sm:text-sm">
+                Feature
               </span>
-              <StatusIcon supported={row.generic} />
-              <StatusIcon supported={row.smart} />
+              <span className="text-center text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
+                Generic
+              </span>
+              <span className="text-center text-[10px] font-semibold uppercase tracking-wider text-primary sm:text-xs">
+                Smart
+              </span>
             </div>
-          ))}
+
+            {rows.map((row, i) => (
+              <div
+                key={row.feature}
+                className={`grid grid-cols-[1fr_80px_80px] items-center px-4 py-3 sm:grid-cols-[1fr_120px_120px] sm:px-6 sm:py-3.5 ${
+                  i < rows.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                <span className="text-xs text-card-foreground sm:text-sm">
+                  {row.feature}
+                </span>
+                <StatusIcon supported={row.generic} />
+                <StatusIcon supported={row.smart} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
