@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, Monitor } from "lucide-react"
 
 const highlights = [
-  "Done-for-you in 4 weeks",
+  "Done-for-you in 2 to 4 weeks",
   "Built-in SEO & speed optimization",
   "AI chatbot + patient intake automation",
 ]
