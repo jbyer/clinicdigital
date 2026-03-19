@@ -1,5 +1,5 @@
 const stats = [
-  { value: "4 Weeks", label: "Average delivery time" },
+  { value: "2 to 4 Weeks", label: "Average delivery time" },
   { value: "70%+", label: "Traffic is mobile-first" },
   { value: "3x", label: "More bookings vs. brochure sites" },
   { value: "100%", label: "Done-for-you setup" },
