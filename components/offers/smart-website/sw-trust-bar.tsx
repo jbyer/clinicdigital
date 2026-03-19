@@ -9,7 +9,7 @@ export function SmartWebsiteTrustBar() {
   return (
     <section className="bg-foreground py-12 lg:py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-6 sm:gap-8 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-8 sm:gap-8 lg:grid-cols-4">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <p className="font-heading text-2xl font-bold text-primary sm:text-4xl lg:text-5xl">
