@@ -30,7 +30,7 @@ export function SmartWebsiteHero() {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
             <Monitor className="h-3.5 w-3.5 text-accent" />
             <span className="text-xs font-medium tracking-wide uppercase text-primary-foreground/90">
-              Smart Website for Healthcare
+              Smart Website for Healthcare Practices
             </span>
           </div>
 
@@ -62,7 +62,7 @@ export function SmartWebsiteHero() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-primary-foreground/10"
+              className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-red-600"
             >
               <Link href="#pricing">See Pricing</Link>
             </Button>
