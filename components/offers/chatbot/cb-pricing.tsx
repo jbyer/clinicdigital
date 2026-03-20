@@ -173,7 +173,7 @@ export function ChatbotPricing() {
                     : "bg-foreground text-background hover:bg-foreground/90"
                     }`}
                 >
-                  <Link href="">
+                  <Link href="${plan.payment}">
                     {plan.cta}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
