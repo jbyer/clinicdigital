@@ -93,7 +93,7 @@ const features = [
     description:
       "Seamlessly connects to your CRM, EHR, or practice management software. New leads auto-populate your pipeline, trigger follow-up workflows, and update patient records without manual entry.",
     highlights: [
-      "GoHighLevel CRM native",
+      "ClinicDigital's CRM native",
       "Zapier & API integrations",
       "Automated follow-up workflows",
     ],
