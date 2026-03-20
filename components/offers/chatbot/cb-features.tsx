@@ -14,7 +14,7 @@ const features = [
     icon: Bot,
     title: "Conversational AI Engine",
     description:
-      "Powered by GoHighLevel Conversation AI with natural-language understanding. Your chatbot holds human-like conversations, interprets patient intent, and provides accurate answers based on your practice information.",
+      "Powered by Conversation AI with natural-language understanding. Your chatbot holds human-like conversations, interprets patient intent, and provides accurate answers based on your practice information.",
     highlights: [
       "Natural language understanding",
       "Context-aware follow-ups",
