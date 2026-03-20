@@ -32,7 +32,7 @@ const faqs = [
   {
     question: "Is the chatbot HIPAA compliant?",
     answer:
-      "Our chatbots are designed with HIPAA awareness in mind -- encrypted conversations, no unauthorized PHI storage, and audit logging. The Enterprise plan includes full HIPAA-compliant conversation handling with BAA coverage through GoHighLevel. We recommend the Enterprise tier for practices handling sensitive patient data via chat.",
+      "Our chatbots are designed with HIPAA awareness in mind -- encrypted conversations, no unauthorized PHI storage, and audit logging. The Enterprise plan includes full HIPAA-compliant conversation handling with BAA coverage. We recommend the Enterprise tier for practices handling sensitive patient data via chat.",
   },
   {
     question: "What happens after the 4-month minimum term?",
@@ -83,15 +83,13 @@ export function ChatbotFaq() {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-96 pb-5" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-5" : "max-h-0"
+                    }`}
                 >
                   <p className="px-6 text-sm leading-relaxed text-muted-foreground">
                     {faq.answer}
