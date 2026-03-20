@@ -58,7 +58,7 @@ const features = [
     icon: Globe,
     title: "Multi-Channel Deployment",
     description:
-      "Deploy the chatbot on your website, Google Business Profile, Facebook Messenger, Instagram DMs, and SMS -- all from a single dashboard. Meet patients wherever they reach out.",
+      "Your chatbot can be deployed on your website, Google Business Profile, Facebook Messenger, Instagram DMs, and SMS -- all from a single dashboard. Meet patients wherever they reach out.",
     highlights: [
       "Website widget",
       "Social media & SMS channels",
