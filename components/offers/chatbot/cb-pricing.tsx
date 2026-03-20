@@ -24,7 +24,7 @@ const plans = [
     ],
     cta: "Get Started",
     highlighted: false,
-    payment: "https://brand.clinicdigital.co/payment-link/69b8848f942c7dd36efd0a74",
+    payment: "https://buy.stripe.com/aFa4grgXT1rgblJdYj1ck00",
   },
   {
     name: "Professional Chatbot",
