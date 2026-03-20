@@ -74,6 +74,7 @@ const plans = [
     ],
     cta: "Launch Enterprise AI",
     highlighted: false,
+    paymenet: "",
   },
 ]
 
