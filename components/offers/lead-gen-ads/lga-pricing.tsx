@@ -1,3 +1,6 @@
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
@@ -81,6 +84,17 @@ const plans = [
 ]
 
 export function LeadGenAdsPricing() {
+  const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly")
+  
+  // 15% discount for yearly billing
+  const getPrice = (monthlyPrice: number) => {
+    if (billingCycle === "yearly") {
+      const yearlyPrice = monthlyPrice * 12 * 0.85 // 15% discount
+      return Math.round(yearlyPrice)
+    }
+    return monthlyPrice
+  }
+
   return (
     <section id="pricing" className="bg-card py-16 lg:py-24">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -98,6 +112,44 @@ export function LeadGenAdsPricing() {
             HIPAA-aware campaigns that fill your schedule — not just your inbox.
             Average patient LTV of $10,000–$20,000 makes every lead count.
           </p>
+        </div>
+
+        {/* Billing Toggle */}
+        <div className="mt-10 flex items-center justify-center gap-4">
+          <span
+            className={`text-sm font-medium transition-colors ${
+              billingCycle === "monthly" ? "text-foreground" : "text-muted-foreground"
+            }`}
+          >
+            Monthly
+          </span>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={billingCycle === "yearly"}
+            onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
+            className={`relative inline-flex h-7 w-14 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+              billingCycle === "yearly" ? "bg-primary" : "bg-muted"
+            }`}
+          >
+            <span
+              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-background shadow-lg ring-0 transition-transform ${
+                billingCycle === "yearly" ? "translate-x-7" : "translate-x-1"
+              }`}
+            />
+          </button>
+          <span
+            className={`text-sm font-medium transition-colors ${
+              billingCycle === "yearly" ? "text-foreground" : "text-muted-foreground"
+            }`}
+          >
+            Yearly
+          </span>
+          {billingCycle === "yearly" && (
+            <span className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent">
+              Save 15%
+            </span>
+          )}
         </div>
 
         {/* Price cards */}
@@ -138,12 +190,17 @@ export function LeadGenAdsPricing() {
               <div className="mt-6 space-y-3">
                 <div className="flex items-baseline gap-2">
                   <span className="font-heading text-4xl font-extrabold tracking-tight text-foreground">
-                    ${plan.price}
+                    ${getPrice(plan.price).toLocaleString()}
                   </span>
                   <span className="text-sm font-medium text-muted-foreground">
-                    /month
+                    {billingCycle === "yearly" ? "/year" : "/month"}
                   </span>
                 </div>
+                {billingCycle === "yearly" && (
+                  <p className="text-xs text-accent font-medium">
+                    ${Math.round(plan.price * 0.85).toLocaleString()}/mo billed annually
+                  </p>
+                )}
                 <div className="flex items-baseline gap-2 rounded-lg bg-muted/60 px-4 py-2.5">
                   <span className="text-lg font-bold text-foreground">
                     {plan.duration}
