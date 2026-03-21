@@ -91,12 +91,12 @@ export function LeadGenAdsPricing() {
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             <span className="text-balance">
-              Simple monthly pricing. You control ad spend.
+              Patient Lead Generation<br />Built for Medical Practices
             </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Transparent monthly management fees. Your ad spend goes
-            directly to Facebook/Google -- we never mark it up or take a cut.
+            HIPAA-aware campaigns that fill your schedule — not just your inbox.
+            Average patient LTV of $10,000–$20,000 makes every lead count.
           </p>
         </div>
 
