@@ -78,9 +78,9 @@ const features = [
   },
   {
     icon: Clock,
-    title: "3-4 Week Campaign Window",
+    title: "4 Months Campaign Window",
     description:
-      "Campaigns run for a focused 3-4 week period to generate a concentrated burst of leads. Perfect for filling your schedule, launching promotions, or testing new services.",
+      "Campaigns run for a focused 4 month period to generate a concentrated burst of leads. Perfect for filling your schedule, launching promotions, or testing new services.",
     highlights: [
       "Focused campaign duration",
       "Burst of new patient inquiries",
