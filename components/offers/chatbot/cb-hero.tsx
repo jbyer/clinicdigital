@@ -36,8 +36,7 @@ export function ChatbotHero() {
 
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
-              Turn Website Visitors into {" "}
-              <span className="text-primary">Booked Patients </span> 24/7 with a <span className="text-primary">HIPAA-Aware Chatbot</span>
+              Book Patients <span className="text-primary">24/7</span> with a <span className="text-primary">HIPAA-Aware Chatbot</span>
             </span>
           </h1>
 
