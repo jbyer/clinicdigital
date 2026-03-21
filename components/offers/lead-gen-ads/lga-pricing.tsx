@@ -51,7 +51,7 @@ const plans = [
   {
     name: "Blitz Campaign",
     icon: Crown,
-    price: 1, 296,
+    price: 1296,
     duration: "4 weeks",
     description:
       "Ideal for grand openings, new service launches, or aggressive growth goals",
