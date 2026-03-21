@@ -1,7 +1,5 @@
 const stats = [
-  { value: "$250-$800", label: "One-time campaign setup" },
-  { value: "3-4 Weeks", label: "Campaign duration" },
-  { value: "0%", label: "Monthly retainer fees" },
+  { value: "4 Months Minimum", label: "Campaign duration" },
   { value: "5-7 Days", label: "Campaign goes live" },
 ]
 
