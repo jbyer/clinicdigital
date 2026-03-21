@@ -51,12 +51,12 @@ const plans = [
   {
     name: "Blitz Campaign",
     icon: Crown,
-    price: 1296,
+    price: 1, 296,
     duration: "4 weeks",
     description:
       "Ideal for grand openings, new service launches, or aggressive growth goals",
     features: [
-      "All platforms (Facebook, Instagram, Google Search & Display)",
+      "All platforms (Facebook, Instagram, TikTok, Google Search & Display)",
       "Unlimited services or promotions",
       "Hyper-targeted custom & lookalike audiences",
       "6+ ad variations with aggressive testing",
