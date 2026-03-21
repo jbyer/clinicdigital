@@ -149,7 +149,7 @@ export function LeadGenAdsPricing() {
             </span>
           </div>
           <span 
-            className={`rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent transition-opacity ${
+            className={`rounded-full bg-red-100 px-2.5 py-1 text-xs font-semibold text-red-600 transition-opacity ${
               billingCycle === "yearly" ? "opacity-100" : "opacity-0"
             }`}
             aria-hidden={billingCycle !== "yearly"}
@@ -203,7 +203,7 @@ export function LeadGenAdsPricing() {
                   </span>
                 </div>
                 {billingCycle === "yearly" && (
-                  <p className="text-xs text-accent font-medium">
+                  <p className="text-xs text-red-600 font-medium">
                     ${Math.round(plan.price * 0.85).toLocaleString()}/mo billed annually
                   </p>
                 )}
