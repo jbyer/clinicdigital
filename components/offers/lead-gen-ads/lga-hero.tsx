@@ -41,7 +41,7 @@ export function LeadGenAdsHero() {
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-            Done-for-you ad campaigns on Facebook, Instagram & Google that flood your practice with qualified leads. One-time setup fee, no monthly retainers, no long-term contracts. Just results.
+            Done-for-you ad campaigns on Facebook, Instagram, Google or TikTok that flood your practice with qualified leads. One-time setup fee, no monthly retainers, no long-term contracts. Just results.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
