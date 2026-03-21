@@ -115,41 +115,47 @@ export function LeadGenAdsPricing() {
         </div>
 
         {/* Billing Toggle */}
-        <div className="mt-10 flex items-center justify-center gap-4">
-          <span
-            className={`text-sm font-medium transition-colors ${
-              billingCycle === "monthly" ? "text-foreground" : "text-muted-foreground"
-            }`}
-          >
-            Monthly
-          </span>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={billingCycle === "yearly"}
-            onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
-            className={`relative inline-flex h-7 w-14 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
-              billingCycle === "yearly" ? "bg-primary" : "bg-muted"
-            }`}
-          >
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <div className="flex items-center gap-4">
             <span
-              className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-background shadow-lg ring-0 transition-transform ${
-                billingCycle === "yearly" ? "translate-x-7" : "translate-x-1"
+              className={`text-sm font-medium transition-colors ${
+                billingCycle === "monthly" ? "text-foreground" : "text-muted-foreground"
               }`}
-            />
-          </button>
-          <span
-            className={`text-sm font-medium transition-colors ${
-              billingCycle === "yearly" ? "text-foreground" : "text-muted-foreground"
-            }`}
-          >
-            Yearly
-          </span>
-          {billingCycle === "yearly" && (
-            <span className="rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent">
-              Save 15%
+            >
+              Monthly
             </span>
-          )}
+            <button
+              type="button"
+              role="switch"
+              aria-checked={billingCycle === "yearly"}
+              aria-label="Toggle yearly billing"
+              onClick={() => setBillingCycle(billingCycle === "monthly" ? "yearly" : "monthly")}
+              className={`relative inline-flex h-7 w-14 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                billingCycle === "yearly" ? "bg-primary" : "bg-muted"
+              }`}
+            >
+              <span
+                className={`pointer-events-none inline-block h-5 w-5 transform rounded-full bg-background shadow-lg ring-0 transition-transform ${
+                  billingCycle === "yearly" ? "translate-x-7" : "translate-x-1"
+                }`}
+              />
+            </button>
+            <span
+              className={`text-sm font-medium transition-colors ${
+                billingCycle === "yearly" ? "text-foreground" : "text-muted-foreground"
+              }`}
+            >
+              Yearly
+            </span>
+          </div>
+          <span 
+            className={`rounded-full bg-accent/15 px-2.5 py-1 text-xs font-semibold text-accent transition-opacity ${
+              billingCycle === "yearly" ? "opacity-100" : "opacity-0"
+            }`}
+            aria-hidden={billingCycle !== "yearly"}
+          >
+            Save 15%
+          </span>
         </div>
 
         {/* Price cards */}
