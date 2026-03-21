@@ -6,7 +6,7 @@ const plans = [
   {
     name: "Starter Campaign",
     icon: Zap,
-    price: 250,
+    price: 180,
     duration: "3 weeks",
     description:
       "Perfect for single-location practices testing paid ads for the first time",
@@ -21,14 +21,14 @@ const plans = [
       "End-of-campaign performance summary",
       "You control your own ad spend budget",
     ],
-    recommended: "$300-$500 ad spend",
+    recommended: "$900 ad spend",
     cta: "Start Starter Campaign",
     highlighted: false,
   },
   {
     name: "Growth Campaign",
     icon: TrendingUp,
-    price: 500,
+    price: 513,
     duration: "4 weeks",
     description:
       "Best for practices ready to generate a consistent flow of new patient leads",
@@ -44,14 +44,14 @@ const plans = [
       "Detailed end-of-campaign report with insights",
       "You control your own ad spend budget",
     ],
-    recommended: "$500-$1,000 ad spend",
+    recommended: "$2700 ad spend",
     cta: "Launch Growth Campaign",
     highlighted: true,
   },
   {
     name: "Blitz Campaign",
     icon: Crown,
-    price: 800,
+    price: 1296,
     duration: "4 weeks",
     description:
       "Ideal for grand openings, new service launches, or aggressive growth goals",
@@ -68,7 +68,7 @@ const plans = [
       "Post-campaign strategy recommendations",
       "You control your own ad spend budget",
     ],
-    recommended: "$1,000-$2,000 ad spend",
+    recommended: "$7200 ad spend",
     cta: "Launch Blitz Campaign",
     highlighted: false,
   },
