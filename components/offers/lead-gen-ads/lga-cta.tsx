@@ -46,9 +46,6 @@ export function LeadGenAdsCta() {
           </Button>
         </div>
 
-        <p className="mt-6 text-sm text-primary-foreground/50">
-          One-time setup from $250. No monthly fees. Results in 3-4 weeks.
-        </p>
       </div>
     </section>
   )
