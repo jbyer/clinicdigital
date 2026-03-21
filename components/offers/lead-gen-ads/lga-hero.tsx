@@ -36,12 +36,12 @@ export function LeadGenAdsHero() {
 
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
-              Get <span className="text-primary">New Patient Leads</span> in Just 3-4 Weeks
+              Get <span className="text-primary">New Patient Leads</span> Consistently
             </span>
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-            Done-for-you ad campaigns on Facebook, Instagram, Google or TikTok that flood your practice with qualified leads. One-time setup fee, no monthly retainers, no long-term contracts. Just results.
+            Done-for-you ad campaigns on Facebook, Instagram, Google or TikTok that flood your practice with qualified leads.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
