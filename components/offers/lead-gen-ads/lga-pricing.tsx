@@ -157,6 +157,16 @@ export function LeadGenAdsPricing() {
                 Recommended ad spend: {plan.recommended}
               </p>
 
+              {/* Estimated Leads */}
+              <p className="mt-2 text-xs font-medium text-primary">
+                Estimated Leads: {plan.leads}
+              </p>
+
+              {/* Estimated Cost Per Lead */}
+              <p className="mt-2 text-xs font-medium text-primary">
+                Estimated Cost per Lead: {plan.cpl}
+              </p>
+
               {/* Description */}
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
                 {plan.description}
