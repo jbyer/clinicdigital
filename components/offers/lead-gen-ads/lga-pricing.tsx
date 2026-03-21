@@ -7,7 +7,7 @@ const plans = [
     name: "Local Pulse",
     icon: Zap,
     price: 1497,
-    duration: "3 weeks",
+    duration: "4-month minimum engagement",
     description:
       "Perfect for single-location practices ready to grow",
     features: [
@@ -31,7 +31,7 @@ const plans = [
     name: "Growth Engine",
     icon: TrendingUp,
     price: 2997,
-    duration: "4 weeks",
+    duration: "4-month minimum engagement",
     description:
       "For practices ready to dominate their local market",
     features: [
@@ -56,7 +56,7 @@ const plans = [
     name: "Blitz Campaign",
     icon: Crown,
     price: 1296,
-    duration: "4 weeks",
+    duration: "4-month minimum engagement",
     description:
       "Ideal for grand openings, new service launches, or aggressive growth goals",
     features: [
