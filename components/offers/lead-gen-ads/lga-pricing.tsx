@@ -85,11 +85,11 @@ export function LeadGenAdsPricing() {
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             <span className="text-balance">
-              One-time setup. No monthly fees. You control ad spend.
+              Simple monthly pricing. You control ad spend.
             </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Pay once for campaign setup and creative. Your ad spend goes
+            Transparent monthly management fees. Your ad spend goes
             directly to Facebook/Google -- we never mark it up or take a cut.
           </p>
         </div>
@@ -135,7 +135,7 @@ export function LeadGenAdsPricing() {
                     ${plan.price}
                   </span>
                   <span className="text-sm font-medium text-muted-foreground">
-                    one-time
+                    /month
                   </span>
                 </div>
                 <div className="flex items-baseline gap-2 rounded-lg bg-muted/60 px-4 py-2.5">
@@ -208,7 +208,7 @@ export function LeadGenAdsPricing() {
             <span className="font-semibold text-foreground">
               Important:
             </span>{" "}
-            These prices cover campaign setup, creative, targeting, and optimization only.{" "}
+            These monthly prices cover campaign management, creative, targeting, and optimization.{" "}
             <span className="font-semibold text-foreground">
               Ad spend is separate
             </span>{" "}
