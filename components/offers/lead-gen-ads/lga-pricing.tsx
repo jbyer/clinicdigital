@@ -4,12 +4,12 @@ import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
 
 const plans = [
   {
-    name: "Starter Campaign",
+    name: "Local Pulse",
     icon: Zap,
-    price: 180,
+    price: 1497 / mo,
     duration: "3 weeks",
     description:
-      "Perfect for single-location practices testing paid ads for the first time",
+      "Perfect for single-location practices ready to grow",
     features: [
       "Single ad platform (Facebook/Instagram OR Google)",
       "1 target service or promotion",
