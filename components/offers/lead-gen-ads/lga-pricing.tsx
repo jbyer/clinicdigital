@@ -6,7 +6,7 @@ const plans = [
   {
     name: "Local Pulse",
     icon: Zap,
-    price: 1497 / mo,
+    price: 1497,
     duration: "3 weeks",
     description:
       "Perfect for single-location practices ready to grow",
