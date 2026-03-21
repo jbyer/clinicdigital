@@ -5,20 +5,16 @@ import { ChevronDown } from "lucide-react"
 
 const faqs = [
   {
-    question: "What exactly do I get for the setup fee?",
+    question: "What exactly do I get?",
     answer:
       "You get complete campaign setup including audience research, targeting configuration, ad copy, creative design (images/graphics), lead capture form setup, conversion tracking, and campaign launch. Basically, everything needed to get your ads live and generating leads -- except the ad spend itself.",
   },
   {
     question: "How much should I budget for ad spend?",
     answer:
-      "We recommend $300-$500 for Starter campaigns, $500-$1,000 for Growth campaigns, and $1,000-$2,000 for Blitz campaigns. This goes directly to Facebook/Google -- we don't take a cut. Higher ad spend generally means more leads, but we optimize to get the best cost per lead regardless of budget.",
+      "We recommend $900-$1500 for Local Pulse campaigns, $1800-$4,000 for Growth Engine campaigns, and $4,500-$9,000 for Clinic Authority campaigns. This goes directly to Facebook/Google/TikTok -- we don't take a cut. Higher ad spend generally means more leads, but we optimize to get the best cost per lead regardless of budget.",
   },
-  {
-    question: "Why is there no monthly management fee?",
-    answer:
-      "This is an ads-only lead generation campaign, not a full-service marketing retainer. We set up and optimize a focused 3-4 week campaign, then hand it off. You get the leads, the report, and all the assets. If you want to run another campaign later, you book another one. Simple.",
-  },
+
   {
     question: "What happens after the campaign ends?",
     answer:
@@ -32,7 +28,7 @@ const faqs = [
   {
     question: "How quickly can my campaign go live?",
     answer:
-      "Standard campaigns go live within 5-7 business days after our strategy call. Blitz campaigns have priority setup and can launch in 3-5 days. This includes creative development, account setup, and platform approval time.",
+      "Standard campaigns go live within 5-7 business days after our strategy call. Clinic Authority campaigns have priority setup and can launch in 3-5 days. This includes creative development, account setup, and platform approval time.",
   },
   {
     question: "What if I need more than just ads?",
@@ -83,15 +79,13 @@ export function LeadGenAdsFaq() {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-96 pb-5" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-5" : "max-h-0"
+                    }`}
                 >
                   <p className="px-6 text-sm leading-relaxed text-muted-foreground">
                     {faq.answer}
