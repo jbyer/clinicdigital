@@ -26,7 +26,7 @@ export function ChatbotHero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-start px-6 pt-32 lg:px-8 lg:pt-36">
-        <div className="max-w-4xl">
+        <div className="max-w-6xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
             <Bot className="h-3.5 w-3.5 text-accent" />
             <span className="text-xs font-medium tracking-wide uppercase text-primary-foreground/90">
