@@ -27,7 +27,7 @@ const steps = [
     step: "04",
     title: "Optimization & Results",
     description:
-      "Throughout the 3-4 week campaign, we optimize for best-performing ads, audiences, and placements. You receive leads directly and a full performance report at the end.",
+      "Throughout the 4 months campaign, we optimize for best-performing ads, audiences, and placements. You receive leads directly and a full performance report at the end.",
   },
 ]
 
