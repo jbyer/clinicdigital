@@ -7,7 +7,7 @@ const stats = [
 
 export function OffersTrustBar() {
   return (
-    <section className="border-b border-border bg-card py-12 lg:py-14">
+    <section className="bg-foreground bg-card py-12 lg:py-14">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat) => (
