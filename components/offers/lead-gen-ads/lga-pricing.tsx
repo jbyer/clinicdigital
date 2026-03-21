@@ -30,7 +30,7 @@ const plans = [
   {
     name: "Growth Engine",
     icon: TrendingUp,
-    price: 513,
+    price: 2997,
     duration: "4 weeks",
     description:
       "For practices ready to dominate their local market",
@@ -46,10 +46,10 @@ const plans = [
       "Review generation campaign",
       "Bi-weekly performance report",
     ],
-    recommended: "$2700 ad spend",
-    leads: "15 - 30",
-    cpl: "$40 - $80",
-    cta: "Launch Growth Campaign",
+    recommended: "$1800 - $4000 ad spend",
+    leads: "40 - 80",
+    cpl: "$40 - $75",
+    cta: "Launch Growth Engine Campaign",
     highlighted: true,
   },
   {
