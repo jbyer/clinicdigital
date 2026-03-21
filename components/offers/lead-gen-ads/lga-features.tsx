@@ -69,9 +69,9 @@ const features = [
     icon: Globe,
     title: "Multi-Platform Reach",
     description:
-      "Run ads across Facebook, Instagram, and Google to maximize your reach. We select the platforms that perform best for your specific service and location.",
+      "Run ads across Facebook, Instagram, TikTok and Google to maximize your reach. We select the platforms that perform best for your specific service and location.",
     highlights: [
-      "Facebook & Instagram ads",
+      "Facebook, TikTok & Instagram ads",
       "Google Search & Display",
       "Platform optimization",
     ],
