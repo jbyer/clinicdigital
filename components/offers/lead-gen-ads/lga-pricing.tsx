@@ -148,7 +148,7 @@ export function LeadGenAdsPricing() {
                   <span className="text-lg font-bold text-foreground">
                     {plan.duration}
                   </span>
-                  <span className="text-sm text-muted-foreground">campaign duration</span>
+
                 </div>
               </div>
 
