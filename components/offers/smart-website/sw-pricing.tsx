@@ -89,7 +89,7 @@ export function SmartWebsitePricing() {
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Every plan includes a one-time setup fee for custom design and
-            development, plus a monthly service fee for hosting, maintenance,
+            development, plus a monthly service fee for hosting if you don't have a hosting provder, maintenance,
             AI tools, and ongoing optimization.
           </p>
         </div>
