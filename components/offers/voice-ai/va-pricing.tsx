@@ -29,7 +29,7 @@ const plans = [
     name: "Professional Voice AI",
     icon: TrendingUp,
     setupFee: 997,
-    monthlyFee: 497,
+    monthlyFee: 797,
     description:
       "For growing practices ready to automate patient acquisition",
     features: [
@@ -53,7 +53,7 @@ const plans = [
     name: "Enterprise Voice AI",
     icon: Crown,
     setupFee: 1997,
-    monthlyFee: 897,
+    monthlyFee: 1297,
     description:
       "For multi-location practices or high-volume clinics",
     features: [
