@@ -1,6 +1,7 @@
 const stats = [
   { value: "4 Months Minimum", label: "Campaign duration" },
   { value: "5-7 Days", label: "Campaign goes live" },
+  { value: "5-7 Days", label: "Campaign goes live" },
 ]
 
 export function LeadGenAdsTrustBar() {
