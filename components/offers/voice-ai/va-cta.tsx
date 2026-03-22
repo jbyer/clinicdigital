@@ -46,9 +46,7 @@ export function VoiceAICta() {
           </Button>
         </div>
 
-        <p className="mt-6 text-sm text-primary-foreground/50">
-          No obligation. Hear a live demo of your custom Voice AI before you commit.
-        </p>
+
       </div>
     </section>
   )
