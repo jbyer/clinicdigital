@@ -33,17 +33,6 @@ const features = [
     ],
   },
   {
-    icon: DollarSign,
-    title: "One-Time Investment",
-    description:
-      "Pay once for campaign setup and creative. No monthly management fees, no retainers. You control your own ad spend budget directly with Facebook/Google.",
-    highlights: [
-      "No monthly retainers",
-      "You own the ad account",
-      "Transparent pricing",
-    ],
-  },
-  {
     icon: Users,
     title: "High-Intent Lead Capture",
     description:
