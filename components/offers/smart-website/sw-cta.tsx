@@ -46,9 +46,6 @@ export function SmartWebsiteCta() {
           </Button>
         </div>
 
-        <p className="mt-6 text-sm text-primary-foreground/50">
-          No obligation. See your custom Smart Website mockup before you commit.
-        </p>
       </div>
     </section>
   )
