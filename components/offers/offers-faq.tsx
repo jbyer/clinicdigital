@@ -46,7 +46,7 @@ const faqs = [
   {
     question: "Do I need a long-term contract?",
     answer:
-      "We offer flexible month-to-month agreements after an initial onboarding period. SEO is a long-term investment, so we recommend at least a 6-month commitment to see the full impact, but we never lock you into rigid contracts. Our retention rate speaks for itself -- 97% of clients stay.",
+      "We offer flexible month-to-month agreements after an initial 4 months onboarding period. SEO is a long-term investment, so we recommend at least a 4-month commitment to see the full impact, but we never lock you into rigid contracts. Our retention rate speaks for itself -- 97% of clients stay.",
   },
 ]
 
@@ -87,15 +87,13 @@ export function OffersFaq() {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-96 pb-5" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-5" : "max-h-0"
+                    }`}
                 >
                   <p className="px-6 text-sm leading-relaxed text-muted-foreground">
                     {faq.answer}
