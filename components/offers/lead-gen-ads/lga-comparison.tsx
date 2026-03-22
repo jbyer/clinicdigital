@@ -1,7 +1,6 @@
 import { Check, X } from "lucide-react"
 
 const rows = [
-  { feature: "One-time payment (no retainers)", agency: false, us: true },
   { feature: "Campaign live in under 1 week", agency: false, us: true },
   { feature: "You own your ad account", agency: false, us: true },
   { feature: "Transparent ad spend (no markup)", agency: false, us: true },
