@@ -74,7 +74,7 @@ const plans = [
     ],
     cta: "Launch Enterprise AI",
     highlighted: false,
-    paymenet: "https://brand.clinicdigital.co/payment-link/69bcd37cf35c540e14833a6c",
+    paymenet: "https://buy.stripe.com/4gM00b6jf6LAcpN2fB1ck02",
   },
 ]
 
