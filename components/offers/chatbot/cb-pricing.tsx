@@ -49,7 +49,7 @@ const plans = [
     ],
     cta: "Deploy My AI Chatbot",
     highlighted: true,
-    payment: "https://brand.clinicdigital.co/payment-link/69bcd200c1b7344f595a5ff6",
+    payment: "https://buy.stripe.com/5kQ14f8rnd9YcpN7zV1ck01",
   },
   {
     name: "Enterprise Chatbot",
