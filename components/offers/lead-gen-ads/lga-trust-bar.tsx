@@ -2,7 +2,7 @@ const stats = [
   { value: "4 Months Minimum", label: "Campaign duration" },
   { value: "5-7 Days", label: "Campaign goes live" },
   { value: "Multi Platform", label: "Advertising Networks" },
-  { value: "Performace Report", label: "Bi Weekly" },
+  { value: "Performace Reports", label: "Bi-Weekly" },
 ]
 
 export function LeadGenAdsTrustBar() {
