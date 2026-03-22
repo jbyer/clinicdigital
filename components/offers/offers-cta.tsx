@@ -46,9 +46,7 @@ export function OffersCta() {
           </Button>
         </div>
 
-        <p className="mt-6 text-sm text-primary-foreground/50">
-          No contracts required. Cancel anytime. 97% client retention rate.
-        </p>
+
       </div>
     </section>
   )
