@@ -152,7 +152,145 @@ export default function TermsOfServicePage() {
         </ul>
       </LegalSection>
 
-      <LegalSection heading="7. Third-Party Services and Platforms">
+      <LegalSection heading="7. Affiliate Program">
+        <p>
+          ClinicDigital.co offers an Affiliate Program that allows approved partners ("Affiliates")
+          to earn commissions by referring new clients to our services. Participation in the
+          Affiliate Program is subject to these Terms and the following specific conditions:
+        </p>
+
+        <p className="font-semibold text-foreground mt-4">7.1 Eligibility and Enrollment</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            The Affiliate Program is open to individuals and businesses who complete our application
+            process and are approved by ClinicDigital.co at our sole discretion.
+          </li>
+          <li>
+            We reserve the right to reject any application or terminate any affiliate relationship
+            at any time without providing a reason.
+          </li>
+          <li>
+            Affiliates must provide accurate and complete information during the application process
+            and promptly update any changes.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.2 Commission Structure</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            <strong>Project Commissions:</strong> Affiliates earn a commission of 10% of the total
+            project value for one-time services such as website design, chatbot setup, Voice AI
+            implementation, and other project-based work.
+          </li>
+          <li>
+            <strong>Recurring Commissions:</strong> Affiliates earn a commission of 10% of the
+            monthly retainer fees for ongoing services such as marketing automation, lead
+            generation, SEO, and website maintenance. Recurring commissions continue for the
+            lifetime of the referred client relationship, as long as the client remains an active,
+            paying customer.
+          </li>
+          <li>
+            Commission rates are subject to change with 30 days prior written notice to active
+            Affiliates. Changes will apply only to new referrals made after the effective date.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.3 Referral Tracking and Attribution</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            Referrals must be made using the unique tracking link or referral code provided to each
+            Affiliate, or through a direct introduction where the referred party identifies the
+            Affiliate during initial contact.
+          </li>
+          <li>
+            Tracking cookies have a duration of 90 days. If a referred prospect does not convert
+            within 90 days of clicking the Affiliate's link, the referral may not be attributed.
+          </li>
+          <li>
+            ClinicDigital.co has sole discretion in determining referral attribution in cases of
+            dispute or ambiguity.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.4 Payment Terms</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            Commissions are calculated and paid on a monthly basis, approximately 15 days after the
+            end of each calendar month.
+          </li>
+          <li>
+            The minimum payout threshold is $50. Commissions below this amount will roll over to
+            the following month.
+          </li>
+          <li>
+            Payments are made via PayPal, Stripe, or direct bank transfer, as selected by the
+            Affiliate.
+          </li>
+          <li>
+            Affiliates are responsible for any applicable taxes on commission earnings. We may
+            request tax documentation (such as a W-9 form for U.S. Affiliates) before processing
+            payments.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.5 Affiliate Conduct and Restrictions</p>
+        <p>Affiliates agree to the following guidelines:</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            Affiliates may not use misleading, deceptive, or unethical marketing practices to
+            generate referrals.
+          </li>
+          <li>
+            Affiliates may not bid on ClinicDigital.co branded keywords (e.g., "ClinicDigital,"
+            "Clinic Digital") in paid advertising campaigns without prior written approval.
+          </li>
+          <li>
+            Affiliates may not send unsolicited emails (spam) or violate any anti-spam laws in
+            connection with promoting ClinicDigital.co.
+          </li>
+          <li>
+            Affiliates may not make false claims about our services, guarantees, or results.
+          </li>
+          <li>
+            Affiliates may not refer themselves, their own businesses, or create fake referrals to
+            earn commissions. Self-referrals will result in immediate termination and forfeiture of
+            unpaid commissions.
+          </li>
+          <li>
+            Affiliates must disclose their affiliate relationship when promoting ClinicDigital.co,
+            in compliance with FTC guidelines and applicable laws.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.6 Termination of Affiliate Status</p>
+        <ul className="ml-5 list-disc flex flex-col gap-2">
+          <li>
+            Either party may terminate the affiliate relationship at any time with written notice.
+          </li>
+          <li>
+            Upon termination, the Affiliate will receive any commissions earned and owed up to the
+            termination date, provided the minimum payout threshold is met.
+          </li>
+          <li>
+            Termination for cause (e.g., violation of these Terms, fraudulent activity) may result
+            in forfeiture of unpaid commissions.
+          </li>
+          <li>
+            Recurring commissions cease upon termination of the affiliate relationship, regardless
+            of whether referred clients remain active.
+          </li>
+        </ul>
+
+        <p className="font-semibold text-foreground mt-4">7.7 Modifications to the Program</p>
+        <p>
+          ClinicDigital.co reserves the right to modify, suspend, or discontinue the Affiliate
+          Program at any time. We will provide reasonable notice of material changes to active
+          Affiliates. Continued participation after changes take effect constitutes acceptance of
+          the modified terms.
+        </p>
+      </LegalSection>
+
+      <LegalSection heading="8. Third-Party Services and Platforms">
         <p>
           Our services utilize third-party platforms, including but not limited to GoHighLevel,
           hosting providers, analytics tools, and payment processors. Your use of these third-party
@@ -165,7 +303,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="8. Limitation of Liability">
+      <LegalSection heading="9. Limitation of Liability">
         <p>
           To the maximum extent permitted by applicable law, ClinicDigital.co and its officers,
           directors, employees, agents, and affiliates shall not be liable for:
@@ -193,7 +331,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="9. Disclaimer of Warranties">
+      <LegalSection heading="10. Disclaimer of Warranties">
         <p>
           Our website and services are provided on an "as is" and "as available" basis without
           warranties of any kind, whether express or implied, including but not limited to implied
@@ -207,7 +345,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="10. Indemnification">
+      <LegalSection heading="11. Indemnification">
         <p>
           You agree to indemnify, defend, and hold harmless ClinicDigital.co and its officers,
           directors, employees, agents, and affiliates from and against any and all claims,
@@ -223,7 +361,7 @@ export default function TermsOfServicePage() {
         </ul>
       </LegalSection>
 
-      <LegalSection heading="11. Termination">
+      <LegalSection heading="12. Termination">
         <p>
           We may terminate or suspend your access to our services immediately, without prior notice
           or liability, for any reason, including but not limited to:
@@ -248,7 +386,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="12. Governing Law and Dispute Resolution">
+      <LegalSection heading="13. Governing Law and Dispute Resolution">
         <p>
           These Terms shall be governed by and construed in accordance with the laws of the United
           States, without regard to conflict of law principles. Any disputes arising out of or
@@ -262,7 +400,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="13. Severability">
+      <LegalSection heading="14. Severability">
         <p>
           If any provision of these Terms is found to be invalid, illegal, or unenforceable by a
           court of competent jurisdiction, the remaining provisions shall continue in full force and
@@ -271,7 +409,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="14. Entire Agreement">
+      <LegalSection heading="15. Entire Agreement">
         <p>
           These Terms, together with our Privacy Policy and any separate service agreements or
           statements of work, constitute the entire agreement between you and ClinicDigital.co
@@ -280,7 +418,7 @@ export default function TermsOfServicePage() {
         </p>
       </LegalSection>
 
-      <LegalSection heading="15. Contact Us">
+      <LegalSection heading="16. Contact Us">
         <p>
           If you have any questions or concerns regarding these Terms of Service, please contact
           us:
