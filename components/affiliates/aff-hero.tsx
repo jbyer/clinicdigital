@@ -11,7 +11,7 @@ const highlights = [
 
 export function AffiliatesHero() {
   return (
-    <section className="relative h-[600px] overflow-hidden">
+    <section className="relative min-h-[700px] overflow-hidden lg:min-h-[650px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
