@@ -8,10 +8,19 @@ import {
   CalendarCheck,
   ArrowRight,
   Phone,
+  Target,
 } from "lucide-react"
 import Link from "next/link"
 
 const services = [
+  {
+    icon: Target,
+    title: "Lead Generation",
+    href: "/services/lead-generation",
+    description:
+      "Capture and convert more high-value patient leads with smart forms, automated follow-ups, and multi-channel nurturing. Turn website visitors into booked appointments.",
+    features: ["Smart Lead Capture Forms", "Automated Follow-Up", "Lead Scoring & Qualification"],
+  },
   {
     icon: Megaphone,
     title: "AI Marketing Automation",
