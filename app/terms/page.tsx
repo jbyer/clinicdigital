@@ -185,7 +185,7 @@ export default function TermsOfServicePage() {
           <li>
             <strong>Recurring Commissions:</strong> Affiliates earn a commission of 10% of the
             monthly retainer fees for ongoing services such as marketing automation, lead
-            generation, SEO, and website maintenance. Recurring commissions continue for the
+            generation, SEO, voice AI and smart websites. Recurring commissions continue for the
             lifetime of the referred client relationship, as long as the client remains an active,
             paying customer.
           </li>
