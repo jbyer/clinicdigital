@@ -73,7 +73,12 @@ export function AffiliatesCta() {
 
         <iframe
           src="https://brand.clinicdigital.co/widget/form/yIn00UuRdK8An0DaRkKu"
-          style="width:100%;height:100%;border:none;border-radius:3px"
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+            borderRadius: '3px'
+          }}
           id="inline-yIn00UuRdK8An0DaRkKu"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
