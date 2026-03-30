@@ -47,14 +47,6 @@ const earningsExamples = [
     yearOneTotal: "$456.10",
   },
   {
-    scenario: "Lead Gen Ads",
-    projectFee: "—",
-    monthlyRetainer: "$500/mo",
-    oneTimeEarning: "—",
-    monthlyEarning: "$50",
-    yearOneTotal: "$600",
-  },
-  {
     scenario: "Full Service Client",
     projectFee: "$5,000",
     monthlyRetainer: "$997/mo",
