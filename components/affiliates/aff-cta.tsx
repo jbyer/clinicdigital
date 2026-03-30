@@ -77,7 +77,7 @@ export function AffiliatesCta() {
             width: '100%',
             height: '100%',
             border: 'none',
-            borderRadius: '3px'
+            borderRadius: '3px',
           }}
           id="inline-yIn00UuRdK8An0DaRkKu"
           data-layout="{'id':'INLINE'}"
