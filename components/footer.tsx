@@ -67,6 +67,7 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about-us" },
+    { label: "Affiliates", href: "/affiliates" },
     { label: "Case Studies", href: "#case-studies" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
