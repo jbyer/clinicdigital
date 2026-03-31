@@ -110,7 +110,7 @@ export function Contact() {
                 width: '100%',
                 height: '100%',
                 border: 'none',
-                borderRadius: '7px'
+                borderRadius: '20px'
               }}
               id="inline-76lQWeup3iwEHsSsOhqO"
               data-layout="{'id':'INLINE'}"
