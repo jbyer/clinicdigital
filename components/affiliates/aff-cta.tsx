@@ -77,7 +77,7 @@ export function AffiliatesCta() {
             width: '100%',
             height: '100%',
             border: 'none',
-            borderRadius: '3px'
+            borderRadius: '20px'
           }}
           id="inline-yIn00UuRdK8An0DaRkKu"
           data-layout="{'id':'INLINE'}"
@@ -88,7 +88,7 @@ export function AffiliatesCta() {
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="Affiliate Form"
-          data-height="813"
+          data-height="857"
           data-layout-iframe-id="inline-yIn00UuRdK8An0DaRkKu"
           data-form-id="yIn00UuRdK8An0DaRkKu"
           title="Affiliate Form">
