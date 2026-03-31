@@ -79,6 +79,7 @@ export function AffiliatesCta() {
             border: 'none',
             borderRadius: '20px'
           }}
+          scrolling="no"
           id="inline-yIn00UuRdK8An0DaRkKu"
           data-layout="{'id':'INLINE'}"
           data-trigger-type="alwaysShow"
