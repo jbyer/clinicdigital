@@ -71,30 +71,139 @@ export function AffiliatesCta() {
           </p>
         </div>
 
-        <iframe
-          src="https://brand.clinicdigital.co/widget/form/yIn00UuRdK8An0DaRkKu"
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'none',
-            borderRadius: '20px'
-          }}
-          scrolling="no"
-          id="inline-yIn00UuRdK8An0DaRkKu"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Affiliate Form"
-          data-height="825"
-          data-layout-iframe-id="inline-yIn00UuRdK8An0DaRkKu"
-          data-form-id="yIn00UuRdK8An0DaRkKu"
-          title="Affiliate Form" >
-        </iframe>
-        <script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
+        {/* Application Form */}
+        <form onSubmit={handleSubmit} className="mt-10 rounded-2xl bg-background p-6 shadow-xl sm:p-8">
+          <div className="grid gap-5 sm:grid-cols-2">
+            {/* Full Name */}
+            <div className="sm:col-span-2 md:col-span-1">
+              <label htmlFor="fullName" className="mb-1.5 block text-sm font-medium text-foreground">
+                Full Name <span className="text-destructive">*</span>
+              </label>
+              <input
+                type="text"
+                id="fullName"
+                required
+                value={formData.fullName}
+                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                placeholder="John Smith"
+                className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            {/* Email */}
+            <div className="sm:col-span-2 md:col-span-1">
+              <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-foreground">
+                Email Address <span className="text-destructive">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                required
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="john@example.com"
+                className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            {/* Phone */}
+            <div className="sm:col-span-2 md:col-span-1">
+              <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-foreground">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                placeholder="(555) 123-4567"
+                className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            {/* Company/Website */}
+            <div className="sm:col-span-2 md:col-span-1">
+              <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-foreground">
+                Company / Website
+              </label>
+              <input
+                type="text"
+                id="company"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                placeholder="yourcompany.com"
+                className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            {/* Referral Method */}
+            <div className="sm:col-span-2">
+              <label htmlFor="referralMethod" className="mb-1.5 block text-sm font-medium text-foreground">
+                How do you plan to refer clients? <span className="text-destructive">*</span>
+              </label>
+              <select
+                id="referralMethod"
+                required
+                value={formData.referralMethod}
+                onChange={(e) => setFormData({ ...formData, referralMethod: e.target.value })}
+                className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              >
+                <option value="">Select an option...</option>
+                {referralMethods.map((method) => (
+                  <option key={method} value={method}>
+                    {method}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Terms Agreement */}
+            <div className="sm:col-span-2">
+              <label className="flex items-start gap-3">
+                <input
+                  type="checkbox"
+                  required
+                  checked={formData.agreedToTerms}
+                  onChange={(e) => setFormData({ ...formData, agreedToTerms: e.target.checked })}
+                  className="mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary"
+                />
+                <span className="text-sm text-muted-foreground">
+                  I agree to the{" "}
+                  <a href="/terms" className="text-primary underline hover:text-primary/80">
+                    Terms of Service
+                  </a>{" "}
+                  and{" "}
+                  <a href="/privacy-policy" className="text-primary underline hover:text-primary/80">
+                    Privacy Policy
+                  </a>
+                  , including the Affiliate Program terms.
+                </span>
+              </label>
+            </div>
+          </div>
+
+          {/* Submit Button */}
+          <div className="mt-6">
+            <Button
+              type="submit"
+              size="lg"
+              disabled={isSubmitting}
+              className="w-full gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  Apply to Become an Affiliate
+                  <ArrowRight className="h-4 w-4" />
+                </>
+              )}
+            </Button>
+          </div>
+        </form>
 
 
 
