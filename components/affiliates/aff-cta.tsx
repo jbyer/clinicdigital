@@ -73,7 +73,6 @@ export function AffiliatesCta() {
 
         <iframe
           src="https://brand.clinicdigital.co/widget/form/yIn00UuRdK8An0DaRkKu"
-          scrolling="no"
           style={{
             width: '100%',
             height: '100%',
@@ -89,10 +88,10 @@ export function AffiliatesCta() {
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="Affiliate Form"
-          data-height="1000"
+          data-height="785"
           data-layout-iframe-id="inline-yIn00UuRdK8An0DaRkKu"
           data-form-id="yIn00UuRdK8An0DaRkKu"
-          title="Affiliate Form">
+          title="Affiliate Form" >
         </iframe>
         <script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
 
