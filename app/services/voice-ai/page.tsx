@@ -12,7 +12,7 @@ import {
 } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Voice AI Solutions for Medical Practices | ClinicDigital.co",
+  title: "Voice AI for Medical Practices | ClinicDigital.co",
   description:
     "AI-powered voice assistants for healthcare. Automate inbound calls, book appointments, answer patient questions, and reduce hold times 24/7.",
   keywords: [
