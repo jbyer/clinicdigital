@@ -89,7 +89,7 @@ export function AffiliatesCta() {
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="Affiliate Form"
-          data-height="900"
+          data-height="1000"
           data-layout-iframe-id="inline-yIn00UuRdK8An0DaRkKu"
           data-form-id="yIn00UuRdK8An0DaRkKu"
           title="Affiliate Form">
