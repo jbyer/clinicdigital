@@ -75,7 +75,7 @@ export function AffiliatesCta() {
           src="https://brand.clinicdigital.co/widget/form/yIn00UuRdK8An0DaRkKu"
           style={{
             width: '100%',
-            height: '100%',
+            height: '828px',
             border: 'none',
             borderRadius: '20px'
           }}
