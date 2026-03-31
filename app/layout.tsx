@@ -2,6 +2,7 @@ import React from "react"
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { GoogleAnalytics } from '@/components/google-analytics'
+import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/google-tag-manager'
 
 import './globals.css'
 
@@ -25,7 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <head>
+        <GoogleTagManager />
+      </head>
       <body className="font-sans antialiased" suppressHydrationWarning>
+        <GoogleTagManagerNoScript />
         <GoogleAnalytics />
         {children}
       </body>
