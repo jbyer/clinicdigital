@@ -123,6 +123,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    // Onboarding
+    {
+      url: `${baseUrl}/chatbot-onboarding`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
     // Legal
     {
       url: `${baseUrl}/privacy`,
