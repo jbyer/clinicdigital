@@ -223,11 +223,33 @@ export default function ChatbotOnboardingPage() {
     if (!validateStep(4)) return
 
     setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    setIsSubmitting(false)
-    setIsSubmitted(true)
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    setErrors({})
+    
+    try {
+      const response = await fetch("/api/chatbot-onboarding", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      const result = await response.json()
+      
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit form")
+      }
+      
+      setIsSubmitted(true)
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    } catch (error) {
+      console.error("[v0] Form submission error:", error)
+      setErrors({ 
+        submit: error instanceof Error ? error.message : "Failed to submit form. Please try again." 
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
