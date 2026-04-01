@@ -23,10 +23,10 @@ export function SpringSalePopup() {
     const dismissed = sessionStorage.getItem(STORAGE_KEY)
     if (dismissed) return
 
-    // Show popup after a short delay for better UX
+    // Show popup after 5 seconds for better UX
     const timer = setTimeout(() => {
       setIsVisible(true)
-    }, 1500)
+    }, 5000)
 
     return () => clearTimeout(timer)
   }, [])
