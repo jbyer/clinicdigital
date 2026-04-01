@@ -5,7 +5,7 @@ import { X, Sparkles, Copy, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
-const COUPON_CODE = "EMBGYE5"
+const COUPON_CODE = "EMBVGYE5"
 const STORAGE_KEY = "spring-sale-popup-dismissed"
 
 export function SpringSalePopup() {
@@ -16,7 +16,7 @@ export function SpringSalePopup() {
     // Check if it's April
     const now = new Date()
     const isApril = now.getMonth() === 3 // April is month 3 (0-indexed)
-    
+
     if (!isApril) return
 
     // Check if user has already dismissed the popup this session
@@ -67,7 +67,7 @@ export function SpringSalePopup() {
         <div className="relative overflow-hidden rounded-2xl bg-background shadow-2xl">
           {/* Decorative gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-transparent" />
-          
+
           {/* Close button */}
           <button
             onClick={handleDismiss}
