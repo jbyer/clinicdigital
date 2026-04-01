@@ -169,7 +169,7 @@ export function ChatbotPricing() {
                   asChild
                   className={`w-full text-base ${plan.highlighted
                     ? "hover:bg-red-600 hover:text-background"
-                    : "bg-foreground text-background hover:bg-foreground/90"
+                    : "bg-foreground text-background hover:bg-red-600"
                     }`}
                 >
                   <Link href="${plan.payment}">
