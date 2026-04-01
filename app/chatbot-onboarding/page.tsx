@@ -190,13 +190,6 @@ export default function ChatbotOnboardingPage() {
       }
     }
 
-    if (step === 2) {
-      if (!formData.schedulingSoftware) newErrors.schedulingSoftware = "Please select your scheduling software"
-      if (formData.schedulingSoftware === "Other" && !formData.schedulingSoftwareOther.trim()) {
-        newErrors.schedulingSoftwareOther = "Please specify your scheduling software"
-      }
-    }
-
     if (step === 3) {
       if (formData.selectedFeatures.length === 0) {
         newErrors.selectedFeatures = "Please select at least one feature"
