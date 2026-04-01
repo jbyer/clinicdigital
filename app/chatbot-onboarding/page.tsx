@@ -63,7 +63,6 @@ const chatbotFeatures = [
   { id: "faq_responses", label: "FAQ Responses", description: "Answer common patient questions automatically" },
   { id: "lead_capture", label: "Lead Capture", description: "Collect contact info from potential patients" },
   { id: "treatment_info", label: "Treatment Information", description: "Provide details about services and procedures" },
-  { id: "insurance_check", label: "Insurance Verification", description: "Help patients check coverage" },
   { id: "appointment_reminders", label: "Appointment Reminders", description: "Send automated reminders via SMS/email" },
   { id: "post_treatment", label: "Post-Treatment Follow-up", description: "Check on patients after procedures" },
   { id: "patient_intake", label: "Patient Intake Forms", description: "Collect medical history before visits" },
