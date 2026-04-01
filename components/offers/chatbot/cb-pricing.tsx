@@ -24,7 +24,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: false,
-    payment: "https://buy.stripe.com/aFa4grgXT1rgblJdYj1ck00",
+    payment: "https://buy.stripe.com/6oUcMXdLHb1QexVbQb1ck03",
   },
   {
     name: "Professional Chatbot",
