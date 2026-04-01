@@ -291,21 +291,26 @@ export default function ChatbotOnboardingPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-muted/30 py-16 lg:py-24">
-        <div className="mx-auto max-w-4xl px-6 lg:px-8">
-          {/* Header */}
-          <div className="text-center">
-            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10">
-              <Bot className="h-7 w-7 text-primary" />
-            </div>
-            <h1 className="mt-6 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              Chatbot Configuration Form
-            </h1>
-            <p className="mt-3 text-lg text-muted-foreground">
-              Help us understand your practice so we can build the perfect AI chatbot for you.
-            </p>
+      
+      {/* Hero Section */}
+      <section className="relative bg-foreground py-16 lg:py-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/20">
+            <Bot className="h-7 w-7 text-primary" />
           </div>
+          <h1 className="mt-6 font-heading text-3xl font-bold tracking-tight text-background sm:text-4xl lg:text-5xl">
+            Configure Your Medical Practice Chatbot
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-background/70">
+            Tell us about your practice and preferences so we can build the perfect AI assistant
+            tailored to your needs. This takes about 5-10 minutes to complete.
+          </p>
+        </div>
+      </section>
 
+      <main className="bg-muted/30 py-12 lg:py-16">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
           {/* Progress Steps */}
           <div className="mt-10">
             <div className="flex items-center justify-between">
