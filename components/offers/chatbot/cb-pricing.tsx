@@ -12,7 +12,7 @@ const plans = [
       "Perfect for small practices just getting started with automation",
     features: [
       "AI-Powered Chat Widget on your website",
-      "4/7 Availability - Never miss a patient inquiry",
+      "24/7 Availability - Never miss a patient inquiry",
       "FAQ Automation - Answers up to 25 common questions (office hours, location, services, insurance accepted)",
       "Lead Capture - Collects name, phone, email from website visitors",
       "Basic Appointment Requests - Captures appointment requests and sends to your staff",
@@ -38,7 +38,7 @@ const plans = [
       "Unlimited FAQs - Train chatbot on your entire knowledge base",
       "Direct Calendar Integration - Patients book appointments directly into your calendar",
       "Automated Appointment Confirmations - SMS & email confirmations sent automatically",
-      "CLead Qualification - Pre-screens patients based on your criteria",
+      "Lead Qualification - Pre-screens patients based on your criteria",
       "Multi-Channel Support - Website chat + Facebook Messenger integration",
       "Smart Lead Routing - Routes inquiries to specific staff members",
       "Custom Workflows - Create automated follow-up sequences",
@@ -49,7 +49,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: true,
-    payment: "",
+    payment: "https://buy.stripe.com/aFa14f0YV7PEgG3g6r1ck04",
   },
   {
     name: "Enterprise Chatbot",
