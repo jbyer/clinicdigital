@@ -49,7 +49,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: true,
-    payment: "https://buy.stripe.com/5kQ14f8rnd9YcpN7zV1ck01",
+    payment: "",
   },
   {
     name: "Enterprise Chatbot",
@@ -74,7 +74,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: false,
-    paymenet: "https://buy.stripe.com/4gM00b6jf6LAcpN2fB1ck02",
+    paymenet: "",
   },
 ]
 
