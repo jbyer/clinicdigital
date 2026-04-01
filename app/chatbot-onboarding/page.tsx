@@ -562,55 +562,6 @@ export default function ChatbotOnboardingPage() {
                   </div>
 
                   <div className="grid gap-5 sm:grid-cols-2">
-                    {/* Scheduling Software */}
-                    <div className="sm:col-span-2">
-                      <label htmlFor="schedulingSoftware" className="mb-1.5 block text-sm font-medium text-foreground">
-                        Current Scheduling Software <span className="text-destructive">*</span>
-                      </label>
-                      <select
-                        id="schedulingSoftware"
-                        value={formData.schedulingSoftware}
-                        onChange={(e) => updateField("schedulingSoftware", e.target.value)}
-                        className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-1 ${
-                          errors.schedulingSoftware
-                            ? "border-destructive focus:border-destructive focus:ring-destructive"
-                            : "border-input focus:border-primary focus:ring-primary"
-                        }`}
-                      >
-                        <option value="">Select scheduling software...</option>
-                        {schedulingSoftware.map((software) => (
-                          <option key={software} value={software}>{software}</option>
-                        ))}
-                      </select>
-                      {errors.schedulingSoftware && (
-                        <p className="mt-1 text-xs text-destructive">{errors.schedulingSoftware}</p>
-                      )}
-                    </div>
-
-                    {/* Scheduling Software Other */}
-                    {formData.schedulingSoftware === "Other" && (
-                      <div className="sm:col-span-2">
-                        <label htmlFor="schedulingSoftwareOther" className="mb-1.5 block text-sm font-medium text-foreground">
-                          Specify Scheduling Software <span className="text-destructive">*</span>
-                        </label>
-                        <input
-                          type="text"
-                          id="schedulingSoftwareOther"
-                          value={formData.schedulingSoftwareOther}
-                          onChange={(e) => updateField("schedulingSoftwareOther", e.target.value)}
-                          placeholder="Enter your scheduling software name"
-                          className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                            errors.schedulingSoftwareOther
-                              ? "border-destructive focus:border-destructive focus:ring-destructive"
-                              : "border-input focus:border-primary focus:ring-primary"
-                          }`}
-                        />
-                        {errors.schedulingSoftwareOther && (
-                          <p className="mt-1 text-xs text-destructive">{errors.schedulingSoftwareOther}</p>
-                        )}
-                      </div>
-                    )}
-
                     {/* Appointment Types */}
                     <div className="sm:col-span-2">
                       <label htmlFor="appointmentTypes" className="mb-1.5 block text-sm font-medium text-foreground">
