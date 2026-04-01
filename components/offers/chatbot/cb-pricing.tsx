@@ -69,7 +69,6 @@ const plans = [
       "Quarterly Optimization - We review and improve chatbot performance",
       "White-Label Option - Remove 'Powered by' branding",
       "Weekly optimization & retraining sessions",
-      "Phone & same-day priority support",
       "Quarterly AI performance audit",
     ],
     cta: "Buy",
