@@ -8,10 +8,12 @@ import { LeadGenAdsProcess } from "@/components/offers/lead-gen-ads/lga-process"
 import { LeadGenAdsComparison } from "@/components/offers/lead-gen-ads/lga-comparison"
 import { LeadGenAdsFaq } from "@/components/offers/lead-gen-ads/lga-faq"
 import { LeadGenAdsCta } from "@/components/offers/lead-gen-ads/lga-cta"
+import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export default function LeadGenAdsPage() {
   return (
     <>
+      <SpringSalePopup />
       <Navigation />
       <main>
         <LeadGenAdsHero />

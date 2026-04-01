@@ -8,10 +8,12 @@ import { OffersComparison } from "@/components/offers/offers-comparison"
 import { OffersResults } from "@/components/offers/offers-results"
 import { OffersFaq } from "@/components/offers/offers-faq"
 import { OffersCta } from "@/components/offers/offers-cta"
+import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export default function OffersPage() {
   return (
     <>
+      <SpringSalePopup />
       <Navigation />
       <main>
         <OffersHero />

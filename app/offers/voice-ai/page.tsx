@@ -8,10 +8,12 @@ import { VoiceAIProcess } from "@/components/offers/voice-ai/va-process"
 import { VoiceAIComparison } from "@/components/offers/voice-ai/va-comparison"
 import { VoiceAIFaq } from "@/components/offers/voice-ai/va-faq"
 import { VoiceAICta } from "@/components/offers/voice-ai/va-cta"
+import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export default function VoiceAIPage() {
   return (
     <>
+      <SpringSalePopup />
       <Navigation />
       <main>
         <VoiceAIHero />

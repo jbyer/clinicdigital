@@ -8,10 +8,12 @@ import { SmartWebsiteProcess } from "@/components/offers/smart-website/sw-proces
 import { SmartWebsiteComparison } from "@/components/offers/smart-website/sw-comparison"
 import { SmartWebsiteFaq } from "@/components/offers/smart-website/sw-faq"
 import { SmartWebsiteCta } from "@/components/offers/smart-website/sw-cta"
+import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export default function SmartWebsitePage() {
   return (
     <>
+      <SpringSalePopup />
       <Navigation />
       <main>
         <SmartWebsiteHero />
