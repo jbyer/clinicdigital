@@ -9,10 +9,12 @@ import { About } from "@/components/about"
 import { CtaBanner } from "@/components/cta-banner"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
+import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export default function Page() {
   return (
     <>
+      <SpringSalePopup />
       <Navigation />
       <main>
         <Hero />
