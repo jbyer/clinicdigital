@@ -73,7 +73,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: false,
-    paymenet: "https://buy.stripe.com/bJe5kv8rnfi6gG33jF1ck05",
+    payment: "https://buy.stripe.com/bJe5kv8rnfi6gG33jF1ck05",
   },
 ]
 
