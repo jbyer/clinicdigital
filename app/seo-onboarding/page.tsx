@@ -54,13 +54,6 @@ const directories = [
   "None of the above",
 ]
 
-const reportingFrequency = [
-  "Weekly",
-  "Bi-weekly",
-  "Monthly",
-  "Quarterly",
-]
-
 type FormData = {
   // Step 1: Business Basics
   businessDescription: string
@@ -110,7 +103,6 @@ type FormData = {
   mainContactName: string
   mainContactEmail: string
   mainContactPhone: string
-  reportingPreference: string
   requiresApproval: string
   approverName: string
   // Step 8: Budget & Timeline
@@ -164,7 +156,6 @@ const initialFormData: FormData = {
   mainContactName: "",
   mainContactEmail: "",
   mainContactPhone: "",
-  reportingPreference: "",
   requiresApproval: "",
   approverName: "",
   hasContentBudget: "",
@@ -1209,23 +1200,6 @@ export default function SeoOnboardingPage() {
                       placeholder="(555) 123-4567"
                       className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
                     />
-                  </div>
-
-                  <div>
-                    <label htmlFor="reportingPreference" className="mb-1.5 block text-sm font-medium text-foreground">
-                      How often do you want to receive reports?
-                    </label>
-                    <select
-                      id="reportingPreference"
-                      value={formData.reportingPreference}
-                      onChange={(e) => updateField("reportingPreference", e.target.value)}
-                      className="w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-                    >
-                      <option value="">Select...</option>
-                      {reportingFrequency.map((freq) => (
-                        <option key={freq} value={freq.toLowerCase()}>{freq}</option>
-                      ))}
-                    </select>
                   </div>
 
                   <div>
