@@ -292,7 +292,7 @@ export default function SeoOnboardingPage() {
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
               Your SEO onboarding form has been submitted successfully. Our team will review your
-              information and reach out within 1-2 business days to discuss your SEO strategy.
+              information and reach out to you soon to discuss your SEO strategy.
             </p>
             <div className="mt-8 rounded-xl border border-border bg-card p-6">
               <h2 className="font-semibold text-foreground">What happens next?</h2>
@@ -360,13 +360,12 @@ export default function SeoOnboardingPage() {
                   <div key={step.id} className="flex items-center">
                     <div className="flex flex-col items-center">
                       <div
-                        className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors ${
-                          isActive
+                        className={`flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors ${isActive
                             ? "border-primary bg-primary text-primary-foreground"
                             : isCompleted
                               ? "border-accent bg-accent text-accent-foreground"
                               : "border-muted-foreground/30 bg-background text-muted-foreground"
-                        }`}
+                          }`}
                       >
                         {isCompleted ? (
                           <CheckCircle2 className="h-5 w-5" />
@@ -375,18 +374,16 @@ export default function SeoOnboardingPage() {
                         )}
                       </div>
                       <span
-                        className={`mt-2 text-xs font-medium ${
-                          isActive ? "text-primary" : isCompleted ? "text-accent" : "text-muted-foreground"
-                        }`}
+                        className={`mt-2 text-xs font-medium ${isActive ? "text-primary" : isCompleted ? "text-accent" : "text-muted-foreground"
+                          }`}
                       >
                         {step.title}
                       </span>
                     </div>
                     {index < steps.length - 1 && (
                       <div
-                        className={`mx-2 h-0.5 w-8 ${
-                          currentStep > step.id ? "bg-accent" : "bg-muted-foreground/30"
-                        }`}
+                        className={`mx-2 h-0.5 w-8 ${currentStep > step.id ? "bg-accent" : "bg-muted-foreground/30"
+                          }`}
                       />
                     )}
                   </div>
@@ -418,11 +415,10 @@ export default function SeoOnboardingPage() {
                       value={formData.businessDescription}
                       onChange={(e) => updateField("businessDescription", e.target.value)}
                       placeholder="E.g., We are a cosmetic dermatology practice specializing in anti-aging treatments for women aged 35-55..."
-                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.businessDescription
+                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.businessDescription
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.businessDescription && (
                       <p className="mt-1 text-xs text-destructive">{errors.businessDescription}</p>
@@ -439,11 +435,10 @@ export default function SeoOnboardingPage() {
                       value={formData.primaryServices}
                       onChange={(e) => updateField("primaryServices", e.target.value)}
                       placeholder="E.g., Botox, dermal fillers, laser skin resurfacing, chemical peels..."
-                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.primaryServices
+                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.primaryServices
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.primaryServices && (
                       <p className="mt-1 text-xs text-destructive">{errors.primaryServices}</p>
@@ -460,11 +455,10 @@ export default function SeoOnboardingPage() {
                       value={formData.locationsServed}
                       onChange={(e) => updateField("locationsServed", e.target.value)}
                       placeholder="E.g., Miami, FL and surrounding areas within 25 miles"
-                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.locationsServed
+                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.locationsServed
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.locationsServed && (
                       <p className="mt-1 text-xs text-destructive">{errors.locationsServed}</p>
@@ -523,11 +517,10 @@ export default function SeoOnboardingPage() {
                       value={formData.successDefinition}
                       onChange={(e) => updateField("successDefinition", e.target.value)}
                       placeholder="E.g., Ranking on the first page for 'Botox Miami', getting 30+ new patient inquiries per month..."
-                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.successDefinition
+                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.successDefinition
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.successDefinition && (
                       <p className="mt-1 text-xs text-destructive">{errors.successDefinition}</p>
@@ -542,11 +535,10 @@ export default function SeoOnboardingPage() {
                       {successMetrics.map((metric) => (
                         <label
                           key={metric}
-                          className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${
-                            formData.focusAreas.includes(metric)
+                          className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${formData.focusAreas.includes(metric)
                               ? "border-primary bg-primary/5"
                               : "border-input hover:border-primary/50"
-                          }`}
+                            }`}
                         >
                           <input
                             type="checkbox"
@@ -650,11 +642,10 @@ export default function SeoOnboardingPage() {
                       value={formData.websiteUrl}
                       onChange={(e) => updateField("websiteUrl", e.target.value)}
                       placeholder="https://www.yourpractice.com"
-                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.websiteUrl
+                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.websiteUrl
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.websiteUrl && (
                       <p className="mt-1 text-xs text-destructive">{errors.websiteUrl}</p>
@@ -785,11 +776,10 @@ export default function SeoOnboardingPage() {
                       value={formData.targetServices}
                       onChange={(e) => updateField("targetServices", e.target.value)}
                       placeholder="E.g., Botox, lip fillers, laser hair removal..."
-                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.targetServices
+                      className={`w-full resize-none overflow-y-scroll rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.targetServices
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.targetServices && (
                       <p className="mt-1 text-xs text-destructive">{errors.targetServices}</p>
@@ -880,11 +870,10 @@ export default function SeoOnboardingPage() {
                       id="hasGoogleBusinessProfile"
                       value={formData.hasGoogleBusinessProfile}
                       onChange={(e) => updateField("hasGoogleBusinessProfile", e.target.value)}
-                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-1 ${
-                        errors.hasGoogleBusinessProfile
+                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-1 ${errors.hasGoogleBusinessProfile
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     >
                       <option value="">Select...</option>
                       <option value="yes">Yes</option>
@@ -998,11 +987,10 @@ export default function SeoOnboardingPage() {
                       {directories.map((directory) => (
                         <label
                           key={directory}
-                          className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${
-                            formData.listedDirectories.includes(directory)
+                          className={`flex cursor-pointer items-center gap-3 rounded-lg border p-3 transition-colors ${formData.listedDirectories.includes(directory)
                               ? "border-primary bg-primary/5"
                               : "border-input hover:border-primary/50"
-                          }`}
+                            }`}
                         >
                           <input
                             type="checkbox"
@@ -1156,11 +1144,10 @@ export default function SeoOnboardingPage() {
                       value={formData.mainContactName}
                       onChange={(e) => updateField("mainContactName", e.target.value)}
                       placeholder="John Smith"
-                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.mainContactName
+                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.mainContactName
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.mainContactName && (
                       <p className="mt-1 text-xs text-destructive">{errors.mainContactName}</p>
@@ -1177,11 +1164,10 @@ export default function SeoOnboardingPage() {
                       value={formData.mainContactEmail}
                       onChange={(e) => updateField("mainContactEmail", e.target.value)}
                       placeholder="john@practice.com"
-                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${
-                        errors.mainContactEmail
+                      className={`w-full rounded-lg border bg-background px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 ${errors.mainContactEmail
                           ? "border-destructive focus:border-destructive focus:ring-destructive"
                           : "border-input focus:border-primary focus:ring-primary"
-                      }`}
+                        }`}
                     />
                     {errors.mainContactEmail && (
                       <p className="mt-1 text-xs text-destructive">{errors.mainContactEmail}</p>
@@ -1331,9 +1317,8 @@ export default function SeoOnboardingPage() {
                         type="checkbox"
                         checked={formData.agreedToTerms}
                         onChange={(e) => updateField("agreedToTerms", e.target.checked)}
-                        className={`mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary ${
-                          errors.agreedToTerms ? "border-destructive" : ""
-                        }`}
+                        className={`mt-1 h-4 w-4 rounded border-input text-primary focus:ring-primary ${errors.agreedToTerms ? "border-destructive" : ""
+                          }`}
                       />
                       <span className="text-sm text-muted-foreground">
                         I agree to the{" "}
