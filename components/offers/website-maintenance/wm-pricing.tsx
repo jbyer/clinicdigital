@@ -40,6 +40,7 @@ const plans = [
     ],
     cta: "Get Professional",
     highlighted: true,
+    payment: "",
   },
   {
     name: "Premium Maintenance",
@@ -60,6 +61,7 @@ const plans = [
     ],
     cta: "Get Premium",
     highlighted: false,
+    payment: "",
   },
 ]
 
