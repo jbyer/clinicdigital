@@ -40,7 +40,7 @@ const plans = [
     ],
     cta: "Get Professional",
     highlighted: true,
-    payment: "",
+    payment: "https://buy.stripe.com/fZudR16jf5Hw0H54nJ1ck07",
   },
   {
     name: "Premium Maintenance",
