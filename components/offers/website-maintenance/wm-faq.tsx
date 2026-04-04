@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "What platforms do you support for maintenance?",
     answer:
-      "We primarily support WordPress websites, which power the vast majority of healthcare practice sites. We also maintain sites built on Webflow, Squarespace, and custom platforms. If you are not sure, just ask -- we likely support your platform.",
+      "We primarily support all CMS platforms but primeraly WordPress, which power the vast majority of healthcare practice sites. We also maintain sites built on Webflow, Squarespace, and custom platforms. If you are not sure, just ask -- we likely support your platform.",
   },
   {
     question: "What happens if my site gets hacked?",
@@ -83,15 +83,13 @@ export function MaintenanceFaq() {
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${
-                      isOpen ? "rotate-180" : ""
-                    }`}
+                    className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    isOpen ? "max-h-96 pb-5" : "max-h-0"
-                  }`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-96 pb-5" : "max-h-0"
+                    }`}
                 >
                   <p className="px-6 text-sm leading-relaxed text-muted-foreground">
                     {faq.answer}
