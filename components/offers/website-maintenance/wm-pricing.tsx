@@ -10,12 +10,12 @@ const plans = [
     description:
       "Basic maintenance for simple websites that need security updates, backups, and uptime monitoring without the bells and whistles.",
     features: [
-      "Weekly software & plugin updates",
-      "Daily automated backups",
+      "Monthly software & plugin updates",
+      "Monthly automated backups",
       "24/7 uptime monitoring",
       "SSL certificate management",
       "Monthly security scans",
-      "Up to 30 min content edits/month",
+      "Up to 1 hour content edits/month",
       "Email support (48hr response)",
     ],
     cta: "Get Essential",
@@ -89,8 +89,8 @@ export function MaintenancePricing() {
             <article
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border p-5 transition-all duration-300 sm:p-8 ${plan.highlighted
-                  ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
-                  : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                ? "border-primary bg-background shadow-xl shadow-primary/10 ring-1 ring-primary"
+                : "border-border bg-background hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
                 }`}
             >
               {/* Popular badge */}
@@ -106,8 +106,8 @@ export function MaintenancePricing() {
               <div className="flex items-center gap-3">
                 <div
                   className={`flex h-11 w-11 items-center justify-center rounded-xl ${plan.highlighted
-                      ? "bg-primary text-primary-foreground"
-                      : "bg-primary/10 text-primary"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-primary/10 text-primary"
                     }`}
                 >
                   <plan.icon className="h-5 w-5" />
@@ -140,8 +140,8 @@ export function MaintenancePricing() {
                   size="lg"
                   asChild
                   className={`w-full text-base ${plan.highlighted
-                      ? "hover:bg-red-600 hover:text-background"
-                      : "bg-foreground text-background hover:bg-foreground/90"
+                    ? "hover:bg-red-600 hover:text-background"
+                    : "bg-foreground text-background hover:bg-foreground/90"
                     }`}
                 >
                   <Link href="/book-a-call">
