@@ -1,17 +1,17 @@
 import {
-  RefreshCw,
-  Shield,
-  Activity,
-  Database,
-  Zap,
-  Bug,
-  FileText,
-  Headphones,
+  RefreshCcw,
+  ShieldCheck,
+  MonitorUp,
+  HardDrive,
+  Gauge,
+  Wrench,
+  PenSquare,
+  LifeBuoy,
 } from "lucide-react"
 
 const features = [
   {
-    icon: RefreshCw,
+    icon: RefreshCcw,
     title: "Regular Software Updates",
     description:
       "We keep your CMS, plugins, and themes updated to the latest versions. No more security vulnerabilities from outdated software or compatibility issues breaking your site.",
@@ -22,7 +22,7 @@ const features = [
     ],
   },
   {
-    icon: Shield,
+    icon: ShieldCheck,
     title: "Security Monitoring & Hardening",
     description:
       "Proactive security scanning detects threats before they become problems. We implement firewalls, malware scanning, and login protection to keep hackers out.",
@@ -33,7 +33,7 @@ const features = [
     ],
   },
   {
-    icon: Activity,
+    icon: MonitorUp,
     title: "24/7 Uptime Monitoring",
     description:
       "Your website is monitored every 60 seconds from multiple global locations. If it goes down, we know immediately and start fixing it before you even notice.",
@@ -44,7 +44,7 @@ const features = [
     ],
   },
   {
-    icon: Database,
+    icon: HardDrive,
     title: "Daily Automated Backups",
     description:
       "Daily backups stored securely off-site mean your data is always protected. If disaster strikes, we can restore your entire site in minutes, not days.",
@@ -55,7 +55,7 @@ const features = [
     ],
   },
   {
-    icon: Zap,
+    icon: Gauge,
     title: "Performance Optimization",
     description:
       "We continuously optimize your site speed with caching, image compression, and database cleanup. A fast website means better Google rankings and happier patients.",
@@ -66,7 +66,7 @@ const features = [
     ],
   },
   {
-    icon: Bug,
+    icon: Wrench,
     title: "Bug Fixes & Troubleshooting",
     description:
       "Something broken? We fix it fast. From broken links to display issues, our team diagnoses and resolves problems quickly so your site always looks professional.",
@@ -77,7 +77,7 @@ const features = [
     ],
   },
   {
-    icon: FileText,
+    icon: PenSquare,
     title: "Content Updates & Edits",
     description:
       "Need to update your hours, add a new service, or swap out a photo? We handle routine content updates so you do not have to wrestle with your website.",
@@ -88,7 +88,7 @@ const features = [
     ],
   },
   {
-    icon: Headphones,
+    icon: LifeBuoy,
     title: "Priority Support",
     description:
       "Direct access to our support team when you need help. No ticket queues or chatbots -- just real humans who know your website inside and out.",

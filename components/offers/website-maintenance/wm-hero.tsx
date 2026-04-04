@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle2, Wrench } from "lucide-react"
+import { ArrowRight, CheckCircle2, Settings } from "lucide-react"
 
 const highlights = [
   "24/7 uptime monitoring & alerts",
@@ -28,7 +28,7 @@ export function MaintenanceHero() {
       <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-start px-6 pt-32 lg:px-8 lg:pt-36">
         <div className="max-w-6xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
-            <Wrench className="h-3.5 w-3.5 text-accent" />
+            <Settings className="h-3.5 w-3.5 text-accent" />
             <span className="text-xs font-medium tracking-wide uppercase text-primary-foreground/90">
               Website Maintenance for Healthcare
             </span>

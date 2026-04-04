@@ -1,38 +1,38 @@
-import { TrendingUp, Clock, Shield, DollarSign, Users, Heart } from "lucide-react"
+import { ChartNoAxesCombined, Timer, ShieldCheck, BadgeDollarSign, UserCheck, HeartHandshake } from "lucide-react"
 
 const benefits = [
   {
-    icon: Shield,
+    icon: ShieldCheck,
     title: "Peace of Mind",
     description:
       "Stop worrying about security threats, outdated software, or your site going down. We handle it all so you can focus on what you do best -- caring for patients.",
   },
   {
-    icon: TrendingUp,
+    icon: ChartNoAxesCombined,
     title: "Better Google Rankings",
     description:
       "A fast, secure, mobile-friendly website ranks higher in search results. Regular maintenance keeps your site optimized for SEO and Core Web Vitals.",
   },
   {
-    icon: Clock,
+    icon: Timer,
     title: "Save Time & Stress",
     description:
       "No more spending hours trying to figure out why something broke or watching YouTube tutorials on WordPress updates. We handle the tech so you do not have to.",
   },
   {
-    icon: DollarSign,
+    icon: BadgeDollarSign,
     title: "Avoid Costly Emergencies",
     description:
       "Proactive maintenance prevents expensive emergency fixes. A hacked website can cost thousands to recover -- prevention is always cheaper than the cure.",
   },
   {
-    icon: Users,
+    icon: UserCheck,
     title: "Better Patient Experience",
     description:
       "A slow or broken website frustrates patients and sends them to competitors. Keep your site fast, functional, and professional at all times.",
   },
   {
-    icon: Heart,
+    icon: HeartHandshake,
     title: "Extended Website Lifespan",
     description:
       "Regular maintenance extends the life of your website investment. Avoid costly rebuilds by keeping your site healthy, updated, and performing optimally.",

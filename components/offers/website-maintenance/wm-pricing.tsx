@@ -1,11 +1,11 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
+import { Check, ArrowRight, Sparkles, Rocket, Gem } from "lucide-react"
 
 const plans = [
   {
     name: "Essential Maintenance",
-    icon: Zap,
+    icon: Sparkles,
     price: 197,
     description:
       "Basic maintenance for simple websites that need security updates, backups, and uptime monitoring without the bells and whistles.",
@@ -23,7 +23,7 @@ const plans = [
   },
   {
     name: "Professional Maintenance",
-    icon: TrendingUp,
+    icon: Rocket,
     price: 297,
     description:
       "Comprehensive maintenance for practices that want proactive optimization, faster support, and regular performance improvements.",
@@ -42,7 +42,7 @@ const plans = [
   },
   {
     name: "Premium Maintenance",
-    icon: Crown,
+    icon: Gem,
     price: 497,
     description:
       "White-glove maintenance for high-traffic or complex websites requiring dedicated attention, same-day support, and unlimited edits.",
