@@ -61,7 +61,7 @@ const plans = [
     ],
     cta: "Get Premium",
     highlighted: false,
-    payment: "",
+    payment: "https://buy.stripe.com/14AfZ9fTP8TI3Th4nJ1ck08",
   },
 ]
 
