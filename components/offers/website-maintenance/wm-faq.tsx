@@ -7,7 +7,7 @@ const faqs = [
   {
     question: "What platforms do you support for maintenance?",
     answer:
-      "We primarily support all CMS platforms but primeraly WordPress, which power the vast majority of healthcare practice sites. We also maintain sites built on Webflow, Squarespace, and custom platforms. If you are not sure, just ask -- we likely support your platform.",
+      "We primarily support all CMS platforms but primarily WordPress, which power the vast majority of healthcare practice sites. We also maintain sites built on Webflow, Squarespace, and custom platforms. If you are not sure, just ask -- we likely support your platform.",
   },
   {
     question: "What happens if my site gets hacked?",
