@@ -17,7 +17,7 @@ export function MaintenanceTrustBar() {
               <div className="mb-2 flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10">
                 <stat.icon className="h-5 w-5 text-primary" />
               </div>
-              <p className="font-heading text-2xl font-bold text-foreground">
+              <p className="font-heading text-2xl font-bold text-primary">
                 {stat.value}
               </p>
               <p className="text-sm text-muted-foreground">{stat.label}</p>
