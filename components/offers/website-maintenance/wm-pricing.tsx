@@ -4,7 +4,7 @@ import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react"
 
 const plans = [
   {
-    name: "Essential",
+    name: "Essential Maintenance",
     icon: Zap,
     price: 197,
     description:
@@ -22,7 +22,7 @@ const plans = [
     highlighted: false,
   },
   {
-    name: "Professional",
+    name: "Professional Maintenance",
     icon: TrendingUp,
     price: 297,
     description:
@@ -41,7 +41,7 @@ const plans = [
     highlighted: true,
   },
   {
-    name: "Premium",
+    name: "Premium Maintenance",
     icon: Crown,
     price: 497,
     description:
