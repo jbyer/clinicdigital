@@ -29,11 +29,11 @@ const plans = [
       "Comprehensive maintenance for practices that want proactive optimization, faster support, and regular performance improvements.",
     features: [
       "Everything in Essential, plus:",
-      "Twice-weekly updates & monitoring",
+      "Bi-weekly updates & monitoring",
       "Real-time security monitoring",
       "Performance optimization (monthly)",
       "Database cleanup & optimization",
-      "Up to 2 hours content edits/month",
+      "Up to 5 hours content edits/month",
       "Priority email & phone support (24hr)",
       "Monthly performance reports",
     ],
@@ -48,7 +48,7 @@ const plans = [
       "White-glove maintenance for high-traffic or complex websites requiring dedicated attention, same-day support, and unlimited edits.",
     features: [
       "Everything in Professional, plus:",
-      "Daily updates & monitoring",
+      "Weekly updates & monitoring",
       "Advanced malware protection",
       "CDN & caching optimization",
       "Unlimited content edits",
