@@ -20,6 +20,7 @@ const plans = [
     ],
     cta: "Get Essential",
     highlighted: false,
+    payment: "https://buy.stripe.com/8x214fePL6LAblJ7zV1ck06",
   },
   {
     name: "Professional Maintenance",
