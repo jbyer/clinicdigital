@@ -9,7 +9,7 @@ const stats = [
 
 export function MaintenanceTrustBar() {
   return (
-    <section className="border-b border-border bg-muted/50 py-8">
+    <section className="border-b border-border bg-foreground py-8">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4 md:gap-8">
           {stats.map((stat) => (
