@@ -127,17 +127,17 @@ export default function BrandPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-background">
-        {/* Header */}
-        <div className="bg-foreground">
-          <div className="mx-auto max-w-7xl px-6 py-6 lg:px-8">
+      <main className="min-h-screen bg-background pt-[72px]">
+        {/* Header with Tab Navigation */}
+        <div className="sticky top-[72px] z-40 bg-foreground">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
             {/* Tab Navigation */}
-            <nav className="flex gap-8 border-b border-background/10">
+            <nav className="flex gap-8 overflow-x-auto border-b border-background/10">
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
-                  className={`pb-4 text-sm font-medium transition-colors ${
+                  className={`whitespace-nowrap py-4 text-sm font-medium transition-colors ${
                     activeTab === tab.id
                       ? "border-b-2 border-primary text-primary"
                       : "text-background/60 hover:text-background"
