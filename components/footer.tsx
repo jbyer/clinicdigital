@@ -68,11 +68,11 @@ const footerLinks = {
   company: [
     { label: "About Us", href: "/about-us" },
     { label: "Affiliates", href: "/affiliates" },
-    { label: "Brand", href: "/brand" },
     { label: "Case Studies", href: "#case-studies" },
     { label: "Process", href: "#process" },
     { label: "Contact", href: "#contact" },
     { label: "Book a Call", href: "/book-a-call" },
+    { label: "Brand", href: "/brand" },
   ],
   resources: [
     { label: "Blog", href: "/blog" },
