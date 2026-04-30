@@ -86,7 +86,7 @@ export default function BookACallPage() {
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-              Discover how AI-powered automation through GoHighLevel can transform your medical
+              Discover how AI-powered automation can transform your medical
               practice or medspa. Pick a time, and we will handle the rest.
             </p>
 
