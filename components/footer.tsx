@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram } from "lucide-react"
 import ChatWidget from "./chat-widget"
+import { Analytics } from "./analytics"
 
 // Custom X (Twitter) icon component
 function XIcon({ className }: { className?: string }) {
@@ -186,6 +187,8 @@ export function Footer() {
       {/* Chat widget loaded via next/script in a client component wrapper for production */}
       <ChatWidget />
 
+      {/* Analytics tracking scripts */}
+      <Analytics />
     </footer>
   )
 }
