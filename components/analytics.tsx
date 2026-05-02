@@ -68,6 +68,13 @@ export function Analytics() {
           }}
         />
       )}
+
+      {/* ClinicDigital External Tracking */}
+      <Script
+        src="https://brand.clinicdigital.co/js/external-tracking.js"
+        data-tracking-id="tk_e23e1f48f346490e89e8fcc241356e39"
+        strategy="afterInteractive"
+      />
     </>
   )
 }
