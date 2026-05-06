@@ -4,11 +4,14 @@ import { NextResponse } from "next/server"
 export async function POST(request: Request) {
   try {
     const body = await request.json()
+    console.log("[v0] Affiliate application body:", JSON.stringify(body))
 
     const { fullName, email, phone, company, website, referralMethod, businessName, audienceSize, promotionChannels } = body
 
     // Validate required fields
+    console.log("[v0] Validating - fullName:", fullName, "email:", email, "referralMethod:", referralMethod)
     if (!fullName || !email || !referralMethod) {
+      console.log("[v0] Validation failed - missing required fields")
       return NextResponse.json(
         { error: "Full name, email, and referral method are required" },
         { status: 400 }
@@ -44,9 +47,9 @@ export async function POST(request: Request) {
       .single()
 
     if (error) {
-      console.error("Supabase error:", error)
+      console.error("[v0] Supabase error:", error.message, error.details, error.hint)
       return NextResponse.json(
-        { error: "Failed to submit application" },
+        { error: `Failed to submit application: ${error.message}` },
         { status: 500 }
       )
     }
