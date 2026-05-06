@@ -5,7 +5,7 @@ export default async function AdminAffiliatesPage() {
   const supabase = await createClient()
 
   const { data: affiliates } = await supabase
-    .from("affiliate_application")
+    .from("affiliate_applications")
     .select("*")
     .order("created_at", { ascending: false })
 

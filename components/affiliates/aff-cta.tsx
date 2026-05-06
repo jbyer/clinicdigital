@@ -24,16 +24,35 @@ export function AffiliatesCta() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError("")
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+    try {
+      const response = await fetch("/api/affiliate-application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      })
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      const result = await response.json()
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit application")
+      }
+
+      setIsSubmitted(true)
+    } catch (err) {
+      console.error("Submission error:", err)
+      setError(err instanceof Error ? err.message : "Failed to submit application. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSubmitted) {
@@ -181,6 +200,13 @@ export function AffiliatesCta() {
               </label>
             </div>
           </div>
+
+          {/* Error Message */}
+          {error && (
+            <div className="mt-4 rounded-lg bg-destructive/10 p-3 text-sm text-destructive">
+              {error}
+            </div>
+          )}
 
           {/* Submit Button */}
           <div className="mt-6">
