@@ -12,6 +12,8 @@ import {
   ExternalLink,
   Menu,
   X,
+  Users,
+  ClipboardCheck,
 } from "lucide-react"
 import { useState } from "react"
 
@@ -19,6 +21,8 @@ const navItems = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "New Post", href: "/admin/create", icon: FilePlus },
   { label: "All Posts", href: "/admin/posts", icon: FileText },
+  { label: "Affiliates", href: "/admin/affiliates", icon: Users },
+  { label: "Site Audits", href: "/admin/site-audits", icon: ClipboardCheck },
 ]
 
 export function AdminSidebar({ userEmail }: { userEmail: string }) {
