@@ -192,7 +192,7 @@ export function AffiliatesCta() {
                     Terms of Service
                   </a>{" "}
                   and{" "}
-                  <a href="/privacy-policy"target="_blank"  className="text-primary underline hover:text-primary/80">
+                  <a href="/privacy"target="_blank"  className="text-primary underline hover:text-primary/80">
                     Privacy Policy
                   </a>
                   , including the Affiliate Program terms.
