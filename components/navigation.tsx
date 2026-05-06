@@ -18,6 +18,7 @@ import {
   Phone,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { SiteAuditModal } from "@/components/site-audit-modal"
 
 const serviceLinks = [
   { label: "Lead Generation", href: "/services/lead-generation", icon: Target },
@@ -181,7 +182,7 @@ export function Navigation() {
           ))}
         </div>
 
-        <div className="hidden lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <Button
             asChild
             variant={isScrolled ? "default" : "secondary"}
@@ -193,6 +194,18 @@ export function Navigation() {
           >
             <Link href="/book-a-call">Book a Consultation</Link>
           </Button>
+          <SiteAuditModal>
+            <Button
+              variant="outline"
+              className={
+                isScrolled
+                  ? "border-primary text-primary hover:bg-primary hover:text-white"
+                  : "border-white text-white hover:bg-white hover:text-foreground"
+              }
+            >
+              Free Site Audit
+            </Button>
+          </SiteAuditModal>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -272,12 +285,20 @@ export function Navigation() {
               </Link>
             ))}
           </div>
-          <div className="border-t border-border px-4 py-4">
+          <div className="flex flex-col gap-3 border-t border-border px-4 py-4">
             <Button asChild className="w-full hover:bg-red-600 hover:text-white">
               <Link href="/book-a-call" onClick={() => setIsMobileMenuOpen(false)}>
                 Book a Consultation
               </Link>
             </Button>
+            <SiteAuditModal>
+              <Button
+                variant="outline"
+                className="w-full border-primary text-primary hover:bg-primary hover:text-white"
+              >
+                Free Site Audit
+              </Button>
+            </SiteAuditModal>
           </div>
         </div>
       </div>
