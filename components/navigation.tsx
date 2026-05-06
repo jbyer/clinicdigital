@@ -199,8 +199,8 @@ export function Navigation() {
               variant="outline"
               className={
                 isScrolled
-                  ? "border-primary text-primary hover:bg-primary hover:text-white"
-                  : "border-white text-white hover:bg-white hover:text-foreground"
+                  ? "hover:bg-red-600 hover:text-white hover:cursor-pointer"
+                  : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"
               }
             >
               Free Site Audit
