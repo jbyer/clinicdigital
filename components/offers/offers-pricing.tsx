@@ -22,10 +22,10 @@ const plans = [
       "Citation Building - 15 directory listings (Healthgrades, WebMD, Yelp, etc.)",
       "Review Monitoring - Track reviews across platforms",
       "Content Optimization - Optimize 1 blog post per month",
-
     ],
     cta: "Get Started",
     highlighted: false,
+    payment: "https://brand.clinicdigital.co/payment-link/69ffb16c34d67b041e7e88e0"
   },
   {
     name: "Growth SEO Accelerator",
