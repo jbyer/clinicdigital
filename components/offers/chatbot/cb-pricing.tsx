@@ -73,7 +73,7 @@ const plans = [
     ],
     cta: "Buy",
     highlighted: false,
-    payment: "https://buy.stripe.com/bJe5kv8rnfi6gG33jF1ck05",
+    payment: "https://brand.clinicdigital.co/payment-link/69ffaf8834d67b041e7e88df",
   },
 ]
 
