@@ -70,7 +70,7 @@ const plans = [
     ],
     cta: "Dominate Your Market",
     highlighted: false,
-    payment: "",
+    payment: "https://brand.clinicdigital.co/payment-link/69ffb36434d67b041e7e88e2",
   },
 ]
 
