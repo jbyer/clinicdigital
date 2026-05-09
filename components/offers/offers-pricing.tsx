@@ -70,6 +70,7 @@ const plans = [
     ],
     cta: "Dominate Your Market",
     highlighted: false,
+    payment: "",
   },
 ]
 
