@@ -160,7 +160,7 @@ export function OffersPricing() {
                     }`}
                   variant={plan.highlighted ? "default" : "default"}
                 >
-                  <Link href="/book-a-call">
+                  <Link href={plan.payment}>
                     {plan.cta}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
