@@ -50,7 +50,7 @@ export function Contact() {
                       href="tel:+18555800608"
                       className="transition-colors hover:text-primary"
                     >
-                      (855) 580-0608
+                      (832) 423-7773
                     </a>
                   </p>
                 </div>
