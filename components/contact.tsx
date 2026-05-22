@@ -48,8 +48,7 @@ export function Contact() {
                   <p className="mt-0.5 text-sm text-muted-foreground">
                     <a
                       href="tel:+18555800608"
-                      className="transition-colors hover:text-primary"
-                    >
+                      className="transition-colors hover:text-primary">
                       (832) 423-7773
                     </a>
                   </p>
