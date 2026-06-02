@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   title: "About ClinicDigital.co | Your Healthcare Digital Partner",
   description:
     "Discover why healthcare practices trust ClinicDigital.co for web design, SEO, and digital marketing. Dedicated to bringing more patients to your door.",
-  keywords: []
+  keywords: ["About ClinicDigital"]
 }
 
 const values = [
