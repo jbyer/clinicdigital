@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Terms of Service - ClinicDigital.co",
   description:
     "Read the Terms of Service for ClinicDigital.co. Understand user obligations, acceptable use, intellectual property rights, liability limitations, and more.",
+  keywords: ["ClinicDigital Terms of Service"]
 }
 
 export default function TermsOfServicePage() {
