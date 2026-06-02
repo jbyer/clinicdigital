@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy - ClinicDigital.co",
   description:
     "Learn how ClinicDigital.co protects your privacy and handles your data. Our commitment to transparency and security for all healthcare practice clients.",
-  keywords: []
+  keywords: ["ClinicDigital Privacy Policy"]
 }
 
 export default function PrivacyPolicyPage() {
