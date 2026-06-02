@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "Schedule Your Free Strategy Call - ClinicDigital.co",
   description:
     "Ready to grow your practice? Book a free strategy call with ClinicDigital.co. Discuss your goals and create a plan to attract more patients.",
-  keywords: []
+  keywords: ["book a call"]
 }
 
 const benefits = [
