@@ -1,4 +1,38 @@
+'use client'
+
 import { Mail, Phone, MapPin } from "lucide-react"
+import dynamic from "next/dynamic"
+
+// Dynamically import the form embed to prevent hydration mismatch
+const FormEmbed = dynamic(() => Promise.resolve(
+  () => (
+    <>
+      <iframe
+        src="https://brand.clinicdigital.co/widget/form/76lQWeup3iwEHsSsOhqO"
+        style={{
+          width: '100%',
+          height: '823px',
+          border: 'none',
+          borderRadius: '20px'
+        }}
+        id="inline-76lQWeup3iwEHsSsOhqO"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="ClinicDigital Contact"
+        data-height="823"
+        data-layout-iframe-id="inline-76lQWeup3iwEHsSsOhqO"
+        data-form-id="76lQWeup3iwEHsSsOhqO"
+        title="ClinicDigital Contact"
+      />
+      <script src="https://brand.clinicdigital.co/js/form_embed.js" />
+    </>
+  )
+), { ssr: false })
 
 export function Contact() {
   return (
@@ -103,32 +137,7 @@ export function Contact() {
               24 hours.
             </p>
 
-            <iframe
-              src="https://brand.clinicdigital.co/widget/form/76lQWeup3iwEHsSsOhqO"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                borderRadius: '20px'
-              }}
-              id="inline-76lQWeup3iwEHsSsOhqO"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="ClinicDigital Contact"
-              data-height="823"
-              data-layout-iframe-id="inline-76lQWeup3iwEHsSsOhqO"
-              data-form-id="76lQWeup3iwEHsSsOhqO"
-              title="ClinicDigital Contact"
-            >
-            </iframe>
-            <script src="https://brand.clinicdigital.co/js/form_embed.js"></script>
-
-
+            <FormEmbed />
           </div>
         </div>
       </div>
