@@ -9,7 +9,7 @@ const features = [
   },
   {
     icon: Wrench,
-    title: "Continuous Maintenance & Support",
+    title: "Continuous Support",
     description:
       "Regular updates, security patches, performance optimization, and technical support so your website is always running at peak performance.",
   },
