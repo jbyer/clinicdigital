@@ -1,89 +1,35 @@
 import {
   Bot,
   Users,
-  Megaphone,
-  Search,
-  Wrench,
-  Palette,
-  CalendarCheck,
-  ArrowRight,
-  Phone,
   Target,
+  ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
 
 const services = [
   {
     icon: Target,
-    title: "Lead Generation",
-    href: "/services/lead-generation",
+    title: "Acquisition Engine",
+    href: "/offers/acquisition-engine",
     description:
-      "Capture and convert more high-value patient leads with smart forms, automated follow-ups, and multi-channel nurturing. Turn website visitors into booked appointments.",
-    features: ["Smart Lead Capture Forms", "Automated Follow-Up", "Lead Scoring & Qualification"],
-  },
-  {
-    icon: Megaphone,
-    title: "AI Marketing Automation",
-    href: "/services/ai-marketing-automation",
-    description:
-      "Automated email campaigns, SMS sequences, and social media outreach powered by AI. Reach the right patients at the right time with personalized messaging that converts.",
-    features: ["Smart Email Sequences", "AI-Powered SMS Campaigns", "Social Media Automation"],
-  },
-  {
-    icon: Users,
-    title: "Client Management (CRM)",
-    href: "/services/client-management",
-    description:
-      "A unified CRM built for healthcare. Track patient journeys, automate follow-ups, and manage relationships from first inquiry to long-term retention.",
-    features: ["Patient Pipeline Tracking", "Automated Follow-Ups", "Retention Workflows"],
+      "The complete lead capture and nurturing system. From smart forms and SEO visibility to automated marketing sequences, we ensure every qualified prospect is captured and converted into booked appointments.",
+    features: ["Lead Capture & Scoring", "Multi-Channel Nurturing", "Local SEO & Visibility"],
   },
   {
     icon: Bot,
-    title: "AI Chatbots & Virtual Assistants",
-    href: "/services/ai-chatbots",
+    title: "Front Desk Autopilot",
+    href: "/offers/front-desk-autopilot",
     description:
-      "24/7 AI assistants that handle appointment booking, FAQ responses, and lead qualification. Reduce staff workload while maintaining an exceptional patient experience.",
-    features: ["24/7 Lead Capture", "Appointment Scheduling", "Intelligent FAQ Responses"],
+      "24/7 patient engagement powered by AI. AI chatbots and voice assistants handle appointment booking, intake, and customer service around the clock—reducing no-shows and freeing your team for complex tasks.",
+    features: ["AI Chatbots & Voice AI", "24/7 Appointment Booking", "Intelligent Call Answering"],
   },
   {
-    icon: Phone,
-    title: "Voice AI",
-    href: "/services/voice-ai",
+    icon: Users,
+    title: "Lifetime Value System",
+    href: "/offers/lifetime-value-system",
     description:
-      "Intelligent voice assistants that answer calls, book appointments, and qualify leads with natural conversation. Never miss a patient call again, even after hours.",
-    features: ["24/7 Call Answering", "Voice-Based Booking", "Natural Conversations"],
-  },
-  {
-    icon: CalendarCheck,
-    title: "Appointment Automation",
-    href: "/services/appointment-automation",
-    description:
-      "Eliminate no-shows with intelligent scheduling, automated reminders, and self-service booking. Seamlessly integrated with your existing practice management systems.",
-    features: ["Online Self-Booking", "Smart Reminders", "Calendar Sync"],
-  },
-  {
-    icon: Search,
-    title: "SEO",
-    href: "/services/seo",
-    description:
-      "Dominate local search results and attract high-intent patients with data-driven SEO strategies tailored for medical practices and medspas. We optimize every page to rank where it matters most.",
-    features: ["Local SEO & Google Business", "Keyword Strategy", "On-Page Optimization"],
-  },
-  {
-    icon: Wrench,
-    title: "Website Maintenance",
-    href: "/services/website-maintenance",
-    description:
-      "Keep your practice website secure, up-to-date, and performing at its best. We handle updates, backups, speed optimization, and ongoing technical support so you can focus on patients.",
-    features: ["Security & Updates", "Performance Optimization", "Ongoing Technical Support"],
-  },
-  {
-    icon: Palette,
-    title: "Web Design",
-    href: "/services/web-design",
-    description:
-      "Custom, conversion-focused websites designed specifically for healthcare and medspa brands. We build beautiful, mobile-first experiences that turn visitors into booked appointments.",
-    features: ["Custom Design & Branding", "Mobile-First Development", "Conversion Optimization"],
+      "Transform one-time patients into lifelong loyalists. Modern website, maintenance, CRM management, and retention workflows keep your practice running smoothly and patients coming back.",
+    features: ["Beautiful Modern Website", "Continuous Maintenance & Support", "Patient Retention CRM"],
   },
 ]
 
@@ -94,15 +40,15 @@ export function Services() {
         {/* Section Header */}
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">
-            What We Do
+            Our Solutions
           </p>
           <h2 className="mt-3 font-heading text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             <span className="text-balance">
-              AI solutions built for healthcare and medspa growth.
+              Three powerful systems to grow your practice.
             </span>
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Our suite of AI empowered services covers every stage of the patient journey, from first touchpoint to lasting loyalty.
+            We've bundled our AI solutions into 3 integrated packages that work together to attract, convert, and retain more patients.
           </p>
         </div>
 

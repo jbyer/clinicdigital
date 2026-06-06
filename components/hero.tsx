@@ -24,20 +24,19 @@ export function Hero() {
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 backdrop-blur-sm">
             <Zap className="h-3.5 w-3.5 text-accent" />
             <span className="text-xs font-medium tracking-wide uppercase text-primary-foreground/90">
-              AI-Powered Healthcare Solutions
+              Patient Acquisition & Growth Engine
             </span>
           </div>
 
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
-              Transform Your Practice with{" "}
-              <span className="text-primary">Intelligent Automation</span>
+              Never Lose Another{" "}
+              <span className="text-primary">Qualified Lead</span>
             </span>
           </h1>
 
           <p className="mt-6 max-w-lg text-lg leading-relaxed text-primary-foreground/70">
-            We deploy cutting-edge AI solutions to streamline
-            operations, boost patient engagement, and drive growth for medical practices and medspas.
+            Get in front of every prospect. Our AI-powered system captures leads, books appointments automatically, and drives consistent patient flow—so you can focus on growing your practice.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">

@@ -57,21 +57,16 @@ const socialLinks = [
 
 
 const footerLinks = {
-  services: [
-    { label: "Marketing Automation", href: "/services/ai-marketing-automation" },
-    { label: "Client Management", href: "/services/client-management" },
-    { label: "AI Chatbots", href: "/services/ai-chatbots" },
-    { label: "Appointment Automation", href: "/services/appointment-automation" },
-    { label: "SEO", href: "/services/seo" },
-    { label: "Website Maintenance", href: "/services/website-maintenance" },
-    { label: "Web Design", href: "/services/web-design" },
+  solutions: [
+    { label: "Acquisition Engine", href: "/offers/acquisition-engine" },
+    { label: "Front Desk Autopilot", href: "/offers/front-desk-autopilot" },
+    { label: "Lifetime Value System", href: "/offers/lifetime-value-system" },
   ],
   company: [
     { label: "About Us", href: "/about-us" },
     { label: "Affiliates", href: "/affiliates" },
     { label: "Case Studies", href: "#case-studies" },
-    { label: "Process", href: "#process" },
-    { label: "Contact", href: "#contact" },
+    { label: "Get Free Audit", href: "#" },
     { label: "Book a Call", href: "/book-a-call" },
     { label: "Brand", href: "/brand" },
   ],
@@ -102,13 +97,13 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Services */}
+          {/* Solutions */}
           <div>
             <h4 className="text-xs font-semibold uppercase tracking-widest text-background/40">
-              Services
+              Solutions
             </h4>
             <ul className="mt-4 flex flex-col gap-2.5">
-              {footerLinks.services.map((link) => (
+              {footerLinks.solutions.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
