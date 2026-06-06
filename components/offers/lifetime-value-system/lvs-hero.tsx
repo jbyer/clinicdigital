@@ -50,7 +50,7 @@ export function LifetimeValueSystemHero() {
                 Book A Call
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-primary-foreground hover:bg-white hover:text-foreground">
+            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-base hover:bg-red-600 hover:text-white">
               <Link href="#contact">
                 Get Free Audit <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
