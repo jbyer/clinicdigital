@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import Link from "next/link"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -104,7 +105,15 @@ export default function OtherServicesPage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
-          <div className="mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <Image
+            src="/images/hero-other-services.png"
+            alt="Healthcare digital marketing workspace with service dashboards and analytics"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-primary/80" />
+          <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
               Other Services
             </p>
