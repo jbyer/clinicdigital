@@ -7,29 +7,19 @@ import {
   Menu,
   X,
   ChevronDown,
-  Megaphone,
-  Users,
   Bot,
-  CalendarCheck,
-  Search,
-  Wrench,
-  Palette,
   Target,
-  Phone,
+  Heart,
+  LayoutGrid,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SiteAuditModal } from "@/components/site-audit-modal"
 
 const serviceLinks = [
-  { label: "Lead Generation", href: "/services/lead-generation", icon: Target },
-  { label: "AI Marketing Automation", href: "/services/ai-marketing-automation", icon: Megaphone },
-  { label: "Client Management (CRM)", href: "/services/client-management", icon: Users },
-  { label: "AI Chatbots & Virtual Assistants", href: "/services/ai-chatbots", icon: Bot },
-  { label: "Voice AI", href: "/services/voice-ai", icon: Phone },
-  { label: "Appointment Automation", href: "/services/appointment-automation", icon: CalendarCheck },
-  { label: "SEO", href: "/services/seo", icon: Search },
-  { label: "Website Maintenance", href: "/services/website-maintenance", icon: Wrench },
-  { label: "Web Design", href: "/services/web-design", icon: Palette },
+  { label: "Acquisition Engine", href: "/offers/acquisition-engine", icon: Target },
+  { label: "Front Desk Autopilot", href: "/offers/front-desk-autopilot", icon: Bot },
+  { label: "Lifetime Value System", href: "/offers/lifetime-value-system", icon: Heart },
+  { label: "Other Services", href: "/other-services", icon: LayoutGrid },
 ]
 
 const navLinks = [
