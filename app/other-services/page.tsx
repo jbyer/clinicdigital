@@ -112,7 +112,7 @@ export default function OtherServicesPage() {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-primary/80" />
+          <div className="absolute inset-0 bg-gradient-to-b from-foreground/90 via-foreground/80 to-foreground/90" />
           <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
             <p className="text-sm font-semibold uppercase tracking-widest text-accent">
               Other Services
