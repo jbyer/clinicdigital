@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { SiteAuditModal } from "@/components/site-audit-modal"
 import { ArrowRight, CheckCircle2, Bot } from "lucide-react"
 
 const highlights = [
@@ -50,11 +51,11 @@ export function FrontDeskAutopilotHero() {
                 Book A Call
               </Link>
             </Button>
-            <Button size="lg" variant="outline" asChild className="border-primary-foreground text-base hover:bg-red-600 hover:text-white">
-              <Link href="#contact">
+            <SiteAuditModal>
+              <Button size="lg" variant="outline" className="border-primary-foreground text-base hover:bg-red-600 hover:text-white">
                 Get Free Audit <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              </Button>
+            </SiteAuditModal>
           </div>
 
           {/* Highlights */}
