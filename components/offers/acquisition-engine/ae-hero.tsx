@@ -16,7 +16,7 @@ export function AcquisitionEngineHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-offers-chatbot.jpg"
+          src="/images/hero-acquisition-engine.png"
           alt="Medical practice dashboard showing patient leads and acquisition metrics"
           fill
           className="object-cover"
