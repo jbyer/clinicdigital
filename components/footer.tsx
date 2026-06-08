@@ -61,6 +61,7 @@ const footerLinks = {
     { label: "Acquisition Engine", href: "/offers/acquisition-engine" },
     { label: "Front Desk Autopilot", href: "/offers/front-desk-autopilot" },
     { label: "Lifetime Value System", href: "/offers/lifetime-value-system" },
+    { label: "Other Services", href: "/other-services" },
   ],
   company: [
     { label: "About Us", href: "/about-us" },
