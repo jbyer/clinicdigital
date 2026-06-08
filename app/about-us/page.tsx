@@ -120,7 +120,7 @@ export default function AboutUsPage() {
                 size="lg"
                 variant="outline"
                 asChild
-                className="border-primary-foreground/20 bg-transparent text-base text-primary-foreground hover:bg-red-600"
+                className="border-primary-foreground text-base hover:bg-red-600 hover:text-white"
               >
                 <Link href="/#services">View Our Services</Link>
               </Button>
