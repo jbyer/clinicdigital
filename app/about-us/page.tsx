@@ -322,7 +322,7 @@ export default function AboutUsPage() {
               size="lg"
               variant="outline"
               asChild
-              className="border-primary-foreground/20 bg-white text-black text-primary-foreground hover:bg-red-600 "
+              className="bg-white text-foreground text-base hover:bg-red-600 hover:text-white"
             >
               <Link href="/#contact">Contact Us</Link>
             </Button>
