@@ -10,7 +10,7 @@ export const metadata = {
   title: "Front Desk Autopilot | 24/7 AI Patient Service | ClinicDigital",
   description:
     "HIPAA-compliant AI chatbots and voice assistants that handle patient calls and appointments 24/7. Reduce no-shows by 40% and free up your front desk staff.",
-  keywords: ["AI chatbot", "voice AI", "appointment scheduling", "patient service", "no-show reduction"],
+  keywords: ["HIPAA-compliant AI chatbots", "voice AI", "appointment scheduling", "patient service", "no-show reduction"],
 }
 
 export default function FrontDeskAutopilotPage() {
