@@ -37,7 +37,7 @@ export function LifetimeValueSystemHero() {
 
           <h1 className="font-heading text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl xl:text-7xl">
             <span className="text-balance">
-              Turn Patients Into <span className="text-primary">Lifelong Loyalists</span>
+              Turn Patients Into <span className="text-primary">Loyalists</span>
             </span>
           </h1>
 
