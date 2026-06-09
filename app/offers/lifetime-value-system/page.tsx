@@ -9,8 +9,8 @@ import { SpringSalePopup } from "@/components/spring-sale-popup"
 export const metadata = {
   title: "Lifetime Value System | Patient Retention & Website | ClinicDigital",
   description:
-    "Complete patient retention infrastructure including modern website, continuous maintenance, and CRM. Turn one-time patients into lifelong loyalists and maximize patient lifetime value.",
-  keywords: ["patient retention", "practice website", "patient CRM", "patient loyalty", "website maintenance"],
+    "ClinicDigital's Lifetime Value System is a complete patient retention solution for medical practices — combining CRM automation, reactivation campaigns, and a modern website to keep patients coming back.",
+  keywords: ["patient retention solution for medical practices",]
 }
 
 export default function LifetimeValueSystemPage() {
