@@ -7,10 +7,10 @@ import { AcquisitionEngineProcess } from "@/components/offers/acquisition-engine
 import { SpringSalePopup } from "@/components/spring-sale-popup"
 
 export const metadata = {
-  title: "Acquisition Engine | Patient Lead Generation System | ClinicDigital",
+  title: "Acquisition Engine Package | Patient Lead Generation System | ClinicDigital",
   description:
-    "Capture and nurture patient leads automatically. The Acquisition Engine combines smart forms, local SEO, and marketing automation to fill your appointment calendar. Never lose another qualified lead.",
-  keywords: ["lead generation", "patient acquisition", "marketing automation", "dental marketing", "medical marketing"],
+    "ClinicDigital's Acquisition Engine package is a complete patient lead generation system for medical practices — combining local SEO, smart forms, and automated nurturing to fill your schedule.",
+  keywords: ["patient lead generation system for medical practices"],
 }
 
 export default function AcquisitionEnginePage() {
