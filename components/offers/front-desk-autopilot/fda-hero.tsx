@@ -12,7 +12,7 @@ const highlights = [
 
 export function FrontDeskAutopilotHero() {
   return (
-    <section className="relative h-[600px] overflow-hidden">
+    <section className="relative h-[600px] overflow-hidden pb-[30px]">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
