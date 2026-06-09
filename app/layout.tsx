@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-space-grotesk' })
 
 export const metadata: Metadata = {
-  title: 'ClinicDigital.co | Bring More Patients to Your Practice',
+  title: 'Medical Practice Marketing Agency | ClinicDigital',
   description: 'ClinicDigital is a medical practice marketing agency helping clinics and med spas attract more patients with AI-powered SEO, automation, and lead generation.',
   keywords: ["AI Solutions", "AI solutions for healthcare practices"]
 }
