@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "solutions": "Soluciones",
+    "acquisitionEngine": "Motor de Adquisición",
+    "frontDeskAutopilot": "Automatización de Recepción",
+    "lifetimeValueSystem": "Sistema de Valor Vitalicio",
+    "otherServices": "Otros Servicios",
+    "caseStudies": "Casos de Éxito",
+    "getFreeAudit": "Obtener Auditoría Gratuita",
+    "bookACall": "Agendar Llamada"
+  },
+  "hero": {
+    "badge": "Motor de Adquisición y Crecimiento de Pacientes",
+    "title": "Nunca Pierdas Otro Cliente Potencial Calificado",
+    "description": "Llega a cada prospecto. Nuestro sistema impulsado por IA captura leads, reserva citas automáticamente e impulsa un flujo constante de pacientes, para que puedas enfocarte en hacer crecer tu práctica."
+  },
+  "footer": {
+    "solutions": "Soluciones",
+    "company": "Empresa",
+    "resources": "Recursos"
+  }
+}

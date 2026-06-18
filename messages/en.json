@@ -1,0 +1,23 @@
+{
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "acquisitionEngine": "Acquisition Engine",
+    "frontDeskAutopilot": "Front Desk Autopilot",
+    "lifetimeValueSystem": "Lifetime Value System",
+    "otherServices": "Other Services",
+    "caseStudies": "Case Studies",
+    "getFreeAudit": "Get Free Audit",
+    "bookACall": "Book A Call"
+  },
+  "hero": {
+    "badge": "Patient Acquisition & Growth Engine",
+    "title": "Never Lose Another Qualified Lead",
+    "description": "Get in front of every prospect. Our AI-powered system captures leads, books appointments automatically, and drives consistent patient flow—so you can focus on growing your practice."
+  },
+  "footer": {
+    "solutions": "Solutions",
+    "company": "Company",
+    "resources": "Resources"
+  }
+}

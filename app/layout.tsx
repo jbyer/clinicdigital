@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { GoogleAnalytics } from '@/components/google-analytics'
 import { GoogleTagManager, GoogleTagManagerNoScript } from '@/components/google-tag-manager'
+import { LocaleProvider } from '@/lib/locale-context'
 
 import './globals.css'
 
@@ -32,7 +33,9 @@ export default function RootLayout({
       <body className="font-sans antialiased" suppressHydrationWarning>
         <GoogleTagManagerNoScript />
         <GoogleAnalytics />
-        {children}
+        <LocaleProvider>
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   )
