@@ -14,7 +14,6 @@ import {
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SiteAuditModal } from "@/components/site-audit-modal"
-import { LanguageSwitcher } from "@/components/language-switcher"
 
 const serviceLinks = [
   { label: "Acquisition Engine", href: "/offers/acquisition-engine", icon: Target },
@@ -197,7 +196,6 @@ export function Navigation() {
               Free Site Audit
             </Button>
           </SiteAuditModal>
-          <LanguageSwitcher />
         </div>
 
         {/* Mobile Menu Toggle */}
