@@ -10,7 +10,7 @@ const nextConfig = {
     return {
       beforeFiles: [
         {
-          source: "/:path*",
+          source: "/((?!_next/).*)",
           has: [{ type: "host", value: "diagnostics.clinicdigital.co" }],
           destination: "/diagnostics/:path*",
         },
