@@ -61,7 +61,6 @@ export default function DiagnosticsChooserPage() {
             conversion — how much revenue is already in your existing database?
           </p>
           <span className="chooser-cta">Start diagnostic →</span>
-          </Link>
         </Link>
       </div>
       </div>
