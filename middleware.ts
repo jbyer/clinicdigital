@@ -6,8 +6,8 @@ export async function middleware(request: NextRequest) {
 
   if (host.startsWith("diagnostics.")) {
     const pathname = request.nextUrl.pathname
-    // Pass _next/* through untouched (static, data, chunks)
-    if (pathname.startsWith("/_next/")) {
+    // Pass _next/* and already-prefixed /diagnostics/* paths through untouched
+    if (pathname.startsWith("/_next/") || pathname.startsWith("/diagnostics")) {
       return NextResponse.next()
     }
     const url = request.nextUrl.clone()
