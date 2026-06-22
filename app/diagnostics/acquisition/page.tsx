@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import Image from "next/image"
 import { InputRow, NumberInput } from "@/components/diagnostics/inputs"
 import { NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { POSITION_CHOICES, LOCAL_PACK_CLICK_SHARE } from "@/lib/diagnostics/acquisitionConstants"
@@ -159,6 +160,31 @@ Write the 3-sentence summary now.`
 
   return (
     <>
+      {/* Hero Header */}
+      <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
+        <Image
+          src="/images/hero-other-services.png"
+          alt="Healthcare digital marketing workspace with service dashboards and analytics"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/90 via-foreground/80 to-foreground/90" />
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+            Customer Acquisition Diagnostic
+          </p>
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+            <span className="text-balance">
+              How many new patients is your Google ranking costing you?
+            </span>
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/70">
+            Discover exactly how many high-value patient leads are going to your competitors every month because of where you rank on Google. This free diagnostic takes under 2 minutes.
+          </p>
+        </div>
+      </section>
+
       {/* ── FORM STEP ── */}
       {step === "form" && (
         <div className="form-panel">

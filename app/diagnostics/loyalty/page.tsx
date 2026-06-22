@@ -2,6 +2,7 @@
 
 import { useState, useCallback, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
+import Image from "next/image"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { streamNarrative } from "@/lib/diagnostics/streamNarrative"
@@ -128,6 +129,33 @@ function LTVContent() {
   const practiceNameParam = searchParams.get("name") || ""
 
   const [step, setStep] = useState<"form" | "results">("form")
+
+  // Hero header component
+  const HeroHeader = () => (
+    <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
+      <Image
+        src="/images/hero-other-services.png"
+        alt="Healthcare digital marketing workspace with service dashboards and analytics"
+        fill
+        priority
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-foreground/90 via-foreground/80 to-foreground/90" />
+      <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+        <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+          Lifetime Value Diagnostic
+        </p>
+        <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+          <span className="text-balance">
+            How much revenue is sitting in your existing patient database?
+          </span>
+        </h1>
+        <p className="mt-6 text-lg leading-relaxed text-primary-foreground/70">
+          Identify hidden revenue opportunities from lapsed patients, loyalty gaps, referral leaks, and website conversion issues. This free diagnostic takes under 2 minutes and reveals untapped potential without new ad spend.
+        </p>
+      </div>
+    </section>
+  )
   const [inputs, setInputs] = useState<Inputs>({
     ...DEFAULTS,
     practiceName: practiceNameParam,
@@ -209,6 +237,7 @@ Write the 3-sentence summary now.`
 
   return (
     <>
+      <HeroHeader />
       {/* ── FORM STEP ── */}
       {step === "form" && (
         <div className="form-panel">

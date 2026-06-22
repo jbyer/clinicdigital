@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback } from "react"
+import Image from "next/image"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { Input } from "@/components/ui/input"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
@@ -127,6 +128,31 @@ Write the 3-sentence summary now.`
 
   return (
     <>
+      {/* Hero Header */}
+      <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
+        <Image
+          src="/images/hero-other-services.png"
+          alt="Healthcare digital marketing workspace with service dashboards and analytics"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-foreground/90 via-foreground/80 to-foreground/90" />
+        <div className="relative mx-auto max-w-4xl px-6 text-center lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-widest text-accent">
+            Practice Revenue Leak Diagnostic
+          </p>
+          <h1 className="mt-4 font-heading text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
+            <span className="text-balance">
+              How much revenue is your practice losing every month?
+            </span>
+          </h1>
+          <p className="mt-6 text-lg leading-relaxed text-primary-foreground/70">
+            Discover the hidden costs of missed calls, no-shows, and billing errors. This free diagnostic takes under 2 minutes and reveals exactly how much revenue is leaking from your front desk and appointment management.
+          </p>
+        </div>
+      </section>
+
       {!buckets && (
         <div className="form-panel">
           <div className="form-intro">
