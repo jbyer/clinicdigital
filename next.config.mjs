@@ -8,9 +8,9 @@ const nextConfig = {
   },
   async rewrites() {
     return {
-      beforeFiles: [
+      afterFiles: [
         {
-          source: "/((?!_next/).*)",
+          source: "/:path*",
           has: [{ type: "host", value: "diagnostics.clinicdigital.co" }],
           destination: "/diagnostics/:path*",
         },
