@@ -2,11 +2,17 @@ import { updateSession } from "@/lib/supabase/middleware"
 import { NextResponse, type NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
-  // Diagnostics subdomain is public — skip Supabase entirely so its routes
-  // work without Supabase env vars and don't hit auth logic.
   const host = request.headers.get("host") ?? ""
+
   if (host.startsWith("diagnostics.")) {
-    return NextResponse.next()
+    const pathname = request.nextUrl.pathname
+    // Pass _next/* through untouched (static, data, chunks)
+    if (pathname.startsWith("/_next/")) {
+      return NextResponse.next()
+    }
+    const url = request.nextUrl.clone()
+    url.pathname = `/diagnostics${pathname === "/" ? "" : pathname}`
+    return NextResponse.rewrite(url)
   }
 
   return await updateSession(request)
