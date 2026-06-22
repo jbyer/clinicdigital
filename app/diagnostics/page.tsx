@@ -11,7 +11,7 @@ export default function DiagnosticsChooserPage() {
         </p>
       </div>
       <div className="chooser-grid">
-        <Link className="chooser-card" href="/diagnostics/acquisition">
+        <Link className="chooser-card" href="/acquisition">
           <div className="chooser-eyebrow">Local Search &amp; Growth</div>
           <h2>Customer Acquisition Diagnostic</h2>
           <p>
@@ -20,7 +20,7 @@ export default function DiagnosticsChooserPage() {
           </p>
           <span className="chooser-cta">Start diagnostic →</span>
         </Link>
-        <Link className="chooser-card" href="/diagnostics/revenue-leak">
+        <Link className="chooser-card" href="/revenue-leak">
           <div className="chooser-eyebrow">Front Desk &amp; Retention</div>
           <h2>Practice Revenue Leak Diagnostic</h2>
           <p>
@@ -29,7 +29,7 @@ export default function DiagnosticsChooserPage() {
           </p>
           <span className="chooser-cta">Start diagnostic →</span>
         </Link>
-        <Link className="chooser-card" href="/diagnostics/loyalty">
+        <Link className="chooser-card" href="/loyalty">
           <div className="chooser-eyebrow">Patient Lifetime Value</div>
           <h2>Lifetime Value Diagnostic</h2>
           <p>
