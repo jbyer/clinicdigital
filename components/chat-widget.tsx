@@ -1,11 +1,17 @@
 'use client';
 
 import Script from 'next/script';
+import { useEffect, useState } from 'react';
 
 export default function ChatWidget() {
-  // Only load in production to keep dev console clean 
-  // and prevent hydration errors during local development
-  if (process.env.NODE_ENV !== 'production') {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  // Only render after client-side hydration to prevent hydration mismatch
+  if (!isMounted) {
     return null;
   }
 
