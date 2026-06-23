@@ -136,7 +136,7 @@ input[type=range]::-webkit-slider-thumb:hover {
   .header-breadcrumb { padding: 6px 20px 10px; }
 }
 
-.app-main { flex: 1; padding: 40px 20px 80px; }
+.app-main { flex: 1; padding: 0; }
 
 /* ── Form Panel ── */
 .form-panel { max-width: 680px; margin: 0 auto; }
