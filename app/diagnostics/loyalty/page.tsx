@@ -3,6 +3,8 @@
 import { useState, useCallback, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
 import Image from "next/image"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { streamNarrative } from "@/lib/diagnostics/streamNarrative"
@@ -237,6 +239,8 @@ Write the 3-sentence summary now.`
 
   return (
     <>
+      <Navigation />
+      <main>
       <HeroHeader />
       {/* ── FORM STEP ── */}
       {step === "form" && (
@@ -370,11 +374,12 @@ Write the 3-sentence summary now.`
           </button>
         </div>
       )}
+      </main>
+      <Footer />
     </>
   )
 }
 
-// ---------- Page export with Suspense boundary ----------
 export default function LTVPage() {
   return (
     <Suspense>
