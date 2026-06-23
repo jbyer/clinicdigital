@@ -2,6 +2,8 @@
 
 import { useState, useCallback } from "react"
 import Image from "next/image"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { Input } from "@/components/ui/input"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
@@ -128,6 +130,8 @@ Write the 3-sentence summary now.`
 
   return (
     <>
+      <Navigation />
+      <main>
       {/* Hero Header */}
       <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
         <Image
@@ -259,6 +263,8 @@ Write the 3-sentence summary now.`
           </button>
         </div>
       )}
+      </main>
+      <Footer />
     </>
   )
 }

@@ -1,9 +1,13 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
 
 export default function DiagnosticsChooserPage() {
   return (
     <>
+      <Navigation />
+      <main>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-primary py-24 lg:py-32">
         <Image
@@ -64,6 +68,8 @@ export default function DiagnosticsChooserPage() {
         </Link>
       </div>
       </div>
+      </main>
+      <Footer />
     </>
   )
 }
