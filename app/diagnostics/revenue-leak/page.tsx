@@ -159,10 +159,10 @@ Write the 3-sentence summary now.`
 
       {!buckets && (
         <div className="form-panel">
-          <div className="form-intro">
+          {/* <div className="form-intro">
             <h1>How much revenue is your practice losing every month?</h1>
             <p>Four numbers. Under 60 seconds. We handle the math.</p>
-          </div>
+          </div>*/}
 
           <div className="form-card">
             <InputRow label="Practice name" hint="Used to personalize your report">
