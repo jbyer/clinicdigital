@@ -1,7 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
 
 export default function DiagnosticsChooserPage() {
   return (
@@ -69,7 +68,6 @@ export default function DiagnosticsChooserPage() {
       </div>
       </div>
       </main>
-      <Footer />
     </>
   )
 }
