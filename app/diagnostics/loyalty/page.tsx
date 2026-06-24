@@ -245,10 +245,10 @@ Write the 3-sentence summary now.`
       {/* ── FORM STEP ── */}
       {step === "form" && (
         <div className="form-panel">
-          <div className="form-intro">
+          {/*<div className="form-intro">
             <h1>How much revenue is sitting in your existing patient database?</h1>
             <p>Three numbers. Four revenue buckets. No new ad spend required. Under 60 seconds.</p>
-          </div>
+          </div>*/}
 
           <div className="form-card">
             <InputRow label="Practice name" hint="Used to personalize your report">
