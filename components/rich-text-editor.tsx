@@ -110,14 +110,27 @@ export function RichTextEditor({
           font-size: 0.875rem !important;
           border: none !important;
           flex: 1;
-          overflow: visible !important;
+          overflow: hidden !important;
         }
         .quill-wrapper .ql-editor {
           min-height: 20rem;
-          max-height: none !important;
-          overflow-y: visible !important;
+          max-height: 60vh !important;
+          overflow-y: auto !important;
           color: hsl(var(--foreground)) !important;
           padding-bottom: 4rem;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar {
+          width: 8px;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-track {
+          background: hsl(var(--background));
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-thumb {
+          background: hsl(var(--muted-foreground));
+          border-radius: 4px;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-thumb:hover {
+          background: hsl(var(--foreground));
         }
         .quill-wrapper .ql-editor.ql-blank::before {
           color: hsl(var(--muted-foreground)) !important;
