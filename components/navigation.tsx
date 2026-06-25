@@ -25,8 +25,8 @@ const serviceLinks = [
 const navLinks = [
   { label: "Process", href: "https://www.clinicdigital.co/#process" },
   { label: "Case Studies", href: "https://www.clinicdigital.co/#case-studies" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about-us" },
+  { label: "Blog", href: "https://www.clinicdigital.co" },
+  { label: "About Us", href: "https://www.clinicdigital.co/about-us" },
   { label: "Contact", href: "https://www.clinicdigital.co/#contact" },
 ]
 
@@ -182,7 +182,7 @@ export function Navigation() {
                 : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"
             }
           >
-            <Link href="/book-a-call">Book a Consultation</Link>
+            <Link href="https://www.clinicdigital.co/book-a-call" target="_blank" rel="noopener noreferrer">Book a Consultation</Link>
           </Button>
           <SiteAuditModal>
             <Button
@@ -277,7 +277,7 @@ export function Navigation() {
           </div>
           <div className="flex flex-col gap-3 border-t border-border px-4 py-4">
             <Button asChild className="w-full hover:bg-red-600 hover:text-white">
-              <Link href="/book-a-call" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="https://www.clinicdigital.co/book-a-call" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                 Book a Consultation
               </Link>
             </Button>
