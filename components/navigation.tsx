@@ -16,17 +16,17 @@ import { Button } from "@/components/ui/button"
 import { SiteAuditModal } from "@/components/site-audit-modal"
 
 const serviceLinks = [
-  { label: "Acquisition Engine", href: "/offers/acquisition-engine", icon: Target },
-  { label: "Front Desk Autopilot", href: "/offers/front-desk-autopilot", icon: Bot },
-  { label: "Lifetime Value System", href: "/offers/lifetime-value-system", icon: Heart },
-  { label: "Other Services", href: "/other-services", icon: LayoutGrid },
+  { label: "Acquisition Engine", href: "https://www.clinicdigital.co/offers/acquisition-engine", icon: Target },
+  { label: "Front Desk Autopilot", href: "https://www.clinicdigital.co/offers/front-desk-autopilot", icon: Bot },
+  { label: "Lifetime Value System", href: "https://www.clinicdigital.co/offers/lifetime-value-system", icon: Heart },
+  { label: "Other Services", href: "https://www.clinicdigital.co/other-services", icon: LayoutGrid },
 ]
 
 const navLinks = [
   { label: "Process", href: "https://www.clinicdigital.co/#process" },
   { label: "Case Studies", href: "https://www.clinicdigital.co/#case-studies" },
-  { label: "Blog", href: "/blog" },
-  { label: "About Us", href: "/about-us" },
+  { label: "Blog", href: "https://www.clinicdigital.co/blog" },
+  { label: "About Us", href: "https://www.clinicdigital.co/about-us" },
   { label: "Contact", href: "https://www.clinicdigital.co/#contact" },
 ]
 
@@ -87,7 +87,7 @@ export function Navigation() {
         }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center">
+        <Link href="https://www.clinicdigital.co" className="flex items-center" target="_blank" rel="noopener noreferrer">
           <Image
             src={isScrolled ? "/images/clinicdigital-logo.png" : "/images/clinicdigital-logo-white.png"}
             alt="ClinicDigital.co - Bringing More Patients to Your Door"
@@ -142,6 +142,8 @@ export function Navigation() {
                       role="menuitem"
                       className="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-primary/10"
                       onClick={() => setIsServicesOpen(false)}
+                      target="_blank"
+                      rel="noopener noreferrer"
                     >
                       <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
                         <service.icon className="h-4 w-4" />
@@ -182,7 +184,7 @@ export function Navigation() {
                 : "bg-white text-foreground font-semibold hover:bg-red-600 hover:text-white"
             }
           >
-            <Link href="/book-a-call">Book a Consultation</Link>
+            <Link href="https://www.clinicdigital.co/book-a-call" target="_blank" rel="noopener noreferrer">Book a Consultation</Link>
           </Button>
           <SiteAuditModal>
             <Button
@@ -255,6 +257,8 @@ export function Navigation() {
                       setIsMobileMenuOpen(false)
                       setIsMobileServicesOpen(false)
                     }}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     <service.icon className="h-3.5 w-3.5 flex-shrink-0 text-primary/60" />
                     {service.label}
@@ -277,7 +281,7 @@ export function Navigation() {
           </div>
           <div className="flex flex-col gap-3 border-t border-border px-4 py-4">
             <Button asChild className="w-full hover:bg-red-600 hover:text-white">
-              <Link href="/book-a-call" onClick={() => setIsMobileMenuOpen(false)}>
+              <Link href="https://www.clinicdigital.co/book-a-call" target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)}>
                 Book a Consultation
               </Link>
             </Button>
