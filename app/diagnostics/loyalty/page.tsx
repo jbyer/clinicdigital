@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useCallback, Suspense } from "react"
-import { useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { streamNarrative } from "@/lib/diagnostics/streamNarrative"
 import { Input } from "@/components/ui/input"
+import { useURLParams } from "@/lib/diagnostics/useURLParams"
 
 // Industry benchmarks — hardcoded so the lead only answers 3 questions
 const VISITS_PER_YEAR = 2       // below 4× benchmark → loyalty gap fires
@@ -124,10 +124,9 @@ const REC_COPY: Record<
   },
 }
 
-// ---------- Inner component (uses useSearchParams) ----------
+// ---------- Inner component (uses useURLParams) ----------
 function LTVContent() {
-  const searchParams = useSearchParams()
-  const practiceNameParam = searchParams.get("name") || ""
+  const { practiceName: practiceNameParam } = useURLParams()
 
   const [step, setStep] = useState<"form" | "results">("form")
 

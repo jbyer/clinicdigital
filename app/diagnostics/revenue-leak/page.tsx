@@ -1,12 +1,13 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, Suspense } from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
 import { Input } from "@/components/ui/input"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { streamNarrative, type ChatMessage } from "@/lib/diagnostics/streamNarrative"
+import { useURLParams } from "@/lib/diagnostics/useURLParams"
 
 // Industry averages
 const REVISIT_RATE = 2.5
@@ -56,8 +57,9 @@ function dominantPackage(buckets: Buckets) {
   }
 }
 
-export default function RevenueLeak() {
-  const [inputs, setInputs] = useState<Inputs>({ ...DEFAULTS })
+function RevenueLeakContent() {
+  const { practiceName: urlPracticeName } = useURLParams()
+  const [inputs, setInputs] = useState<Inputs>({ ...DEFAULTS, practiceName: urlPracticeName })
   const [buckets, setBuckets] = useState<Buckets | null>(null)
   const [narrative, setNarrative] = useState("")
   const [narrativeLoading, setNarrativeLoading] = useState(false)
@@ -265,5 +267,14 @@ Write the 3-sentence summary now.`
       </main>
   
     </>
+  )
+}
+
+// ---------- Main page with Suspense boundary ----------
+export default function RevenueLeak() {
+  return (
+    <Suspense>
+      <RevenueLeakContent />
+    </Suspense>
   )
 }
