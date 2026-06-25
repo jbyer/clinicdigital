@@ -87,7 +87,7 @@ export function Navigation() {
         }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-        <Link href="/" className="flex items-center">
+        <Link href="https://www.clinicdigital.co" className="flex items-center" target="_blank" rel="noopener noreferrer">
           <Image
             src={isScrolled ? "/images/clinicdigital-logo.png" : "/images/clinicdigital-logo-white.png"}
             alt="ClinicDigital.co - Bringing More Patients to Your Door"
