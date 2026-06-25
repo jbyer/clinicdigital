@@ -7,6 +7,7 @@ import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inp
 import { Input } from "@/components/ui/input"
 import { BucketCard, NarrativeCard, RecommendationCard } from "@/components/diagnostics/result-cards"
 import { streamNarrative, type ChatMessage } from "@/lib/diagnostics/streamNarrative"
+import { useURLParams } from "@/lib/diagnostics/useURLParams"
 
 // Industry averages
 const REVISIT_RATE = 2.5
@@ -57,7 +58,8 @@ function dominantPackage(buckets: Buckets) {
 }
 
 export default function RevenueLeak() {
-  const [inputs, setInputs] = useState<Inputs>({ ...DEFAULTS })
+  const { practiceName: urlPracticeName } = useURLParams()
+  const [inputs, setInputs] = useState<Inputs>({ ...DEFAULTS, practiceName: urlPracticeName })
   const [buckets, setBuckets] = useState<Buckets | null>(null)
   const [narrative, setNarrative] = useState("")
   const [narrativeLoading, setNarrativeLoading] = useState(false)

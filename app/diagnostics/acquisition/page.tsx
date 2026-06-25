@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { InputRow, NumberInput } from "@/components/diagnostics/inputs"
@@ -9,6 +9,7 @@ import { POSITION_CHOICES, LOCAL_PACK_CLICK_SHARE } from "@/lib/diagnostics/acqu
 import { calcAcquisition, AcquisitionResult } from "@/lib/diagnostics/acquisitionCalc"
 import { staticLookup, Metro } from "@/lib/diagnostics/metroLookup"
 import { streamNarrative } from "@/lib/diagnostics/streamNarrative"
+import { useURLParams } from "@/lib/diagnostics/useURLParams"
 
 // Hardcoded so the lead only answers 3 questions
 const CLOSE_RATE_PCT = 25
@@ -49,8 +50,9 @@ function RankVisual({ position }: { position: number }) {
 
 // ---------- Main page ----------
 export default function AcquisitionPage() {
+  const { practiceName: urlPracticeName } = useURLParams()
   const [step, setStep] = useState<"form" | "population" | "results">("form")
-  const [inputs, setInputs] = useState({ ...DEFAULTS })
+  const [inputs, setInputs] = useState({ ...DEFAULTS, practiceName: urlPracticeName })
   const [metro, setMetro] = useState<Metro | null>(null)
   const [results, setResults] = useState<AcquisitionResult | null>(null)
   const [lookupLoading, setLookupLoading] = useState(false)
