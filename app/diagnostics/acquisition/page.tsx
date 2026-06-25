@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect, Suspense } from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { InputRow, NumberInput } from "@/components/diagnostics/inputs"
@@ -48,8 +48,8 @@ function RankVisual({ position }: { position: number }) {
   )
 }
 
-// ---------- Main page ----------
-export default function AcquisitionPage() {
+// ---------- Content component (uses useSearchParams) ----------
+function AcquisitionContent() {
   const { practiceName: urlPracticeName } = useURLParams()
   const [step, setStep] = useState<"form" | "population" | "results">("form")
   const [inputs, setInputs] = useState({ ...DEFAULTS, practiceName: urlPracticeName })
@@ -336,5 +336,14 @@ Write the 3-sentence summary now.`
       </main>
       
     </>
+  )
+}
+
+// ---------- Main page with Suspense boundary ----------
+export default function AcquisitionPage() {
+  return (
+    <Suspense>
+      <AcquisitionContent />
+    </Suspense>
   )
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useCallback, Suspense } from "react"
 import Image from "next/image"
 import { Navigation } from "@/components/navigation"
 import { InputRow, SliderInput, NumberInput } from "@/components/diagnostics/inputs"
@@ -57,7 +57,7 @@ function dominantPackage(buckets: Buckets) {
   }
 }
 
-export default function RevenueLeak() {
+function RevenueLeakContent() {
   const { practiceName: urlPracticeName } = useURLParams()
   const [inputs, setInputs] = useState<Inputs>({ ...DEFAULTS, practiceName: urlPracticeName })
   const [buckets, setBuckets] = useState<Buckets | null>(null)
@@ -267,5 +267,14 @@ Write the 3-sentence summary now.`
       </main>
   
     </>
+  )
+}
+
+// ---------- Main page with Suspense boundary ----------
+export default function RevenueLeak() {
+  return (
+    <Suspense>
+      <RevenueLeakContent />
+    </Suspense>
   )
 }
