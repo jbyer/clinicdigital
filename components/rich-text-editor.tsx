@@ -1,6 +1,6 @@
 "use client"
 
-import { useMemo } from "react"
+import { useMemo, useRef, useEffect, useState } from "react"
 import dynamic from "next/dynamic"
 import "react-quill-new/dist/quill.snow.css"
 
@@ -24,6 +24,9 @@ export function RichTextEditor({
   onChange,
   placeholder,
 }: RichTextEditorProps) {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const [editorHeight, setEditorHeight] = useState<number | string>("auto")
+
   const modules = useMemo(
     () => ({
       toolbar: [
@@ -56,8 +59,23 @@ export function RichTextEditor({
     []
   )
 
+  useEffect(() => {
+    // Handle auto-expanding editor based on content
+    const timer = setTimeout(() => {
+      if (containerRef.current) {
+        const editorElement = containerRef.current.querySelector(".ql-editor")
+        if (editorElement) {
+          const scrollHeight = (editorElement as HTMLElement).scrollHeight
+          setEditorHeight(Math.max(320, scrollHeight))
+        }
+      }
+    }, 0)
+
+    return () => clearTimeout(timer)
+  }, [value])
+
   return (
-    <div className="quill-wrapper blog-content">
+    <div className="quill-wrapper blog-content" ref={containerRef}>
       <ReactQuill
         theme="snow"
         value={value}
@@ -67,22 +85,52 @@ export function RichTextEditor({
         placeholder={placeholder}
       />
       <style jsx global>{`
+        .quill-wrapper {
+          display: flex;
+          flex-direction: column;
+          border-radius: 0.5rem !important;
+          overflow: hidden;
+          border: 1px solid hsl(var(--input));
+        }
         .quill-wrapper .ql-toolbar {
-          border-color: hsl(var(--input)) !important;
-          border-radius: 0.5rem 0.5rem 0 0 !important;
+          border-color: hsl(var(--border)) !important;
+          border-radius: 0 !important;
           background: hsl(var(--background)) !important;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          border-bottom: 1px solid hsl(var(--border)) !important;
+          flex-shrink: 0;
         }
         .quill-wrapper .ql-container {
-          border-color: hsl(var(--input)) !important;
-          border-radius: 0 0 0.5rem 0.5rem !important;
+          border-color: transparent !important;
+          border-radius: 0 !important;
           background: hsl(var(--background)) !important;
           font-family: inherit !important;
           font-size: 0.875rem !important;
-          min-height: 20rem;
+          border: none !important;
+          flex: 1;
+          overflow: hidden !important;
         }
         .quill-wrapper .ql-editor {
           min-height: 20rem;
+          max-height: 60vh !important;
+          overflow-y: auto !important;
           color: hsl(var(--foreground)) !important;
+          padding-bottom: 4rem;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar {
+          width: 8px;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-track {
+          background: hsl(var(--background));
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-thumb {
+          background: hsl(var(--muted-foreground));
+          border-radius: 4px;
+        }
+        .quill-wrapper .ql-editor::-webkit-scrollbar-thumb:hover {
+          background: hsl(var(--foreground));
         }
         .quill-wrapper .ql-editor.ql-blank::before {
           color: hsl(var(--muted-foreground)) !important;

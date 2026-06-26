@@ -1,15 +1,46 @@
-import { createClient } from "@/lib/supabase/server"
+"use client"
+
+import { useEffect, useState } from "react"
 import { Users, Mail, Phone, Globe, Calendar, CheckCircle, Clock, XCircle } from "lucide-react"
+import { AffiliateDetailsModal } from "@/components/admin/affiliate-details-modal"
 
-export default async function AdminAffiliatesPage() {
-  const supabase = await createClient()
+export default function AdminAffiliatesPage() {
+  const [allAffiliates, setAllAffiliates] = useState<any[]>([])
+  const [selectedAffiliate, setSelectedAffiliate] = useState<any>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
-  const { data: affiliates } = await supabase
-    .from("affiliate_applications")
-    .select("*")
-    .order("created_at", { ascending: false })
+  useEffect(() => {
+    const fetchAffiliates = async () => {
+      try {
+        const response = await fetch("/api/affiliate-application/get")
+        const data = await response.json()
+        setAllAffiliates(data.sort((a: any, b: any) => 
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime()
+        ))
+      } catch (error) {
+        console.error("Error fetching affiliates:", error)
+      } finally {
+        setIsLoading(false)
+      }
+    }
 
-  const allAffiliates = affiliates ?? []
+    fetchAffiliates()
+  }, [])
+
+  const handleOpenModal = (affiliate: any) => {
+    setSelectedAffiliate(affiliate)
+    setIsModalOpen(true)
+  }
+
+  const handleStatusChange = (newStatus: string) => {
+    setAllAffiliates(
+      allAffiliates.map((a) =>
+        a.id === selectedAffiliate.id ? { ...a, status: newStatus } : a
+      )
+    )
+    setSelectedAffiliate(null)
+  }
 
   const statusCounts = {
     pending: allAffiliates.filter((a) => a.status === "pending").length,
@@ -41,6 +72,17 @@ export default async function AdminAffiliatesPage() {
           </span>
         )
     }
+  }
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent mx-auto mb-3"></div>
+          <p className="text-muted-foreground">Loading affiliate applications...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -134,8 +176,8 @@ export default async function AdminAffiliatesPage() {
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10">
                   <Users className="h-5 w-5 text-primary" />
                 </div>
-                <div className="min-w-0">
-                  <p className="truncate font-medium text-card-foreground">
+                <div className="min-w-0 cursor-pointer hover:opacity-70 transition-opacity" onClick={() => handleOpenModal(affiliate)}>
+                  <p className="truncate font-medium text-primary hover:underline">
                     {affiliate.full_name}
                   </p>
                   <p className="truncate text-xs text-muted-foreground">
@@ -193,6 +235,13 @@ export default async function AdminAffiliatesPage() {
           ))}
         </div>
       )}
+
+      <AffiliateDetailsModal
+        affiliate={selectedAffiliate}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onStatusChange={handleStatusChange}
+      />
     </div>
   )
 }
