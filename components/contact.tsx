@@ -83,7 +83,7 @@ export function Contact() {
                     <a
                       href="tel:+18555800608"
                       className="transition-colors hover:text-primary">
-                      (832) 423-7773
+                      +1 855-580-0608
                     </a>
                   </p>
                 </div>
